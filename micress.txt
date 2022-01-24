@@ -1,0 +1,1922 @@
+#
+#
+#
+# Automatic 'Driving File' written out by MICRESS.
+#
+#1.	MICRESS BINARY
+# ==============
+# version number: 6.402 (Windows)
+# compiled: Mar 16 2018
+# compiler version: Intel 1400 20140805
+# executable architecture: x64
+# Thermo-Calc coupling: enabled
+#    Version:    19
+#    Link Date:  Mon Mar 20 12:37:26 2017
+#    OS Name:    WinNT
+#    Build Date: 10716
+#    Compiler:   Intel(R) Visual Fortran Composer Version 13.1.0.149 Build 20130118
+# OpenMP: disabled
+# ('double precision' binary)
+#
+#
+#2.	LANGUAGE SETTINGS
+# =================
+# Please select a language: 'English'. 'Deutsch' or 'Francais'
+English
+#
+#
+#3.	FLAGS AND SETTINGS
+# ==================
+#	GEOMETRY
+# --------
+# Grid size?
+# (for 2D calculations: CellsY=1. for 1D calculations: CellsX=1. CellsY=1)
+# Cells in X-direction (CellsX):
+458
+# Cells in Y-direction (CellsY):
+1
+# Cells in Z-direction (CellsZ):
+453
+# Cell dimension (grid spacing in micrometers):
+# (optionally followed by rescaling factor for the output in the form of '3/4')
+0.0945
+#
+# FLAGS
+# -----
+# Type of coupling?
+# Options:  phase  concentration [volume_change] temperature  temp_cyl_coord
+#    [stress] [stress_coupled] [flow] [flow_coarse] [dislocation]
+phase
+# Type of potential?
+# Options:  double_obstacle  multi_obstacle   [fd_correction]
+multi_obstacle fd_correction
+#
+# PHASE FIELD DATA STRUCTURE
+# --------------------------
+# Coefficient for initial dimension of field iFace
+#  [minimum usage] [target usage]
+0.1
+# Coefficient for initial dimension of field nTupel
+#  [minimum usage] [target usage]
+0.1
+#
+#
+#4.	RESTART OPTIONS
+# ===============
+# Restart using old results?
+# Options:    new       restart [reset_time | structure_only]
+new
+#
+#
+#5.	NAME OF OUTPUT FILES
+# ====================
+# Name of result files?
+Results\Vasilis_Test_5_Results_ReX_AA3104_CR_attemp_15_v2
+# Overwrite files with the same name?
+# Options:    overwrite      write_protected     append
+#             [zipped|not_zipped|vtk]
+#             [unix|windows|non_native]
+overwrite
+#
+#
+#6.	SELECTION OF THE OUTPUTS
+# ========================
+# [legacy|verbose|terse]
+# Restart data output?                                 ('rest')
+# Options:     out_restart      no_out_restart         [wallclock time. h.]
+no_out_restart
+# Grain number output?                                 ('korn')
+# Options:     out_grains       no_out_grains
+out_grains
+# Phase number output?                                 ('phas')
+# Options:     out_phases       no_out_phases          [no_interfaces]
+out_phases
+# Fraction output?                                     ('frac')
+# Options:     out_fraction     no_out_fraction        [phase number]
+out_fraction
+# Average fraction table?                              ('TabF')
+# Options:     tab_fractions    no_tab_fractions       [front_temp] [TabL_steps]
+tab_fractions
+# Interface output?                                    ('intf')
+# Options:     out_interface    no_out_interface       [sharp]
+out_interface
+# Driving-force output?                                ('driv')
+# Options:     out_driv_force   no_out_driv_force
+out_driv_force
+# Interface mobility output?                           ('mueS')
+# Options:     out_mobility     no_out_mobility
+out_mobility
+# Curvature output?                                    ('krum')
+# Options:     out_curvature    no_out_curvature
+out_curvature
+# Interface velocity output?                           ('vel')
+# Options:     out_velocity     no_out_velocity
+out_velocity
+# Should the grain-time file be written out?           ('TabK')
+# Options:     tab_grains       no_tab_grains          [extra|standard]
+tab_grains
+# Should the 'von Neumann Mullins' output be written out?       ('TabN')
+# Options:    tab_vnm    no_tab_vnm
+tab_vnm
+# Should the 'grain data output' be written out?       ('TabGD')
+# Options:    tab_grain_data    no_tab_grain_data
+tab_grain_data
+# Temperature output?                                  ('temp')
+# Options:     out_temp         no_out_temp
+out_temp
+# Recrystallisation energy output?                     ('rex')
+# Options:     out_recrystall   no_out_recrystall
+out_recrystall
+# Recrystallised fraction output?                      ('TabR')
+# Options:     tab_recrystall   no_tab_recrystall
+tab_recrystall
+# Dislocation density output?                          ('rhoD')
+# Options:     out_disloc       no_out_disloc
+out_disloc
+# Miller-Indices output?                               ('mill')
+# Options:     out_miller       no_out_miller
+out_miller
+# Orientation output?                                  ('orie')
+# Options:     out_orientation  no_out_orientation
+out_orientation
+# Should the orientation-time file be written?         ('TabO')
+# Options:   tab_orientation  no_tab_orientation    [rotmat]
+tab_orientation
+# Should monitoring outputs be written out?            ('TabL')
+# Options:     tab_log [simulation time. s] [wallclock time. min]  no_tab_log
+tab_log 1.0
+#
+#
+#7.	TIME INPUT DATA
+# ===============
+# Finish input of output times (in seconds) with 'end_of_simulation'
+# 'regularly-spaced' outputs can be set with 'linear_step'
+# or 'logarithmic_step' and then specifying the increment
+# and end value
+# ('automatic_outputs' optionally followed by the number
+#  of outputs can be used in conjuction with 'linear_from_file')
+#  'first'                  : additional output for first time-step
+#  'end_at_temperature'    : additional output and end of simulation
+#                             at given temperature
+linear_step 1.0 10.
+linear_step 2.0 20.
+linear_step 10.0 1200.
+end_of_simulation
+# Time-step?
+# Options:   fix ...[s]   automatic    automatic_limited
+automatic
+# Coefficient for phase-field criterion 1.00
+# Number of steps to adjust profiles of initially sharp interfaces [exclude_inactive]?
+30
+#
+#
+#8.	PHASE DATA
+# ==========
+# Number of distinct solid phases?
+1
+#
+#	DATA FOR PHASE 1:
+# -----------------
+# Simulation of recrystallisation in phase 1?
+# Options:   recrystall     no_recrystall   [verbose|no_verbose]
+recrystall
+# Which recrystallisation model?
+# Options:  energy  mean_disloc  local_disloc  [all_interfaces]
+mean_disloc
+# Dislocation threshold for recrystallisation model? [m^-2]
+2.72E+14
+# Burgers vector of phase 1? [nm] [dislocation interaction coefficient (default: 0.5)]
+0.29  0.5
+# Shear modulus of phase 1? [MPa]
+2.6e+4
+# Stress recovery coefficient of phase 1? [MPa] [start_time (default: 0 sec)]
+2.0 0.0
+# Is phase 1 anisotrop?
+# Options: isotropic  anisotropic  faceted_a faceted_b  antifaceted
+anisotropic
+# Crystal symmetry of the phase?
+# Options:   none  cubic  hexagonal  tetragonal orthorhombic
+cubic
+# Should grains of phase 1 be reduced to categories?
+# Options:   categorize no_categorize
+no_categorize
+#
+#
+#
+#
+# Warning: 'dislocation density output' was selected without mean or local dislocation definition!
+#
+#
+#
+#
+#
+#	ORIENTATION
+# -----------
+# How shall grain orientations be defined?
+# Options:  angle_2d  euler_zxz  angle_axis  miller_indices  quaternion
+miller_indices
+#
+#
+#9.	GRAIN INPUT
+# ===========
+#
+#
+#9.	GRAIN INPUT
+# ===========
+# Type of grain positioning?
+# Options:  deterministic   random [deterministic_infile]   from_file
+deterministic
+# NB: the origin of coordinate system is the bottom left-hand corner.
+#     all points within the simulation domain having positive coordinates.
+# Number of grains at the beginning?
+57
+#
+#
+#                                         INPUT FOR GRAIN 1?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+9.581241349
+40.67631015
+# Length of axis along x-axis [micrometers]
+17.9524
+# Length of axis along z-axis [micrometers]
+2,9363
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.40E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 2?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+8.769506337
+38.02087008
+# Length of axis along x-axis [micrometers]
+18.1792
+# Length of axis along z-axis [micrometers]
+1.5486
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.40E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 3?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+24.28101338
+41.59266697
+# Length of axis along x-axis [micrometers]
+12.4215
+# Length of axis along z-axis [micrometers]
+2.2701
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.40E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 4?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+26.3034304
+39.01070643
+# Length of axis along x-axis [micrometers]
+16.0884
+# Length of axis along z-axis [micrometers]
+2.8789
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.40E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 5?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+38.27570766
+41.68135126
+# Length of axis along x-axis [micrometers]
+9.351
+# Length of axis along z-axis [micrometers]
+1.8771
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.40E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 6?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+39.51570006
+39.3943876
+# Length of axis along x-axis [micrometers]
+7.3083
+# Length of axis along z-axis [micrometers]
+2.0106
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.41E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 7?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+20.02510381
+35.45132575
+# Length of axis along x-axis [micrometers]
+39.0042
+# Length of axis along z-axis [micrometers]
+4.572
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.41E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                          INPUT FOR GRAIN 8?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+40.7705512
+36.48797731
+# Length of axis along x-axis [micrometers]
+4.6549
+# Length of axis along z-axis [micrometers]
+2.951
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.41E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 9?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+14.21513285
+31.39142942
+# Length of axis along x-axis [micrometers]
+28.391
+# Length of axis along z-axis [micrometers]
+1.7798
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.41E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 10?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+35.35321736
+33.1146362
+# Length of axis along x-axis [micrometers]
+6.0579
+# Length of axis along z-axis [micrometers]
+0.8351
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.41E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 11?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+41.34128966
+32.49586126
+# Length of axis along x-axis [micrometers]
+3.3088
+# Length of axis along z-axis [micrometers]
+1.1059
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.41E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 12?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+35.44542297
+30.07714332
+# Length of axis along x-axis [micrometers]
+14.9479
+# Length of axis along z-axis [micrometers]
+4.9018
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.41E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 13?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+1.406695253
+29.61530111
+# Length of axis along x-axis [micrometers]
+2.8358
+# Length of axis along z-axis [micrometers]
+1.2601
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.41E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 14?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+14.93466225
+27.6177165
+# Length of axis along x-axis [micrometers]
+30.1209
+# Length of axis along z-axis [micrometers]
+5.6598
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.41E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 15?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+36.76785084
+25.3463647
+# Length of axis along x-axis [micrometers]
+12.5072
+# Length of axis along z-axis [micrometers]
+3.1209
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.41E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 16?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+5.963239884
+24.22931311
+# Length of axis along x-axis [micrometers]
+8.1646
+# Length of axis along z-axis [micrometers]
+1.6782
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.42E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 17?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+17.77980568
+23.44953456
+# Length of axis along x-axis [micrometers]
+6.5393
+# Length of axis along z-axis [micrometers]
+2.0845
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.42E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 18?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+24.73125356
+23.93661628
+# Length of axis along x-axis [micrometers]
+8.1259
+# Length of axis along z-axis [micrometers]
+2.3088
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.42E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 19?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+30.72380384
+22.43954732
+# Length of axis along x-axis [micrometers]
+5.4245
+# Length of axis along z-axis [micrometers]
+2.1431
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.42E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 20?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+38.48291584
+21.43017071
+# Length of axis along x-axis [micrometers]
+8.7089
+# Length of axis along z-axis [micrometers]
+3.5549
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.42E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 21?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+9.209772844
+21.54720873
+# Length of axis along x-axis [micrometers]
+16.8921
+# Length of axis along z-axis [micrometers]
+2.6774
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.42E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 22?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+24.41474204
+21.70149537
+# Length of axis along x-axis [micrometers]
+2.9207
+# Length of axis along z-axis [micrometers]
+1.2699
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.42E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 23?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+28.63788097
+19.92638478
+# Length of axis along x-axis [micrometers]
+10.5701
+# Length of axis along z-axis [micrometers]
+2.6361
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.42E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 24?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+3.688834912
+18.2595598
+# Length of axis along x-axis [micrometers]
+6.6301
+# Length of axis along z-axis [micrometers]
+1.9905
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.42E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 25?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+12.84304014
+18.18058458
+# Length of axis along x-axis [micrometers]
+6.6465
+# Length of axis along z-axis [micrometers]
+2.6845
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.42E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 26?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+19.10895053
+19.50545499
+# Length of axis along x-axis [micrometers]
+7.5684
+# Length of axis along z-axis [micrometers]
+2.7489
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.43E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 27?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+2.217616088
+16.44557223
+# Length of axis along x-axis [micrometers]
+3.9838
+# Length of axis along z-axis [micrometers]
+1.5109
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.43E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 28?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+8.608095639
+15.68533395
+# Length of axis along x-axis [micrometers]
+5.5616
+# Length of axis along z-axis [micrometers]
+2.2135
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.43E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 29?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+19.31554808
+16.95015876
+# Length of axis along x-axis [micrometers]
+7.5684
+# Length of axis along z-axis [micrometers]
+2.4002
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.43E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 30?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+27.1393872
+16.46429831
+# Length of axis along x-axis [micrometers]
+7.5684
+# Length of axis along z-axis [micrometers]
+1.8431
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.43E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 31?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+33.12481342
+15.89844492
+# Length of axis along x-axis [micrometers]
+4.2297
+# Length of axis along z-axis [micrometers]
+2.0006
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.43E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 32?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+36.69681385
+17.88564876
+# Length of axis along x-axis [micrometers]
+6.6146
+# Length of axis along z-axis [micrometers]
+2.0521
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.43E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.00
+#
+#
+#
+#                                         INPUT FOR GRAIN 33?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+37.35426222
+16.26584254
+# Length of axis along x-axis [micrometers]
+4.2345
+# Length of axis along z-axis [micrometers]
+1.2748
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.43E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 34?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+41.42026488
+16.61166445
+# Length of axis along x-axis [micrometers]
+3.6612
+# Length of axis along z-axis [micrometers]
+2.0597
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.43E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 35?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+1.796075664
+14.95745922
+# Length of axis along x-axis [micrometers]
+3.0243
+# Length of axis along z-axis [micrometers]
+1.2367
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.43E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 36?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+# μπήκαν κατά προσέγγιση βάση των συντεταγμένων από το MICRESS # DP
+18.0968
+1.55925
+# Length of axis along x-axis [micrometers]
+6.213768
+# Length of axis along z-axis [micrometers]
+1.647448
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.44E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 37?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+29.69834722
+14.61672592
+# Length of axis along x-axis [micrometers]
+4.1556
+# Length of axis along z-axis [micrometers]
+1.2612
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.44E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 38?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+39.31317339
+14.64542568
+# Length of axis along x-axis [micrometers]
+3.9557
+# Length of axis along z-axis [micrometers]
+1.998
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.44E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 39?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+5.636754688
+13.24585448
+# Length of axis along x-axis [micrometers]
+7.7139
+# Length of axis along z-axis [micrometers]
+1.952
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.44E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 40?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+18.29416235
+11.43919451
+# Length of axis along x-axis [micrometers]
+24.532
+# Length of axis along z-axis [micrometers]
+3.1759
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.44E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 41?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+30.72889245
+13.04088528
+# Length of axis along x-axis [micrometers]
+8.6439
+# Length of axis along z-axis [micrometers]
+1.7293
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.44E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 42?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+37.51343393
+12.91244877
+# Length of axis along x-axis [micrometers]
+4.2394
+# Length of axis along z-axis [micrometers]
+1.376
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.44E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 43?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+41.75265286
+12.85830597
+# Length of axis along x-axis [micrometers]
+3.5313
+# Length of axis along z-axis [micrometers]
+2.0448
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.44E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 44?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+2.806062909
+10.80047222
+# Length of axis along x-axis [micrometers]
+5.4192
+# Length of axis along z-axis [micrometers]
+2.0399
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.44E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 45?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+35.27241024
+11.76120173
+# Length of axis along x-axis [micrometers]
+5.1381
+# Length of axis along z-axis [micrometers]
+1.5687
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.44E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 46?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+40.34147963
+10.77706462
+# Length of axis along x-axis [micrometers]
+3.9632
+# Length of axis along z-axis [micrometers]
+2.0096
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.45E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 47?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+7.20486064
+8.22950308
+# Length of axis along x-axis [micrometers]
+6.0742
+# Length of axis along z-axis [micrometers]
+1.9982
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.45E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.00
+#
+#
+#
+#                                         INPUT FOR GRAIN 48?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+18.76251798
+8.055676174
+# Length of axis along x-axis [micrometers]
+16.341
+# Length of axis along z-axis [micrometers]
+3.0548
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.45E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 49?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+34.23067007
+8.113686325
+# Length of axis along x-axis [micrometers]
+14.9208
+# Length of axis along z-axis [micrometers]
+3.3334
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.45E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 50?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+4.04748012
+6.405541835
+# Length of axis along x-axis [micrometers]
+7.694
+# Length of axis along z-axis [micrometers]
+2.0688
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.45E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 51?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+21.57224469
+4.987041007
+# Length of axis along x-axis [micrometers]
+30.4671
+# Length of axis along z-axis [micrometers]
+2.5093
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.45E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 52?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+40.19757375
+5.913575054
+# Length of axis along x-axis [micrometers]
+5.1173
+# Length of axis along z-axis [micrometers]
+1.5345
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.45E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 53?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+7.610524602
+2.902746492
+# Length of axis along x-axis [micrometers]
+7.7432
+# Length of axis along z-axis [micrometers]
+2.0369
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.45E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 54?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+3.6131164
+1.078988791
+# Length of axis along x-axis [micrometers]
+7.6164
+# Length of axis along z-axis [micrometers]
+2.0692
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.45E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 55?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+18.70450783
+14.37247266
+# Length of axis along x-axis [micrometers]
+14.3725
+# Length of axis along z-axis [micrometers]
+3.811
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.45E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 56?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+29.33522403
+1.715879176
+# Length of axis along x-axis [micrometers]
+7.2924
+# Length of axis along z-axis [micrometers]
+3.3314
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.46E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 57?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+38.28588488
+3.192186609
+# Length of axis along x-axis [micrometers]
+9.488
+# Length of axis along z-axis [micrometers]
+2.5126
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.46E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#                                         INPUT FOR GRAIN 58?
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x.z coordinates [micrometers]?
+-1
+25
+# Length of axis along x-axis [micrometers]
+9.488
+# Length of axis along z-axis [micrometers]
+2.5126
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?   (integer)
+1
+# Mean dislocation density? [m-2]
+4.46E+03
+# Miller indices h.k.l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u.v.w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+#10.	DATA FOR FURTHER NUCLEATION
+# ===========================
+# Enable further nucleation?
+# Options:  nucleation   nucleation_symm   no_nucleation  [verbose|no_verbose]
+nucleation
+# Additional output for nucleation?
+# Options:     out_nucleation     no_out_nucleation
+#out_nucleation
+out_nucleation
+# Number of types of seeds?
+2
+#
+#	INPUT FOR SEED TYPE 1:
+# ----------------------
+# Type of 'position' of the seeds?
+# Options:   bulk  region  interface  triple  quadruple  front  [restrictive]
+interface
+# Phase of new grains (integer) [unresolved|add_to_grain]?
+1
+# Reference phase (integer) [min. and max. fraction (real)]?
+1
+# Substrate phase [2nd phase in interface]?
+# (set to 1 to disable the effect of substrate curvature)
+1
+# maximum number of new nuclei 1?
+# (set negative for unlimited number)
+100
+# Grain radius [micrometers]?
+0.700000
+# Choice of growth mode:
+# Options:   stabilisation analytical_curvature
+stabilisation
+# critical recrystallisation energy [J/cm**3 or MPa]?
+5e-2
+# Determination of nuclei orientations?
+# Options:   random    fix     fix_direction   parent_relation
+parent_relation
+# Minimal value of rotation angle? [Degree]
++0.000
+# Maximal value of rotation angle? [Degree]
++15.00
+# Referring to which coordinate system shall the rotation axis be defined?
+# local  (system of the crystal)
+# global (system of the workpiece)
+global
+# Rotation axis? [3 reals in one line]
++0.000 +1.000 +0.000
+# Shield effect:
+# Shield time [s] [shield phase or group number] ?
+100.00
+# Shield distance [micrometers]  [ nucleation distance [micrometers] ]?
+25.000
+# Input of minimal and maximal energy of the nuclei:
+# Minimum of recrystallisation energy?  [J/cm**3 or MPa]
+0.0
+# Maximum of recrystallisation energy?  [J/cm**3 or MPa]
+0.0
+# Nucleation range
+# min. nucleation temperature for seed type 1 [K]
+650
+# max. nucleation temperature for seed type 1 [K]
+700
+# Time between checks for nucleation? [s]
+# Options:  constant   from_file
+constant
+# Time interval [s]
+1.50000E-02
+# Shall random noise be applied?
+# Options:     nucleation_noise   no_nucleation_noise
+nucleation_noise
+# Factor for random noise?
+# (applied as DeltaT -> (1+Factor*(RAND-1/2))*DeltaT)
+1.000E-03
+#
+#	INPUT FOR SEED TYPE 2:
+# ----------------------
+# Type of 'position' of the seeds?
+# Options:   bulk  region  interface  triple  quadruple  front  [restrictive]
+bulk
+# Phase of new grains (integer) [unresolved|add_to_grain]?
+1
+# Reference phase (integer) [min. and max. fraction (real)]?
+1
+# Which nucleation model shall be used?
+# Options:    seed_undercooling    seed_density
+seed_undercooling
+# maximum number of new nuclei 2?
+# (set negative for unlimited number)
+100
+# Grain radius [micrometers]?
+0.900000
+# Choice of growth mode:
+# Options:   stabilisation analytical_curvature
+stabilisation
+# critical recrystallisation energy [J/cm**3 or MPa]?
+5e-2
+# Determination of nuclei orientations?
+# Options:   random    fix     fix_direction   parent_relation
+parent_relation
+# Minimal value of rotation angle? [Degree]
++20.00
+# Maximal value of rotation angle? [Degree]
++25.00
+# Referring to which coordinate system shall the rotation axis be defined?
+# local  (system of the crystal)
+# global (system of the workpiece)
+global
+# Rotation axis? [3 reals in one line]
++0.000 +1.000 +0.000
+# Shield effect:
+# Shield time [s] [shield phase or group number] ?
+100.00
+# Shield distance [micrometers]  [ nucleation distance [micrometers] ]?
+25.000
+# Input of minimal and maximal energy of the nuclei:
+# Minimum of recrystallisation energy?  [J/cm**3 or MPa]
+0.0
+# Maximum of recrystallisation energy?  [J/cm**3 or MPa]
+0.0
+# Nucleation range
+# min. nucleation temperature for seed type 2 [K]
+650
+# max. nucleation temperature for seed type 2 [K]
+700
+# Time between checks for nucleation? [s]
+# Options:  constant   from_file
+constant
+# Time interval [s]
+1.50000E-02
+# Shall random noise be applied?
+# Options:     nucleation_noise   no_nucleation_noise
+nucleation_noise
+# Factor for random noise?
+# (applied as DeltaT -> (1+Factor*(RAND-1/2))*DeltaT)
+1.000E-03
+#
+#	SEED FOR RANDOM-NUMBER GENERATOR INITIALISATION
+# -----------------------------------------------
+7
+#
+#	MAX. NUMBER OF SIMULTANEOUS NUCLEATIONS?
+# ----------------------------------------
+# (set to 0 for automatic)
+0
+#
+#	SHALL METASTABLE SMALL SEEDS BE KILLED?
+# ---------------------------------------
+# Options:     kill_metastable      no_kill_metastable
+no_kill_metastable
+#
+#
+#11.	PHASE INTERACTION DATA
+# ======================
+#
+#	DATA FOR PHASE INTERACTION 0 / 1:
+# ---------------------------------
+# Simulation of interaction between phases 0 and 1?
+# Options: phase_interaction  no_phase_interaction
+#  [standard|particle_pinning[_temperature]|solute_drag]
+#   |[no_junction_force|junction_force]
+no_phase_interaction
+#
+#	DATA FOR PHASE INTERACTION 1 / 1:
+# ---------------------------------
+# Simulation of interaction between phases 1 and 1?
+# Options: phase_interaction  no_phase_interaction  identical phases nb
+#  [standard|particle_pinning[_temperature]|solute_drag]
+#   |[no_junction_force|junction_force]
+phase_interaction 
+# Type of interfacial energy definition between phases 1 and 1?
+# Options:  constant  temp_dependent
+constant
+# Interfacial energy between phases 1 and 1? [J/cm**2]
+#     [max. value for num. interface stabilisation [J/cm**2]]
+3.24000E-05
+# Type of mobility definition between phases 1 and 1?
+# Options: constant temp_dependent dg_dependent [fixed_minimum]
+constant
+# Kinetic coefficient mu between phases 1 and 1  [ min. value ] [cm**4/(Js)] ?
+1.780000E+16
+# Shall misorientation be considered?
+# Options:   misorientation    no_misorientation
+#           [low_angle_limit (degrees)] default:15    [special_orient (nb)]
+misorientation 
+# Input of the misorientation coefficients:
+# Modification of interfacial energy for low angle boundaries
+# Options:  factor   read-shockley
+factor
+# Prefactor of interfacial energy for low angle boundaries?
+0.20000
+# Modification of the mobility for low angle boundaries
+# Options:  factor   humphreys [min_reduction + parameters B and N
+#                         (default: min_reduction=0. B=5.0 N=4.0)]
+factor
+# Prefactor of interfacial mobility for low angle boundaries?
+0.10000
+#
+#
+#12.	PHASE DIAGRAM - INPUT DATA
+# ==========================
+#
+#
+#13.	BOUNDARY CONDITIONS
+# ===================
+# Type of temperature trend?
+# Options:   linear     linear_from_file     profiles_from_file
+linear
+# Number of connecting points?    (integer)
+0
+# Initial temperature at the bottom?  (real)  [K]
+580.000
+# Temperature gradient in z-direction?  [K/cm]
+0.0000
+# Cooling rate? [K/s]
+0.0000
+# Moving-frame system in z-direction?
+# Options:      moving_frame      no_moving_frame
+no_moving_frame
+#
+# Boundary conditions for phase field in each direction
+# Options: i (insulation) s (symmetric) p (periodic/wrap-around)
+#          g (gradient)   f (fixed)     w (wetting)
+# Sequence: W E (S N. if 3D) B T borders
+pppp
+# Unit-cell model symmetric with respect to the x/y diagonal plane?
+# Options:    unit_cell_symm   no_unit_cell_symm
+no_unit_cell_symm
+#
+#
+#14.	OTHER NUMERICAL PARAMETERS
+# ==========================
+# Phase minimum?
+1.00E-04
+# Interface thickness (in cells)?
+3.00
+#
+#
