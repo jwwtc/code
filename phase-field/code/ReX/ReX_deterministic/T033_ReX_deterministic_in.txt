@@ -26,7 +26,7 @@ English
 # ===============
 # Options: [ <directory path>/ ] <base name>
 # The default result directory is the driving file location.
-Results_ReX/T033_ReX_deterministic
+C:\Users\mikep\Desktop\project\code\phase-field\code\ReX\ReX_deterministic/T033_ReX_deterministic
 # Overwrite files with the same name?
 # Options:    overwrite      write_protected     append
 #             [zipped|not_zipped|vtk]
@@ -36,7 +36,7 @@ overwrite
 #
 # Restart
 # =======
-# Restart using old results?
+# Restart using old?
 # Options:    new       restart [reset_time | with_flow]
 new
 #
@@ -952,5 +952,4 @@ multi_obstacle fd_correction
 # Coefficient for initial dimension of field nTupel
 #  [minimum usage] [target usage]
 0.1
-#
 #
