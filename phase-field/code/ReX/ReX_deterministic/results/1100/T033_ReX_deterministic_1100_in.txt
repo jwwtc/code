@@ -1,4 +1,8 @@
-
+#
+#
+#
+# Automatic 'Driving File' written out by MICRESS.
+#
 # MICRESS binary
 # ==============
 # version number: 7.100 (Windows)
@@ -25,16 +29,12 @@ English
 # ===============
 # Options: [ <directory path>/ ] <base name>
 # The default result directory is the driving file location.
-Results_ReX/T033_ReX_deterministic
+Results_ReX/output_files/T033_ReX_deterministic_1100
 # Overwrite files with the same name?
 # Options:    overwrite      write_protected     append
 #             [zipped|not_zipped|vtk]
 #             [unix|windows|non_native]
 overwrite
-
-# The data compression is done with 'zlib' (cf. http://www.zlib.net/).
-# The routine for appending is loosely derived from the 'gzappend.c' example.
-
 #
 #
 # Restart
@@ -53,7 +53,7 @@ new
 # Cells in Y-direction (CellsY):
 1
 # Cells in Z-direction (CellsZ):
-300
+500
 # Cell dimension (grid spacing in micrometers):
 # (optionally followed by rescaling factor for the output in the form of '3/4')
 0.50000
@@ -75,9 +75,6 @@ phase
 # Sequence: W E B T
 #   (X: West-East, Y:South-North, Z:Bottom-Top)
 iiii
-
-# License check ...
-
 #
 #
 # Phases
@@ -124,7 +121,7 @@ recrystall verbose
 # Options:  energy  mean_disloc  local_disloc  [all_interfaces]
 energy
 # Energy threshold for recrystallisation  model? [J/cm**3 or MPa]
-2.1230000000000E-03 
+2.1230000000000E-03
 # Is phase  1 (PHASE_1) anisotropic ?
 # Optionen: isotropic  anisotropic  faceted_a  faceted_b   faceted[_c]  antifaceted
 anisotropic
@@ -178,13 +175,13 @@ misorientation
 # Options:  factor   read-shockley
 factor
 # Prefactor of interfacial energy for low angle boundaries?
-0.1000000000000 
+0.1000000000000
 # Modification of the mobility for low angle boundaries
 # Options: {factor | humphreys [<minimum> <parameter B> <parameter N>]}
 #                    (default: minimum=0.05 B=5.0 N=4.0)
 factor
 # Prefactor of interfacial mobility for low angle boundaries?
-0.1000000000000 
+0.1000000000000
 #
 # Initial Microstructure
 # ======================
@@ -194,7 +191,7 @@ deterministic
 # NB: the origin of coordinate system is the bottom left-hand corner,
 #     all points within the simulation domain having positive coordinates.
 # Number of grains at the beginning?
-22                    
+22
 #
 # Grain number 1
 # --------------
@@ -202,21 +199,21 @@ deterministic
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 1?
-267.0000000000  
-108.4000000000  
+267.0000000000
+108.4000000000
 # Length of axis along x-axis [micrometers]
-309.6000000000  
+309.6000000000
 # Length of axis along z-axis [micrometers]
-101.0000000000  
+101.0000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-1.265000000000  
+1.265000000000
 # Rotation angle? [Degree]
-0.9800000000000 
+0.9800000000000
 #
 # Grain number 2
 # --------------
@@ -224,21 +221,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 2?
-149.9000000000  
-123.0600000000  
+149.9000000000
+123.0600000000
 # Length of axis along x-axis [micrometers]
-303.4200000000  
+303.4200000000
 # Length of axis along z-axis [micrometers]
-104.8800000000  
+104.8800000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-4.960000000000  
+4.960000000000
 # Rotation angle? [Degree]
-0.9900000000000 
+0.9900000000000
 #
 # Grain number 3
 # --------------
@@ -246,21 +243,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 3?
-175.8000000000  
-26.20000000000  
+175.8000000000
+26.20000000000
 # Length of axis along x-axis [micrometers]
-300.6000000000  
+300.6000000000
 # Length of axis along z-axis [micrometers]
-102.2000000000  
+102.2000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-1.290000000000  
+1.290000000000
 # Rotation angle? [Degree]
-0.9800000000000 
+0.9800000000000
 #
 # Grain number 4
 # --------------
@@ -268,21 +265,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 4?
--2.240000000000 
-22.70000000000  
+-2.240000000000
+22.70000000000
 # Length of axis along x-axis [micrometers]
-300.5000000000  
+300.5000000000
 # Length of axis along z-axis [micrometers]
-101.5000000000  
+101.5000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-1.240000000000  
+1.240000000000
 # Rotation angle? [Degree]
-0.9800000000000 
+0.9800000000000
 #
 # Grain number 5
 # --------------
@@ -290,21 +287,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 5?
-260.0000000000  
-149.7000000000  
+260.0000000000
+149.7000000000
 # Length of axis along x-axis [micrometers]
-300.9000000000  
+300.9000000000
 # Length of axis along z-axis [micrometers]
-109.0000000000  
+109.0000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-1.580500000000  
+1.580500000000
 # Rotation angle? [Degree]
-0.9241000000000 
+0.9241000000000
 #
 # Grain number 6
 # --------------
@@ -312,21 +309,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 6?
-10.90000000000  
-82.00000000000  
+10.90000000000
+82.00000000000
 # Length of axis along x-axis [micrometers]
-306.3000000000  
+306.3000000000
 # Length of axis along z-axis [micrometers]
-102.2000000000  
+102.2000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-1.650000000000  
+1.650000000000
 # Rotation angle? [Degree]
-0.9400000000000 
+0.9400000000000
 #
 # Grain number 7
 # --------------
@@ -334,21 +331,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 7?
-123.1000000000  
-56.85000000000  
+123.1000000000
+56.85000000000
 # Length of axis along x-axis [micrometers]
-306.6200000000  
+306.6200000000
 # Length of axis along z-axis [micrometers]
-105.4900000000  
+105.4900000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-1.600000000000  
+1.600000000000
 # Rotation angle? [Degree]
-0.9000000000000 
+0.9000000000000
 #
 # Grain number 8
 # --------------
@@ -356,21 +353,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 8?
-148.9500000000  
-49.70000000000  
+148.9500000000
+49.70000000000
 # Length of axis along x-axis [micrometers]
-303.6500000000  
+303.6500000000
 # Length of axis along z-axis [micrometers]
-109.9000000000  
+109.9000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-1.603900000000  
+1.603900000000
 # Rotation angle? [Degree]
-0.9526000000000 
+0.9526000000000
 #
 # Grain number 9
 # --------------
@@ -378,21 +375,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 9?
-266.3200000000  
-11.92700000000  
+266.3200000000
+11.92700000000
 # Length of axis along x-axis [micrometers]
-307.0000000000  
+307.0000000000
 # Length of axis along z-axis [micrometers]
-104.0000000000  
+104.0000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-1.700000000000  
+1.700000000000
 # Rotation angle? [Degree]
-0.9400000000000 
+0.9400000000000
 #
 # Grain number 10
 # ---------------
@@ -400,21 +397,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 10?
-122.9000000000  
-157.2000000000  
+122.9000000000
+157.2000000000
 # Length of axis along x-axis [micrometers]
-305.6000000000  
+305.6000000000
 # Length of axis along z-axis [micrometers]
-106.4000000000  
+106.4000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-1.600000000000  
+1.600000000000
 # Rotation angle? [Degree]
-0.9400000000000 
+0.9400000000000
 #
 # Grain number 11
 # ---------------
@@ -422,21 +419,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 11?
-9.700000000000  
-152.5000000000  
+9.700000000000
+152.5000000000
 # Length of axis along x-axis [micrometers]
-306.5400000000  
+306.5400000000
 # Length of axis along z-axis [micrometers]
-105.0000000000  
+105.0000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-2.600000000000  
+2.600000000000
 # Rotation angle? [Degree]
-0.9000000000000 
+0.9000000000000
 #
 # Grain number 12
 # ---------------
@@ -444,21 +441,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 12?
-189.6000000000  
-92.18000000000  
+189.6000000000
+92.18000000000
 # Length of axis along x-axis [micrometers]
-305.7000000000  
+305.7000000000
 # Length of axis along z-axis [micrometers]
-100.0000000000  
+100.0000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-2.600000000000  
+2.600000000000
 # Rotation angle? [Degree]
-0.9000000000000 
+0.9000000000000
 #
 # Grain number 13
 # ---------------
@@ -466,21 +463,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 13?
-170.4000000000  
-71.85000000000  
+170.4000000000
+71.85000000000
 # Length of axis along x-axis [micrometers]
-301.2500000000  
+301.2500000000
 # Length of axis along z-axis [micrometers]
-101.2000000000  
+101.2000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-2.700000000000  
+2.700000000000
 # Rotation angle? [Degree]
-0.9000000000000 
+0.9000000000000
 #
 # Grain number 14
 # ---------------
@@ -488,21 +485,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 14?
-29.20000000000  
-45.80000000000  
+29.20000000000
+45.80000000000
 # Length of axis along x-axis [micrometers]
-309.7000000000  
+309.7000000000
 # Length of axis along z-axis [micrometers]
-106.2000000000  
+106.2000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-2.600000000000  
+2.600000000000
 # Rotation angle? [Degree]
-0.8600000000000 
+0.8600000000000
 #
 # Grain number 15
 # ---------------
@@ -510,21 +507,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 15?
-230.7000000000  
-125.4000000000  
+230.7000000000
+125.4000000000
 # Length of axis along x-axis [micrometers]
-301.3000000000  
+301.3000000000
 # Length of axis along z-axis [micrometers]
-103.2000000000  
+103.2000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-5.053100000000  
+5.053100000000
 # Rotation angle? [Degree]
-0.8572000000000 
+0.8572000000000
 #
 # Grain number 16
 # ---------------
@@ -532,21 +529,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 16?
-18.40000000000  
-114.0000000000  
+18.40000000000
+114.0000000000
 # Length of axis along x-axis [micrometers]
-305.7000000000  
+305.7000000000
 # Length of axis along z-axis [micrometers]
-102.5000000000  
+102.5000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-2.590000000000  
+2.590000000000
 # Rotation angle? [Degree]
-0.8600000000000 
+0.8600000000000
 #
 # Grain number 17
 # ---------------
@@ -554,21 +551,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 17?
-56.10000000000  
-111.5000000000  
+56.10000000000
+111.5000000000
 # Length of axis along x-axis [micrometers]
-303.3000000000  
+303.3000000000
 # Length of axis along z-axis [micrometers]
-108.5500000000  
+108.5500000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-5.000000000000  
+5.000000000000
 # Rotation angle? [Degree]
-0.8000000000000 
+0.8000000000000
 #
 # Grain number 18
 # ---------------
@@ -576,21 +573,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 18?
-61.50000000000  
-45.52000000000  
+61.50000000000
+45.52000000000
 # Length of axis along x-axis [micrometers]
-301.6000000000  
+301.6000000000
 # Length of axis along z-axis [micrometers]
-108.2000000000  
+108.2000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-5.015000000000  
+5.015000000000
 # Rotation angle? [Degree]
-0.7759000000000 
+0.7759000000000
 #
 # Grain number 19
 # ---------------
@@ -598,21 +595,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 19?
-97.30000000000  
-124.4000000000  
+97.30000000000
+124.4000000000
 # Length of axis along x-axis [micrometers]
-306.7000000000  
+306.7000000000
 # Length of axis along z-axis [micrometers]
-102.0000000000  
+102.0000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-1.400000000000  
+1.400000000000
 # Rotation angle? [Degree]
-0.7580000000000 
+0.7580000000000
 #
 # Grain number 20
 # ---------------
@@ -620,21 +617,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 20?
-197.7000000000  
-120.2100000000  
+197.7000000000
+120.2100000000
 # Length of axis along x-axis [micrometers]
-304.7300000000  
+304.7300000000
 # Length of axis along z-axis [micrometers]
-102.4300000000  
+102.4300000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-2.500000000000  
+2.500000000000
 # Rotation angle? [Degree]
-0.7500000000000 
+0.7500000000000
 #
 # Grain number 21
 # ---------------
@@ -642,21 +639,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 21?
-245.3000000000  
+245.3000000000
 -0.8600000000000
 # Length of axis along x-axis [micrometers]
-303.2000000000  
+303.2000000000
 # Length of axis along z-axis [micrometers]
-107.0000000000  
+107.0000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-4.900000000000  
+4.900000000000
 # Rotation angle? [Degree]
-0.7650000000000 
+0.7650000000000
 #
 # Grain number 22
 # ---------------
@@ -664,21 +661,21 @@ voronoi
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 22?
-33.35000000000  
-142.0000000000  
+33.35000000000
+142.0000000000
 # Length of axis along x-axis [micrometers]
-307.3000000000  
+307.3000000000
 # Length of axis along z-axis [micrometers]
-101.3000000000  
+101.3000000000
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-5.000000000000  
+5.000000000000
 # Rotation angle? [Degree]
-0.7560000000000 
+0.7560000000000
 #
 #
 # Process Conditions
@@ -690,20 +687,21 @@ voronoi
 # Options:   linear     linear_from_file     profiles_from_file
 linear
 # Number of connecting points?    (integer)
-0                     
+0
 # Initial temperature at the bottom?  (real)  [K]
-1000.000000000  
+1100.000000000
 # Temperature gradient in z-direction?  [K/cm]
-0.000000000000  
+0.000000000000
 # Cooling rate? [K/s]
--1.000000000000 
+-1.000000000000
 #
 # Moving frame
 # ------------
 # Moving-frame system in z-direction?
 # Options:      moving_frame      no_moving_frame
 no_moving_frame
-
+#
+#
 # Nucleation
 # ==========
 # Enable further nucleation?
@@ -714,7 +712,7 @@ nucleation
 no_out_nucleation
 #
 # Number of types of seeds?
-2                     
+2
 #
 # Input for seed type 1:
 # ----------------------
@@ -729,7 +727,7 @@ interface
 1
 # Maximum number of new nuclei of seed type 1?
 # (set negative for unlimited number)
-29                    
+29
 # Grain radius [micrometers]?
 0.700000
 # Choice of growth mode:
@@ -747,14 +745,14 @@ random
 20.000
 # Input of minimal and maximal energy of the nuclei:
 # Minimum of recrystallisation energy?  [J/cm**3 or MPa]
-0.000000000000  
+0.000000000000
 # Maximum of recrystallisation energy?  [J/cm**3 or MPa]
-0.000000000000  
+0.000000000000
 # Nucleation range
 # min. nucleation temperature for seed type 1 [K]
-750.0000000000  
+750.0000000000
 # max. nucleation temperature for seed type 1 [K]
-1005.000000000  
+1005.000000000
 # Time between checks for nucleation? [s]
 # Options:  constant   from_file
 constant
@@ -765,7 +763,7 @@ constant
 nucleation_noise
 # Factor for random noise?
 # (applied as DeltaT -> (1+Factor*(RAND-1/2))*DeltaT)
-1.0000000000000E-03 
+1.0000000000000E-03
 #
 # Input for seed type 2:
 # ----------------------
@@ -789,7 +787,7 @@ region
 seed_undercooling
 # Maximum number of new nuclei of seed type 2?
 # (set negative for unlimited number)
-29                    
+29
 # Grain radius [micrometers]?
 0.700000
 # Choice of growth mode:
@@ -807,14 +805,14 @@ random
 7.5000
 # Input of minimal and maximal energy of the nuclei:
 # Minimum of recrystallisation energy?  [J/cm**3 or MPa]
-0.000000000000  
+0.000000000000
 # Maximum of recrystallisation energy?  [J/cm**3 or MPa]
-0.000000000000  
+0.000000000000
 # Nucleation range
 # min. nucleation temperature for seed type 2 [K]
-750.0000000000  
+750.0000000000
 # max. nucleation temperature for seed type 2 [K]
-1005.000000000  
+1005.000000000
 # Time between checks for nucleation? [s]
 # Options:  constant   from_file
 constant
@@ -825,21 +823,22 @@ constant
 nucleation_noise
 # Factor for random noise?
 # (applied as DeltaT -> (1+Factor*(RAND-1/2))*DeltaT)
-1.0000000000000E-03 
+1.0000000000000E-03
 #
 # Seed for random-number generator initialisation
 # -----------------------------------------------
-13                    
+13
 #
 # Max. number of simultaneous nucleations?
 # ----------------------------------------
 # (set to 0 for automatic)
-25                    
+25
 #
 # Shall metastable small seeds be killed?
 # Options:     kill_metastable      no_kill_metastable
 kill_metastable
-
+#
+#
 # Output
 # ======
 #
@@ -949,778 +948,12 @@ multi_obstacle fd_correction
 # Phase minimum?
 5.00E-03
 # Interface thickness (in cells)?
-5.000000000000  
+5.000000000000
 # Coefficient for initial dimension of field iFace
 #  [minimum usage] [target usage]
 0.1
 # Coefficient for initial dimension of field nTupel
 #  [minimum usage] [target usage]
 0.1
-
-
-Beginning of initialisation
-===========================
-Routine init calls routine initDateien
-Routine init calls routine initParallel
-Routine init calls routine initRand
-Routine init calls routine initWorkspace
-Routine init calls routine initFixeFelder
-Routine init calls routine initPointer
-Routine init calls routine initIFaceSharp
-# Grain number  1 set
-# Grain number  2 set
-# Grain number  3 set
-# Grain number  4 set
-# Grain number  5 set
-# Grain number  6 set
-# Grain number  7 set
-# Grain number  8 set
-# Grain number  9 set
-# Grain number 10 set
-# Grain number 11 set
-# Grain number 12 set
-# Grain number 13 set
-# Grain number 14 set
-# Grain number 15 set
-# Grain number 16 set
-# Grain number 17 set
-# Grain number 18 set
-# Grain number 19 set
-# Grain number 20 set
-# Grain number 21 set
-# Grain number 22 set
-Routine init calls routine initKorn
-Routine init calls routine initEinschwing
-Routine init calls routine initTwidth
-
-tWidth_max( PHASE_1: PHASE_1) = 2.3750000E-02 s
-Maximal value for tWidth = 2.3750000E-02 s for phase-field solver
-Initial value for tWidth = 2.37500E-02 s for automatic time stepping (phase-field solver)
-End of routine init
-
-
-Remaining license time: permanent
-
-==================================================
-
-Time t = 0.0000000 s
-CPU-time: 0 s
-Current phase-field solver time step = 2.38E-02 s
-Temperature at the bottom = 1000.0 K
-Temperature gradient = 0.00000 K/cm
-
-Seed number 1 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                116944
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0531 MPa or J/cm**3
-Grain number = 23
-
-Seed number 2 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                131885
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 4.9600 MPa or J/cm**3
-Grain number = 24
-
-Seed number 3 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 24714
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0150 MPa or J/cm**3
-Grain number = 25
-
-Seed number 4 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                141030
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0531 MPa or J/cm**3
-Grain number = 26
-
-Seed number 5 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 86521
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
-Grain number = 27
-
-Seed number 6 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 89993
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
-Grain number = 28
-
-Seed number 7 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 95472
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
-Grain number = 29
-
-Seed number 8 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 65857
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0150 MPa or J/cm**3
-Grain number = 30
-
-Seed number 9 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 42880
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0150 MPa or J/cm**3
-Grain number = 31
-
-Seed number 10 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                 56898
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0150 MPa or J/cm**3
-Grain number = 32
-
-Seed number 11 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                 67907
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0150 MPa or J/cm**3
-Grain number = 33
-
-Seed number 12 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                148647
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
-Grain number = 34
-
-Seed number 13 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                 93097
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
-Grain number = 35
-
-Seed number 14 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                 44270
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0150 MPa or J/cm**3
-Grain number = 36
-
-Seed number 15 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                123424
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0531 MPa or J/cm**3
-Grain number = 37
-
-Seed number 16 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                134937
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0531 MPa or J/cm**3
-Grain number = 38
-
-Seed number 17 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                128080
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
-Grain number = 39
-
-Seed number 18 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                130526
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
-Grain number = 40
-
-Seed number 19 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                112143
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
-Grain number = 41
-
-Seed number 20 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                123623
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
-Grain number = 42
-
-Seed number 21 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                143746
-Phase: 1
-Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
-Grain number = 43
-
-Seed number 22 set at time t = 0.25000 s
-----------------------------------------
-in user-defined area, zp =                 11466
-Phase: 1
-Seed type: 2
-Local temperature = 999.75 K
-Driving force = 4.9000 MPa or J/cm**3
-Grain number = 44
-
-Seed number 23 set at time t = 0.25000 s
-----------------------------------------
-in user-defined area, zp =                 11482
-Phase: 1
-Seed type: 2
-Local temperature = 999.75 K
-Driving force = 4.9000 MPa or J/cm**3
-Grain number = 45
-
-Seed number 24 set at time t = 0.25000 s
-----------------------------------------
-in user-defined area, zp =                 19242
-Phase: 1
-Seed type: 2
-Local temperature = 999.75 K
-Driving force = 5.0150 MPa or J/cm**3
-Grain number = 46
-
-Seed number 25 set at time t = 0.25000 s
-----------------------------------------
-in user-defined area, zp =                 19258
-Phase: 1
-Seed type: 2
-Local temperature = 999.75 K
-Driving force = 5.0150 MPa or J/cm**3
-Grain number = 47
-
-
-Seed number 26 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                142885
-Phase: 1
-Seed type: 1
-Local temperature = 999.50 K
-Driving force = 4.9600 MPa or J/cm**3
-Grain number = 48
-
-Seed number 27 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                104707
-Phase: 1
-Seed type: 1
-Local temperature = 999.50 K
-Driving force = 4.9600 MPa or J/cm**3
-Grain number = 49
-
-Seed number 28 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                115703
-Phase: 1
-Seed type: 1
-Local temperature = 999.50 K
-Driving force = 4.9600 MPa or J/cm**3
-Grain number = 50
-
-Seed number 29 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                137804
-Phase: 1
-Seed type: 1
-Local temperature = 999.50 K
-Driving force = 4.9600 MPa or J/cm**3
-Grain number = 51
-
-Seed number 30 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                113289
-Phase: 1
-Seed type: 1
-Local temperature = 999.50 K
-Driving force = 4.9600 MPa or J/cm**3
-Grain number = 52
-
-Seed number 31 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                  1851
-Phase: 1
-Seed type: 1
-Local temperature = 999.50 K
-Driving force = 4.9000 MPa or J/cm**3
-Grain number = 53
-
-Seed number 32 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                  8531
-Phase: 1
-Seed type: 1
-Local temperature = 999.50 K
-Driving force = 4.9000 MPa or J/cm**3
-Grain number = 54
-
-Seed number 33 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14563
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2400 MPa or J/cm**3
-Grain number = 55
-
-Seed number 34 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14579
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2400 MPa or J/cm**3
-Grain number = 56
-
-Seed number 35 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14595
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2400 MPa or J/cm**3
-Grain number = 57
-
-Seed number 36 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14611
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2400 MPa or J/cm**3
-Grain number = 58
-
-Seed number 37 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14627
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2400 MPa or J/cm**3
-Grain number = 59
-
-Seed number 38 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14755
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 60
-
-Seed number 39 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14771
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 61
-
-Seed number 40 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14787
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 62
-
-Seed number 41 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14803
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 63
-
-Seed number 42 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14819
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 64
-
-Seed number 43 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14835
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 65
-
-Seed number 44 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14851
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 66
-
-Seed number 45 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14867
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 67
-
-Seed number 46 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14947
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 68
-
-Seed number 47 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14963
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 69
-
-Seed number 48 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 15011
-Phase: 1
-Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.7000 MPa or J/cm**3
-Grain number = 70
-
-
-Intermediate output for t = 0.50000 s
-CPU-time: 1 s
-Current phase-field solver time step = 9.11E-04 s
-Temperature at the bottom = 999.50 K
-Temperature gradient = 0.00000 K/cm
-
-Seed number 49 set at time t = 0.75000 s
-----------------------------------------
-in user-defined area, zp =                 10695
-Phase: 1
-Seed type: 2
-Local temperature = 999.25 K
-Driving force = 1.2400 MPa or J/cm**3
-Grain number = 71
-
-Seed number 50 set at time t = 0.75000 s
-----------------------------------------
-in user-defined area, zp =                 10711
-Phase: 1
-Seed type: 2
-Local temperature = 999.25 K
-Driving force = 1.2400 MPa or J/cm**3
-Grain number = 72
-
-Seed number 51 set at time t = 0.75000 s
-----------------------------------------
-in user-defined area, zp =                 18999
-Phase: 1
-Seed type: 2
-Local temperature = 999.25 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 73
-
-
-Intermediate output for t = 1.0000 s
-CPU-time: 4 s
-Current phase-field solver time step = 8.75E-04 s
-Temperature at the bottom = 999.00 K
-Temperature gradient = 0.00000 K/cm
-
-Seed number 52 set at time t = 1.5000 s
----------------------------------------
-in user-defined area, zp =                 20405
-Phase: 1
-Seed type: 2
-Local temperature = 998.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 74
-
-Seed number 53 set at time t = 1.5000 s
----------------------------------------
-in user-defined area, zp =                 20453
-Phase: 1
-Seed type: 2
-Local temperature = 998.50 K
-Driving force = 1.2900 MPa or J/cm**3
-Grain number = 75
-
-
-Intermediate output for t = 1.5000 s
-CPU-time: 4 s
-Current phase-field solver time step = 7.51E-04 s
-Temperature at the bottom = 998.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 2.0000 s
-CPU-time: 4 s
-Current phase-field solver time step = 1.00E-03 s
-Temperature at the bottom = 998.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 2.5000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.70E-03 s
-Temperature at the bottom = 997.50 K
-Temperature gradient = 0.00000 K/cm
-
-Seed number 54 set at time t = 2.7500 s
----------------------------------------
-in user-defined area, zp =                 12132
-Phase: 1
-Seed type: 2
-Local temperature = 997.25 K
-Driving force = 1.2400 MPa or J/cm**3
-Grain number = 76
-
-
-Intermediate output for t = 3.0000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.35E-03 s
-Temperature at the bottom = 997.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 3.5000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.73E-03 s
-Temperature at the bottom = 996.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 4.0000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.16E-03 s
-Temperature at the bottom = 996.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 4.5000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.69E-03 s
-Temperature at the bottom = 995.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 5.0000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.48E-03 s
-Temperature at the bottom = 995.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 5.5000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.51E-03 s
-Temperature at the bottom = 994.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 6.0000 s
-CPU-time: 1 s
-Current phase-field solver time step = 1.61E-03 s
-Temperature at the bottom = 994.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 6.5000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.32E-03 s
-Temperature at the bottom = 993.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 7.0000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.34E-03 s
-Temperature at the bottom = 993.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 7.5000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.37E-03 s
-Temperature at the bottom = 992.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 8.0000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.41E-03 s
-Temperature at the bottom = 992.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 8.5000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.46E-03 s
-Temperature at the bottom = 991.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 9.0000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.50E-03 s
-Temperature at the bottom = 991.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 9.5000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.55E-03 s
-Temperature at the bottom = 990.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 10.000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.61E-03 s
-Temperature at the bottom = 990.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 11.000 s
-CPU-time: 2 s
-Current phase-field solver time step = 2.74E-03 s
-Temperature at the bottom = 989.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 12.000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.95E-03 s
-Temperature at the bottom = 988.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 13.000 s
-CPU-time: 1 s
-Current phase-field solver time step = 3.05E-03 s
-Temperature at the bottom = 987.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 14.000 s
-CPU-time: 1 s
-Current phase-field solver time step = 3.05E-03 s
-Temperature at the bottom = 986.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 15.000 s
-CPU-time: 1 s
-Current phase-field solver time step = 3.06E-03 s
-Temperature at the bottom = 985.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 20.000 s
-CPU-time: 8 s
-Current phase-field solver time step = 3.15E-03 s
-Temperature at the bottom = 980.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 25.000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.39E-02 s
-Temperature at the bottom = 975.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 30.000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.24E-02 s
-Temperature at the bottom = 970.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 60.000 s
-CPU-time: 11 s
-Current phase-field solver time step = 1.48E-02 s
-Temperature at the bottom = 940.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 90.000 s
-CPU-time: 12 s
-Current phase-field solver time step = 1.24E-02 s
-Temperature at the bottom = 910.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 120.00 s
-CPU-time: 12 s
-Current phase-field solver time step = 1.83E-02 s
-Temperature at the bottom = 880.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 150.00 s
-CPU-time: 12 s
-Current phase-field solver time step = 1.21E-02 s
-Temperature at the bottom = 850.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 180.00 s
-CPU-time: 14 s
-Current phase-field solver time step = 6.25E-03 s
-Temperature at the bottom = 820.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 210.00 s
-CPU-time: 16 s
-Current phase-field solver time step = 1.25E-02 s
-Temperature at the bottom = 790.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 240.00 s
-CPU-time: 15 s
-Current phase-field solver time step = 1.42E-02 s
-Temperature at the bottom = 760.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 270.00 s
-CPU-time: 15 s
-Current phase-field solver time step = 1.25E-02 s
-Temperature at the bottom = 730.00 K
-Temperature gradient = 0.00000 K/cm
-
-==================================================
-
-Simulation run on machine: ELK171
-Remaining license time: permanent
-CPU time in seconds:  177
-Wall clock time in seconds:  182
-End
-
+#
+#

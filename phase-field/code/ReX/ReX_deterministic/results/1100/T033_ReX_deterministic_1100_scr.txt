@@ -25,7 +25,7 @@ English
 # ===============
 # Options: [ <directory path>/ ] <base name>
 # The default result directory is the driving file location.
-Results_ReX/T033_ReX_deterministic
+Results_ReX/output_files/T033_ReX_deterministic_1100
 # Overwrite files with the same name?
 # Options:    overwrite      write_protected     append
 #             [zipped|not_zipped|vtk]
@@ -53,7 +53,7 @@ new
 # Cells in Y-direction (CellsY):
 1
 # Cells in Z-direction (CellsZ):
-300
+500
 # Cell dimension (grid spacing in micrometers):
 # (optionally followed by rescaling factor for the output in the form of '3/4')
 0.50000
@@ -692,7 +692,7 @@ linear
 # Number of connecting points?    (integer)
 0                     
 # Initial temperature at the bottom?  (real)  [K]
-1000.000000000  
+1100.000000000  
 # Temperature gradient in z-direction?  [K/cm]
 0.000000000000  
 # Cooling rate? [K/s]
@@ -1006,721 +1006,756 @@ Remaining license time: permanent
 Time t = 0.0000000 s
 CPU-time: 0 s
 Current phase-field solver time step = 2.38E-02 s
-Temperature at the bottom = 1000.0 K
+Temperature at the bottom = 1100.0 K
 Temperature gradient = 0.00000 K/cm
 
-Seed number 1 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                116944
+Intermediate output for t = 0.50000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.35E-01 s
+Temperature at the bottom = 1099.5 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 1.0000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.28E-01 s
+Temperature at the bottom = 1099.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 1.5000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.23E-01 s
+Temperature at the bottom = 1098.5 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 2.0000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.17E-01 s
+Temperature at the bottom = 1098.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 2.5000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.08E-01 s
+Temperature at the bottom = 1097.5 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 3.0000 s
+CPU-time: 0 s
+Current phase-field solver time step = 4.97E-01 s
+Temperature at the bottom = 1097.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 3.5000 s
+CPU-time: 0 s
+Current phase-field solver time step = 4.61E-01 s
+Temperature at the bottom = 1096.5 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 4.0000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.88E-01 s
+Temperature at the bottom = 1096.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 4.5000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.88E-01 s
+Temperature at the bottom = 1095.5 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 5.0000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.85E-01 s
+Temperature at the bottom = 1095.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 5.5000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.84E-01 s
+Temperature at the bottom = 1094.5 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 6.0000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.84E-01 s
+Temperature at the bottom = 1094.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 6.5000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.84E-01 s
+Temperature at the bottom = 1093.5 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 7.0000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.84E-01 s
+Temperature at the bottom = 1093.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 7.5000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.83E-01 s
+Temperature at the bottom = 1092.5 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 8.0000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.82E-01 s
+Temperature at the bottom = 1092.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 8.5000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.81E-01 s
+Temperature at the bottom = 1091.5 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 9.0000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.78E-01 s
+Temperature at the bottom = 1091.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 9.5000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.74E-01 s
+Temperature at the bottom = 1090.5 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 10.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.69E-01 s
+Temperature at the bottom = 1090.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 11.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.58E-01 s
+Temperature at the bottom = 1089.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 12.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 5.39E-01 s
+Temperature at the bottom = 1088.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 13.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 6.75E-01 s
+Temperature at the bottom = 1087.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 14.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 6.71E-01 s
+Temperature at the bottom = 1086.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 15.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 6.73E-01 s
+Temperature at the bottom = 1085.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 20.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 6.67E-01 s
+Temperature at the bottom = 1080.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 25.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 7.85E-01 s
+Temperature at the bottom = 1075.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 30.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 8.03E-01 s
+Temperature at the bottom = 1070.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 60.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 1.09E+00 s
+Temperature at the bottom = 1040.0 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 90.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 1.27E+00 s
+Temperature at the bottom = 1010.0 K
+Temperature gradient = 0.00000 K/cm
+
+Seed number 1 set at time t = 95.000 s
+--------------------------------------
+at an interface, zp =                113923
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0531 MPa or J/cm**3
 Grain number = 23
 
-Seed number 2 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                131885
+Seed number 2 set at time t = 95.000 s
+--------------------------------------
+at an interface, zp =                 28332
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
-Driving force = 4.9600 MPa or J/cm**3
+Local temperature = 1005.0 K
+Driving force = 5.0150 MPa or J/cm**3
 Grain number = 24
 
-Seed number 3 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 24714
+Seed number 3 set at time t = 95.000 s
+--------------------------------------
+at an interface, zp =                 22715
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0150 MPa or J/cm**3
 Grain number = 25
 
-Seed number 4 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                141030
+Seed number 4 set at time t = 95.000 s
+--------------------------------------
+at an interface, zp =                138041
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0531 MPa or J/cm**3
 Grain number = 26
 
-Seed number 5 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 86521
+Seed number 5 set at time t = 95.000 s
+--------------------------------------
+at an interface, zp =                142513
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
+Local temperature = 1005.0 K
+Driving force = 5.0531 MPa or J/cm**3
 Grain number = 27
 
-Seed number 6 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 89993
+Seed number 6 set at time t = 95.000 s
+--------------------------------------
+at an interface, zp =                147970
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
+Local temperature = 1005.0 K
+Driving force = 5.0531 MPa or J/cm**3
 Grain number = 28
 
-Seed number 7 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 95472
+Seed number 7 set at time t = 95.000 s
+--------------------------------------
+at an interface, zp =                 88506
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0000 MPa or J/cm**3
 Grain number = 29
 
-Seed number 8 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 65857
+Seed number 8 set at time t = 95.000 s
+--------------------------------------
+at an interface, zp =                 94972
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0150 MPa or J/cm**3
+Local temperature = 1005.0 K
+Driving force = 5.0000 MPa or J/cm**3
 Grain number = 30
 
-Seed number 9 set at time t = 0.25000 s
----------------------------------------
-at an interface, zp =                 42880
+Seed number 9 set at time t = 95.000 s
+--------------------------------------
+at an interface, zp =                 70409
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0150 MPa or J/cm**3
 Grain number = 31
 
-Seed number 10 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                 56898
+Seed number 10 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                 85035
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0150 MPa or J/cm**3
+Local temperature = 1005.0 K
+Driving force = 5.0000 MPa or J/cm**3
 Grain number = 32
 
-Seed number 11 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                 67907
+Seed number 11 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                 47390
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0150 MPa or J/cm**3
 Grain number = 33
 
-Seed number 12 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                148647
+Seed number 12 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                 58398
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
+Local temperature = 1005.0 K
+Driving force = 5.0150 MPa or J/cm**3
 Grain number = 34
 
-Seed number 13 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                 93097
+Seed number 13 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                146115
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0000 MPa or J/cm**3
 Grain number = 35
 
-Seed number 14 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                 44270
+Seed number 14 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                151180
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0150 MPa or J/cm**3
+Local temperature = 1005.0 K
+Driving force = 5.0000 MPa or J/cm**3
 Grain number = 36
 
-Seed number 15 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                123424
+Seed number 15 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                 41256
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0531 MPa or J/cm**3
+Local temperature = 1005.0 K
+Driving force = 5.0150 MPa or J/cm**3
 Grain number = 37
 
-Seed number 16 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                134937
+Seed number 16 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                 61337
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0531 MPa or J/cm**3
+Local temperature = 1005.0 K
+Driving force = 5.0150 MPa or J/cm**3
 Grain number = 38
 
-Seed number 17 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                128080
+Seed number 17 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                132436
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
-Driving force = 5.0000 MPa or J/cm**3
+Local temperature = 1005.0 K
+Driving force = 5.0531 MPa or J/cm**3
 Grain number = 39
 
-Seed number 18 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                130526
+Seed number 18 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                120563
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0000 MPa or J/cm**3
 Grain number = 40
 
-Seed number 19 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                112143
+Seed number 19 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                130024
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0000 MPa or J/cm**3
 Grain number = 41
 
-Seed number 20 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                123623
+Seed number 20 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                105649
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0000 MPa or J/cm**3
 Grain number = 42
 
-Seed number 21 set at time t = 0.25000 s
-----------------------------------------
-at an interface, zp =                143746
+Seed number 21 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                116127
 Phase: 1
 Seed type: 1
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0000 MPa or J/cm**3
 Grain number = 43
 
-Seed number 22 set at time t = 0.25000 s
-----------------------------------------
-in user-defined area, zp =                 11466
+Seed number 22 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                132143
 Phase: 1
-Seed type: 2
-Local temperature = 999.75 K
-Driving force = 4.9000 MPa or J/cm**3
+Seed type: 1
+Local temperature = 1005.0 K
+Driving force = 5.0000 MPa or J/cm**3
 Grain number = 44
 
-Seed number 23 set at time t = 0.25000 s
-----------------------------------------
-in user-defined area, zp =                 11482
+Seed number 23 set at time t = 95.000 s
+---------------------------------------
+at an interface, zp =                140728
 Phase: 1
-Seed type: 2
-Local temperature = 999.75 K
-Driving force = 4.9000 MPa or J/cm**3
+Seed type: 1
+Local temperature = 1005.0 K
+Driving force = 5.0000 MPa or J/cm**3
 Grain number = 45
 
-Seed number 24 set at time t = 0.25000 s
-----------------------------------------
-in user-defined area, zp =                 19242
+Seed number 24 set at time t = 95.000 s
+---------------------------------------
+in user-defined area, zp =                 17736
 Phase: 1
 Seed type: 2
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0150 MPa or J/cm**3
 Grain number = 46
 
-Seed number 25 set at time t = 0.25000 s
-----------------------------------------
-in user-defined area, zp =                 19258
+Seed number 25 set at time t = 95.000 s
+---------------------------------------
+in user-defined area, zp =                 17752
 Phase: 1
 Seed type: 2
-Local temperature = 999.75 K
+Local temperature = 1005.0 K
 Driving force = 5.0150 MPa or J/cm**3
 Grain number = 47
 
 
-Seed number 26 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                142885
+Seed number 26 set at time t = 95.250 s
+---------------------------------------
+at an interface, zp =                140849
 Phase: 1
 Seed type: 1
-Local temperature = 999.50 K
+Local temperature = 1004.8 K
 Driving force = 4.9600 MPa or J/cm**3
 Grain number = 48
 
-Seed number 27 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                104707
+Seed number 27 set at time t = 95.250 s
+---------------------------------------
+at an interface, zp =                106751
 Phase: 1
 Seed type: 1
-Local temperature = 999.50 K
+Local temperature = 1004.8 K
 Driving force = 4.9600 MPa or J/cm**3
 Grain number = 49
 
-Seed number 28 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                115703
+Seed number 28 set at time t = 95.250 s
+---------------------------------------
+at an interface, zp =                127256
 Phase: 1
 Seed type: 1
-Local temperature = 999.50 K
+Local temperature = 1004.8 K
 Driving force = 4.9600 MPa or J/cm**3
 Grain number = 50
 
-Seed number 29 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                137804
+Seed number 29 set at time t = 95.250 s
+---------------------------------------
+at an interface, zp =                124849
 Phase: 1
 Seed type: 1
-Local temperature = 999.50 K
+Local temperature = 1004.8 K
 Driving force = 4.9600 MPa or J/cm**3
 Grain number = 51
 
-Seed number 30 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                113289
+Seed number 30 set at time t = 95.250 s
+---------------------------------------
+at an interface, zp =                156240
 Phase: 1
 Seed type: 1
-Local temperature = 999.50 K
-Driving force = 4.9600 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 5.0000 MPa or J/cm**3
 Grain number = 52
 
-Seed number 31 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                  1851
+Seed number 31 set at time t = 95.250 s
+---------------------------------------
+at an interface, zp =                 99953
 Phase: 1
 Seed type: 1
-Local temperature = 999.50 K
-Driving force = 4.9000 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 5.0000 MPa or J/cm**3
 Grain number = 53
 
-Seed number 32 set at time t = 0.50000 s
-----------------------------------------
-at an interface, zp =                  8531
+Seed number 32 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 10563
 Phase: 1
-Seed type: 1
-Local temperature = 999.50 K
-Driving force = 4.9000 MPa or J/cm**3
+Seed type: 2
+Local temperature = 1004.8 K
+Driving force = 1.2400 MPa or J/cm**3
 Grain number = 54
 
-Seed number 33 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14563
+Seed number 33 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 10739
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2400 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 1.2900 MPa or J/cm**3
 Grain number = 55
 
-Seed number 34 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14579
+Seed number 34 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 10787
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2400 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 1.2900 MPa or J/cm**3
 Grain number = 56
 
-Seed number 35 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14595
+Seed number 35 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 10803
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2400 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 1.2900 MPa or J/cm**3
 Grain number = 57
 
-Seed number 36 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14611
+Seed number 36 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 10819
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2400 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 1.2900 MPa or J/cm**3
 Grain number = 58
 
-Seed number 37 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14627
+Seed number 37 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 10835
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2400 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 1.2900 MPa or J/cm**3
 Grain number = 59
 
-Seed number 38 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14755
+Seed number 38 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 10851
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
+Local temperature = 1004.8 K
 Driving force = 1.2900 MPa or J/cm**3
 Grain number = 60
 
-Seed number 39 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14771
+Seed number 39 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 10867
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
+Local temperature = 1004.8 K
 Driving force = 1.2900 MPa or J/cm**3
 Grain number = 61
 
-Seed number 40 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14787
+Seed number 40 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 10963
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 4.9000 MPa or J/cm**3
 Grain number = 62
 
-Seed number 41 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14803
+Seed number 41 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 10979
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 4.9000 MPa or J/cm**3
 Grain number = 63
 
-Seed number 42 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14819
+Seed number 42 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 18627
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.2900 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 1.2400 MPa or J/cm**3
 Grain number = 64
 
-Seed number 43 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14835
+Seed number 43 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 18835
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
+Local temperature = 1004.8 K
 Driving force = 1.2900 MPa or J/cm**3
 Grain number = 65
 
-Seed number 44 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14851
+Seed number 44 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 18851
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
+Local temperature = 1004.8 K
 Driving force = 1.2900 MPa or J/cm**3
 Grain number = 66
 
-Seed number 45 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14867
+Seed number 45 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 18867
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
+Local temperature = 1004.8 K
 Driving force = 1.2900 MPa or J/cm**3
 Grain number = 67
 
-Seed number 46 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14947
+Seed number 46 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 18883
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
+Local temperature = 1004.8 K
 Driving force = 1.2900 MPa or J/cm**3
 Grain number = 68
 
-Seed number 47 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 14963
+Seed number 47 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 18899
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
+Local temperature = 1004.8 K
 Driving force = 1.2900 MPa or J/cm**3
 Grain number = 69
 
-Seed number 48 set at time t = 0.50000 s
-----------------------------------------
-in user-defined area, zp =                 15011
+Seed number 48 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 18915
 Phase: 1
 Seed type: 2
-Local temperature = 999.50 K
-Driving force = 1.7000 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 1.2900 MPa or J/cm**3
 Grain number = 70
 
-
-Intermediate output for t = 0.50000 s
-CPU-time: 1 s
-Current phase-field solver time step = 9.11E-04 s
-Temperature at the bottom = 999.50 K
-Temperature gradient = 0.00000 K/cm
-
-Seed number 49 set at time t = 0.75000 s
-----------------------------------------
-in user-defined area, zp =                 10695
+Seed number 49 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 18979
 Phase: 1
 Seed type: 2
-Local temperature = 999.25 K
-Driving force = 1.2400 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 1.2900 MPa or J/cm**3
 Grain number = 71
 
-Seed number 50 set at time t = 0.75000 s
-----------------------------------------
-in user-defined area, zp =                 10711
+Seed number 50 set at time t = 95.250 s
+---------------------------------------
+in user-defined area, zp =                 18995
 Phase: 1
 Seed type: 2
-Local temperature = 999.25 K
-Driving force = 1.2400 MPa or J/cm**3
+Local temperature = 1004.8 K
+Driving force = 1.2900 MPa or J/cm**3
 Grain number = 72
 
-Seed number 51 set at time t = 0.75000 s
-----------------------------------------
-in user-defined area, zp =                 18999
+
+Seed number 51 set at time t = 95.500 s
+---------------------------------------
+in user-defined area, zp =                 17578
 Phase: 1
 Seed type: 2
-Local temperature = 999.25 K
-Driving force = 1.2900 MPa or J/cm**3
+Local temperature = 1004.5 K
+Driving force = 1.2400 MPa or J/cm**3
 Grain number = 73
 
-
-Intermediate output for t = 1.0000 s
-CPU-time: 4 s
-Current phase-field solver time step = 8.75E-04 s
-Temperature at the bottom = 999.00 K
-Temperature gradient = 0.00000 K/cm
-
-Seed number 52 set at time t = 1.5000 s
+Seed number 52 set at time t = 95.500 s
 ---------------------------------------
-in user-defined area, zp =                 20405
+in user-defined area, zp =                 17642
 Phase: 1
 Seed type: 2
-Local temperature = 998.50 K
-Driving force = 1.2900 MPa or J/cm**3
+Local temperature = 1004.5 K
+Driving force = 1.2400 MPa or J/cm**3
 Grain number = 74
 
-Seed number 53 set at time t = 1.5000 s
+Seed number 53 set at time t = 95.500 s
 ---------------------------------------
-in user-defined area, zp =                 20453
+in user-defined area, zp =                 17930
 Phase: 1
 Seed type: 2
-Local temperature = 998.50 K
+Local temperature = 1004.5 K
 Driving force = 1.2900 MPa or J/cm**3
 Grain number = 75
 
-
-Intermediate output for t = 1.5000 s
-CPU-time: 4 s
-Current phase-field solver time step = 7.51E-04 s
-Temperature at the bottom = 998.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 2.0000 s
-CPU-time: 4 s
-Current phase-field solver time step = 1.00E-03 s
-Temperature at the bottom = 998.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 2.5000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.70E-03 s
-Temperature at the bottom = 997.50 K
-Temperature gradient = 0.00000 K/cm
-
-Seed number 54 set at time t = 2.7500 s
+Seed number 54 set at time t = 95.500 s
 ---------------------------------------
-in user-defined area, zp =                 12132
+in user-defined area, zp =                 17946
 Phase: 1
 Seed type: 2
-Local temperature = 997.25 K
-Driving force = 1.2400 MPa or J/cm**3
+Local temperature = 1004.5 K
+Driving force = 1.2900 MPa or J/cm**3
 Grain number = 76
 
+Seed number 55 set at time t = 95.500 s
+---------------------------------------
+in user-defined area, zp =                 18026
+Phase: 1
+Seed type: 2
+Local temperature = 1004.5 K
+Driving force = 1.7000 MPa or J/cm**3
+Grain number = 77
 
-Intermediate output for t = 3.0000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.35E-03 s
-Temperature at the bottom = 997.00 K
-Temperature gradient = 0.00000 K/cm
+Seed number 56 set at time t = 95.500 s
+---------------------------------------
+in user-defined area, zp =                 18042
+Phase: 1
+Seed type: 2
+Local temperature = 1004.5 K
+Driving force = 1.7000 MPa or J/cm**3
+Grain number = 78
 
-Intermediate output for t = 3.5000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.73E-03 s
-Temperature at the bottom = 996.50 K
-Temperature gradient = 0.00000 K/cm
+Seed number 57 set at time t = 95.500 s
+---------------------------------------
+in user-defined area, zp =                 18058
+Phase: 1
+Seed type: 2
+Local temperature = 1004.5 K
+Driving force = 1.7000 MPa or J/cm**3
+Grain number = 79
 
-Intermediate output for t = 4.0000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.16E-03 s
-Temperature at the bottom = 996.00 K
-Temperature gradient = 0.00000 K/cm
 
-Intermediate output for t = 4.5000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.69E-03 s
-Temperature at the bottom = 995.50 K
-Temperature gradient = 0.00000 K/cm
+Seed number 58 set at time t = 97.000 s
+---------------------------------------
+in user-defined area, zp =                 10088
+Phase: 1
+Seed type: 2
+Local temperature = 1003.0 K
+Driving force = 1.2400 MPa or J/cm**3
+Grain number = 80
 
-Intermediate output for t = 5.0000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.48E-03 s
-Temperature at the bottom = 995.00 K
-Temperature gradient = 0.00000 K/cm
 
-Intermediate output for t = 5.5000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.51E-03 s
-Temperature at the bottom = 994.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 6.0000 s
-CPU-time: 1 s
-Current phase-field solver time step = 1.61E-03 s
-Temperature at the bottom = 994.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 6.5000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.32E-03 s
-Temperature at the bottom = 993.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 7.0000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.34E-03 s
-Temperature at the bottom = 993.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 7.5000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.37E-03 s
-Temperature at the bottom = 992.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 8.0000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.41E-03 s
-Temperature at the bottom = 992.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 8.5000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.46E-03 s
-Temperature at the bottom = 991.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 9.0000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.50E-03 s
-Temperature at the bottom = 991.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 9.5000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.55E-03 s
-Temperature at the bottom = 990.50 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 10.000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.61E-03 s
-Temperature at the bottom = 990.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 11.000 s
-CPU-time: 2 s
-Current phase-field solver time step = 2.74E-03 s
-Temperature at the bottom = 989.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 12.000 s
-CPU-time: 1 s
-Current phase-field solver time step = 2.95E-03 s
-Temperature at the bottom = 988.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 13.000 s
-CPU-time: 1 s
-Current phase-field solver time step = 3.05E-03 s
-Temperature at the bottom = 987.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 14.000 s
-CPU-time: 1 s
-Current phase-field solver time step = 3.05E-03 s
-Temperature at the bottom = 986.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 15.000 s
-CPU-time: 1 s
-Current phase-field solver time step = 3.06E-03 s
-Temperature at the bottom = 985.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 20.000 s
-CPU-time: 8 s
-Current phase-field solver time step = 3.15E-03 s
+Intermediate output for t = 120.00 s
+CPU-time: 54 s
+Current phase-field solver time step = 1.33E-02 s
 Temperature at the bottom = 980.00 K
 Temperature gradient = 0.00000 K/cm
 
-Intermediate output for t = 25.000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.39E-02 s
-Temperature at the bottom = 975.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 30.000 s
-CPU-time: 2 s
-Current phase-field solver time step = 1.24E-02 s
-Temperature at the bottom = 970.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 60.000 s
-CPU-time: 11 s
-Current phase-field solver time step = 1.48E-02 s
-Temperature at the bottom = 940.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 90.000 s
-CPU-time: 12 s
-Current phase-field solver time step = 1.24E-02 s
-Temperature at the bottom = 910.00 K
-Temperature gradient = 0.00000 K/cm
-
-Intermediate output for t = 120.00 s
-CPU-time: 12 s
-Current phase-field solver time step = 1.83E-02 s
-Temperature at the bottom = 880.00 K
-Temperature gradient = 0.00000 K/cm
-
 Intermediate output for t = 150.00 s
-CPU-time: 12 s
+CPU-time: 17 s
 Current phase-field solver time step = 1.21E-02 s
-Temperature at the bottom = 850.00 K
+Temperature at the bottom = 950.00 K
 Temperature gradient = 0.00000 K/cm
 
 Intermediate output for t = 180.00 s
-CPU-time: 14 s
-Current phase-field solver time step = 6.25E-03 s
-Temperature at the bottom = 820.00 K
+CPU-time: 23 s
+Current phase-field solver time step = 1.00E-02 s
+Temperature at the bottom = 920.00 K
 Temperature gradient = 0.00000 K/cm
 
 Intermediate output for t = 210.00 s
-CPU-time: 16 s
-Current phase-field solver time step = 1.25E-02 s
-Temperature at the bottom = 790.00 K
+CPU-time: 24 s
+Current phase-field solver time step = 9.83E-03 s
+Temperature at the bottom = 890.00 K
 Temperature gradient = 0.00000 K/cm
 
 Intermediate output for t = 240.00 s
-CPU-time: 15 s
-Current phase-field solver time step = 1.42E-02 s
-Temperature at the bottom = 760.00 K
+CPU-time: 25 s
+Current phase-field solver time step = 1.04E-02 s
+Temperature at the bottom = 860.00 K
 Temperature gradient = 0.00000 K/cm
 
 Intermediate output for t = 270.00 s
-CPU-time: 15 s
-Current phase-field solver time step = 1.25E-02 s
-Temperature at the bottom = 730.00 K
+CPU-time: 26 s
+Current phase-field solver time step = 1.01E-02 s
+Temperature at the bottom = 830.00 K
 Temperature gradient = 0.00000 K/cm
 
 ==================================================
 
 Simulation run on machine: ELK171
 Remaining license time: permanent
-CPU time in seconds:  177
-Wall clock time in seconds:  182
+CPU time in seconds:  174
+Wall clock time in seconds:  179
 End
 

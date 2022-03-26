@@ -1,3 +1,6 @@
+#
+#
+#
 # Automatic 'Driving File' written out by MICRESS.
 #
 # MICRESS binary
@@ -26,7 +29,7 @@ English
 # ===============
 # Options: [ <directory path>/ ] <base name>
 # The default result directory is the driving file location.
-Results_ReX/T033_ReX_deterministic
+Results_ReX/output_files/T033_ReX_deterministic
 # Overwrite files with the same name?
 # Options:    overwrite      write_protected     append
 #             [zipped|not_zipped|vtk]
@@ -50,7 +53,7 @@ new
 # Cells in Y-direction (CellsY):
 1
 # Cells in Z-direction (CellsZ):
-300
+500
 # Cell dimension (grid spacing in micrometers):
 # (optionally followed by rescaling factor for the output in the form of '3/4')
 0.50000

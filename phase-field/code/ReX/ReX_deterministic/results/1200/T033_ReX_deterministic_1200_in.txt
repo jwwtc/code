@@ -1,3 +1,6 @@
+#
+#
+#
 # Automatic 'Driving File' written out by MICRESS.
 #
 # MICRESS binary
@@ -26,7 +29,7 @@ English
 # ===============
 # Options: [ <directory path>/ ] <base name>
 # The default result directory is the driving file location.
-C:\Users\mikep\Desktop\project\code\phase-field\code\ReX\ReX_deterministic/T033_ReX_deterministic
+Results_ReX/output_files/T033_ReX_deterministic_1200
 # Overwrite files with the same name?
 # Options:    overwrite      write_protected     append
 #             [zipped|not_zipped|vtk]
@@ -36,7 +39,7 @@ overwrite
 #
 # Restart
 # =======
-# Restart using old?
+# Restart using old results?
 # Options:    new       restart [reset_time | with_flow]
 new
 #
@@ -50,7 +53,7 @@ new
 # Cells in Y-direction (CellsY):
 1
 # Cells in Z-direction (CellsZ):
-300
+500
 # Cell dimension (grid spacing in micrometers):
 # (optionally followed by rescaling factor for the output in the form of '3/4')
 0.50000
@@ -686,7 +689,7 @@ linear
 # Number of connecting points?    (integer)
 0
 # Initial temperature at the bottom?  (real)  [K]
-1000.000000000
+1200.000000000
 # Temperature gradient in z-direction?  [K/cm]
 0.000000000000
 # Cooling rate? [K/s]
@@ -952,4 +955,5 @@ multi_obstacle fd_correction
 # Coefficient for initial dimension of field nTupel
 #  [minimum usage] [target usage]
 0.1
+#
 #
