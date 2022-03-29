@@ -1,0 +1,2470 @@
+#
+#
+#
+# 'Driving File' written out by VASILIS LOUKADAKIS, MEng.
+#
+# MICRESS binary
+# ==============
+# version number: 6.402 (Windows)
+# compiled: Aug 2021
+# compiler version: Intel 1400 20140805
+# executable architecture: x64
+# Thermo-Calc coupling: enabled
+#    Version:    19
+#    Link Date:  Mon Mar 20 12:37:26 2017
+#    OS Name:    WinNT
+#    Build Date: 10716
+#    Compiler:   Intel(R) Visual Fortran Composer Version 13.1.0.149 Build 20130118
+# OpenMP: disabled
+# ('double precision' binary)
+#
+#
+# Language settings
+# =================
+# Please select a language: 'English', 'Deutsch' or 'Francais'
+English
+#
+#
+# Flags and settings
+# ==================
+#
+# Geometry
+# --------
+# Grid size?
+# (for 2D calculations: CellsY=1, for 1D calculations: CellsX=1, CellsY=1)
+# Cells in X-direction (CellsX):
+458
+# Cells in Y-direction (CellsY):
+1
+# Cells in Z-direction (CellsZ):
+453
+# Cell dimension (grid spacing in micrometers):
+# (optionally followed by rescaling factor for the output in the form of '3/4')
+0.0945
+#
+# Flags
+# -----
+# Type of coupling?
+# Options:  phase  concentration [volume_change] temperature  temp_cyl_coord
+#    [stress] [stress_coupled] [flow] [flow_coarse] [dislocation]
+phase dislocation
+# Type of potential?
+# Options:  double_obstacle  multi_obstacle   [fd_correction]
+multi_obstacle fd_correction
+#
+# Phase field data structure
+# --------------------------
+# Coefficient for initial dimension of field iFace
+#  [min usage] [target usage]
+0.1
+# Coefficient for initial dimension of field nTupel
+#  [min usage] [target usage]
+0.1
+#
+#
+# Restart options
+# ===============
+# Restart using old results?
+# Options:    new       restart [reset_time | structure_only]
+new
+#
+#
+# Name of output files
+# ====================
+# Name of result files?
+Results_210827_v1\Vasilis_Test_5_Results_ReX_AA3104_CR_attemp_21_2
+# Overwrite files with the same name?
+# Options:    overwrite      write_protected     append
+#             [zipped|not_zipped|vtk]
+#             [unix|windows|non_native]
+overwrite
+#
+#
+# Selection of the outputs
+# ========================
+# [legacy|verbose|terse]
+# Restart data output?                                 ('rest')
+# Options:     out_restart      no_out_restart         [wallclock time, h.]
+no_out_restart
+# Grain number output?                                 ('korn')
+# Options:     out_grains       no_out_grains
+out_grains
+# Phase number output?                                 ('phas')
+# Options:     out_phases       no_out_phases          [no_interfaces]
+out_phases
+# Fraction output?                                     ('frac')
+# Options:     out_fraction     no_out_fraction        [phase number]
+out_fraction
+# Average fraction table?                              ('TabF')
+# Options:     tab_fractions    no_tab_fractions       [front_temp] [TabL_steps]
+tab_fractions
+# Interface output?                                    ('intf')
+# Options:     out_interface    no_out_interface       [sharp]
+out_interface
+# Driving-force output?                                ('driv')
+# Options:     out_driv_force   no_out_driv_force
+out_driv_force
+# Interface mobility output?                           ('mueS')
+# Options:     out_mobility     no_out_mobility
+out_mobility
+# Curvature output?                                    ('krum')
+# Options:     out_curvature    no_out_curvature
+out_curvature
+# Interface velocity output?                           ('vel')
+# Options:     out_velocity     no_out_velocity
+out_velocity
+# Should the grain-time file be written out?           ('TabK')
+# Options:     tab_grains       no_tab_grains          [extra|standard]
+tab_grains
+# Should the 'von Neumann Mullins' output be written out?       ('TabN')
+# Options:    tab_vnm    no_tab_vnm
+tab_vnm
+# Should the 'grain data output' be written out?       ('TabGD')
+# Options:    tab_grain_data    no_tab_grain_data
+tab_grain_data
+# Temperature output?                                  ('temp')
+# Options:     out_temp         no_out_temp
+out_temp
+# Recrystallisation energy output?                     ('rex')
+# Options:     out_recrystall   no_out_recrystall
+out_recrystall
+# Recrystallised fraction output?                      ('TabR')
+# Options:     tab_recrystall   no_tab_recrystall
+tab_recrystall
+# Dislocation density output?                          ('rhoD')
+# Options:     out_disloc       no_out_disloc
+out_disloc
+# Miller-Indices output?                               ('mill')
+# Options:     out_miller       no_out_miller
+out_miller
+# Orientation output?                                  ('orie')
+# Options:     out_orientation  no_out_orientation
+out_orientation
+# Should the orientation-time file be written?         ('TabO')
+# Options:   tab_orientation  no_tab_orientation    [rotmat]
+tab_orientation
+# Should monitoring outputs be written out?            ('TabL')
+# Options:     tab_log [simulation time, s] [wallclock time, min]  no_tab_log
+tab_log 1.0
+#
+#
+# Time input data
+# ===============
+# Finish input of output times (in seconds) with 'end_of_simulation'
+# 'regularly-spaced' outputs can be set with 'linear_step'
+# or 'logarithmic_step' and then specifying the increment
+# and end value
+# ('automatic_outputs' optionally followed by the number
+#  of outputs can be used in conjuction with 'linear_from_file')
+#  'first'                  : additional output for first time-step
+#  'end_at_temperature'    : additional output and end of simulation
+#                             at given temperature
+linear_step 0.001 1.
+end_of_simulation
+# Time-step?
+# Options:   fix ...[s]   automatic    automatic_limited
+automatic
+# Coefficient for phase-field criterion 1.00
+# Number of steps to adjust profiles of initially sharp interfaces [exclude_inactive]?
+30
+#
+#
+# Phase data
+# ==========
+# Number of distinct solid phases?
+2
+#
+# Data for phase 1:
+# -----------------
+# Simulation of recrystallisation in phase 1?
+# Options:   recrystall     no_recrystall   [verbose|no_verbose]
+recrystall
+# Which recrystallisation model?
+# Options:  energy  mean_disloc  local_disloc  [all_interfaces]
+local_disloc
+# Dislocation threshold for recrystallisation model? [m^-2]
+2.72E+14
+# Burgers vector of phase 1? [nm] [dislocation interaction coefficient (default: 0.5)]
+0.29
+# Shear modulus of phase 1? [MPa]
+2.600E+04
+# Stress recovery coefficient of phase 1? [MPa] [start_time (default: 0 sec)]
+2.0
+# Is phase 1 anisotrop?
+# Options: isotropic  anisotropic  faceted_a faceted_b  antifaceted
+anisotropic
+# Crystal symmetry of the phase?
+# Options:   none  cubic  hexagonal  tetragonal orthorhombic
+cubic
+# Should grains of phase 1 be reduced to categories?
+# Options:   categorize no_categorize
+no_categorize
+#
+# Data for phase 2:
+# -----------------
+# [identical phase number]
+# Simulation of recrystallisation in phase 2?
+# Options:   recrystall     no_recrystall   [verbose|no_verbose]
+recrystall
+# Which recrystallisation model?
+# Options:  energy  mean_disloc  local_disloc  [all_interfaces]
+local_disloc
+# Dislocation threshold for recrystallisation model? [m^-2]
+2.72E+14
+# Burgers vector of phase 2? [nm] [dislocation interaction coefficient (default: 0.5)]
+0.29
+# Shear modulus of phase 2? [MPa]
+2.600E+04
+# Stress recovery coefficient of phase 2? [MPa] [start_time (default: 0 sec)]
+2.0
+# Is phase 2 anisotrop?
+# Options: isotropic  anisotropic  faceted_a faceted_b  antifaceted
+anisotropic
+# Crystal symmetry of the phase?
+# Options:   none  cubic  hexagonal  tetragonal orthorhombic
+cubic
+# Should grains of phase 2 be reduced to categories?
+# Options:   categorize no_categorize
+no_categorize
+#
+# Orientation
+# -----------
+# How shall grain orientations be defined?
+# Options:  angle_2d  euler_zxz  angle_axis  miller_indices  quaternion
+miller_indices
+#
+#
+# Grain input
+# ===========
+# Type of grain positioning?
+# Options:  deterministic   random [deterministic_infile]   from_file
+random
+# Integer for randomization?
+6
+# Number of different types of grains?
+48
+# Number_of_grains_of_type 1?
+3500
+# Number_of_grains_of_type 2?
+1
+# Number_of_grains_of_type 3?
+1
+# Number_of_grains_of_type 4?
+1
+# Number_of_grains_of_type 5?
+1
+# Number_of_grains_of_type 6?
+1
+# Number_of_grains_of_type 7?
+1
+# Number_of_grains_of_type 8?
+1
+# Number_of_grains_of_type 9?
+1
+# Number_of_grains_of_type 10?
+1
+# Number_of_grains_of_type 11?
+1
+# Number_of_grains_of_type 12?
+1
+# Number_of_grains_of_type 13?
+1
+# Number_of_grains_of_type 14?
+1
+# Number_of_grains_of_type 15?
+1
+# Number_of_grains_of_type 16?
+1
+# Number_of_grains_of_type 17?
+1
+# Number_of_grains_of_type 18?
+1
+# Number_of_grains_of_type 19?
+1
+# Number_of_grains_of_type 20?
+1
+# Number_of_grains_of_type 21?
+1
+# Number_of_grains_of_type 22?
+1
+# Number_of_grains_of_type 23?
+1
+# Number_of_grains_of_type 24?
+1
+# Number_of_grains_of_type 25?
+1
+# Number_of_grains_of_type 26?
+1
+# Number_of_grains_of_type 27?
+1
+# Number_of_grains_of_type 28?
+1
+# Number_of_grains_of_type 29?
+1
+# Number_of_grains_of_type 30?
+1
+# Number_of_grains_of_type 31?
+1
+# Number_of_grains_of_type 32?
+1
+# Number_of_grains_of_type 33?
+1
+# Number_of_grains_of_type 34?
+1
+# Number_of_grains_of_type 35?
+1
+# Number_of_grains_of_type 36?
+1
+# Number_of_grains_of_type 37?
+1
+# Number_of_grains_of_type 38?
+1
+# Number_of_grains_of_type 39?
+1
+# Number_of_grains_of_type 40?
+1
+# Number_of_grains_of_type 41?
+1
+# Number_of_grains_of_type 42?
+1
+# Number_of_grains_of_type 43?
+1
+# Number_of_grains_of_type 44?
+1
+# Number_of_grains_of_type 45?
+1
+# Number_of_grains_of_type 46?
+1
+# Number_of_grains_of_type 47?
+1
+# Number_of_grains_of_type 48?
+1
+# INPUT_FOR_GRAIN_TYPE 1
+# ----------------------
+# Geometry of grain type 1
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+0.000
+# max value of x-coordinates?  [micrometers]
+43.280
+# min value of z-coordinates?  [micrometers]
+0.000
+# max value of z-coordinates?  [micrometers]
+42.800
+# min length of x-axis?  [micrometers]
+0.000
+# max length of x-axis?  [micrometers]
+4.000
+# min length of z-axis?  [micrometers]
+0.000
+# max length of z-axis?  [micrometers]
+4.000
+# Should the Voronoi criterion for grains of type 1 be applied?
+# Options:    voronoi     voronoi
+no_voronoi
+# Phase number for grain type 1? (int)
+2
+# Mean dislocation density? [m-2]
+10E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+random
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+# min distance between grains (real) [micrometers]?
+2.00000E-02
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 2
+# ----------------------
+# Geometry of grain type 2
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+6.58124
+# max value of x-coordinates?  [micrometers]
+6.58124
+# min value of z-coordinates?  [micrometers]
+41.6763
+# max value of z-coordinates?  [micrometers]
+41.6763
+# min length of x-axis?  [micrometers]
+25.0000
+# max length of x-axis?  [micrometers]
+25.0000
+# min length of z-axis?  [micrometers]
+6.00000
+# max length of z-axis?  [micrometers]
+6.00000
+# Should the Voronoi criterion for grains of type 2 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 2? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 3
+# ----------------------
+# Geometry of grain type 3
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+8.76951
+# max value of x-coordinates?  [micrometers]
+8.76951
+# min value of z-coordinates?  [micrometers]
+37.0209
+# max value of z-coordinates?  [micrometers]
+37.0209
+# min length of x-axis?  [micrometers]
+6.17920
+# max length of x-axis?  [micrometers]
+6.17920
+# min length of z-axis?  [micrometers]
+2.54860
+# max length of z-axis?  [micrometers]
+2.54860
+# Should the Voronoi criterion for grains of type 3 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 3? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 4
+# ----------------------
+# Geometry of grain type 4
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+24.2810
+# max value of x-coordinates?  [micrometers]
+24.2810
+# min value of z-coordinates?  [micrometers]
+41.5927
+# max value of z-coordinates?  [micrometers]
+41.5927
+# min length of x-axis?  [micrometers]
+12.4215
+# max length of x-axis?  [micrometers]
+12.4215
+# min length of z-axis?  [micrometers]
+2.27010
+# max length of z-axis?  [micrometers]
+2.27010
+# Should the Voronoi criterion for grains of type 4 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 4? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix_direction
+# Global direction to be fixed
+# Options:  x   (-> fixed Miller-indices QRS)
+#           y   (-> fixed Miller-indices HKL)
+#           z   (-> fixed Miller-indices UVW)
+y
+# Vector in y-direction (Miller-indices HKL) [3 reals in one line]
+0.000 0.000 1.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 5
+# ----------------------
+# Geometry of grain type 5
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+28.3034
+# max value of x-coordinates?  [micrometers]
+28.3034
+# min value of z-coordinates?  [micrometers]
+37.0000
+# max value of z-coordinates?  [micrometers]
+37.0000
+# min length of x-axis?  [micrometers]
+25.0000
+# max length of x-axis?  [micrometers]
+25.0000
+# min length of z-axis?  [micrometers]
+4.00000
+# max length of z-axis?  [micrometers]
+4.00000
+# Should the Voronoi criterion for grains of type 5 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 5? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 6
+# ----------------------
+# Geometry of grain type 6
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+40.6000
+# max value of x-coordinates?  [micrometers]
+40.6000
+# min value of z-coordinates?  [micrometers]
+37.3944
+# max value of z-coordinates?  [micrometers]
+37.3944
+# min length of x-axis?  [micrometers]
+7.08300
+# max length of x-axis?  [micrometers]
+7.08300
+# min length of z-axis?  [micrometers]
+3.91060
+# max length of z-axis?  [micrometers]
+3.91060
+# Should the Voronoi criterion for grains of type 6 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 6? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 7
+# ----------------------
+# Geometry of grain type 7
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+20.0251
+# max value of x-coordinates?  [micrometers]
+20.0251
+# min value of z-coordinates?  [micrometers]
+33.0000
+# max value of z-coordinates?  [micrometers]
+33.0000
+# min length of x-axis?  [micrometers]
+50.0000
+# max length of x-axis?  [micrometers]
+50.0000
+# min length of z-axis?  [micrometers]
+6.00000
+# max length of z-axis?  [micrometers]
+6.00000
+# Should the Voronoi criterion for grains of type 7 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 7? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 8
+# ----------------------
+# Geometry of grain type 8
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+40.7706
+# max value of x-coordinates?  [micrometers]
+40.7706
+# min value of z-coordinates?  [micrometers]
+35.4880
+# max value of z-coordinates?  [micrometers]
+35.4880
+# min length of x-axis?  [micrometers]
+8.00000
+# max length of x-axis?  [micrometers]
+8.00000
+# min length of z-axis?  [micrometers]
+2.95100
+# max length of z-axis?  [micrometers]
+2.95100
+# Should the Voronoi criterion for grains of type 8 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 8? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 9
+# ----------------------
+# Geometry of grain type 9
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+16.0000
+# max value of x-coordinates?  [micrometers]
+16.0000
+# min value of z-coordinates?  [micrometers]
+29.3914
+# max value of z-coordinates?  [micrometers]
+29.3914
+# min length of x-axis?  [micrometers]
+45.50000
+# max length of x-axis?  [micrometers]
+45.50000
+# min length of z-axis?  [micrometers]
+5.00000
+# max length of z-axis?  [micrometers]
+5.00000
+# Should the Voronoi criterion for grains of type 9 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 9? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 10
+# -----------------------
+# Geometry of grain type10
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+14.9347
+# max value of x-coordinates?  [micrometers]
+14.9347
+# min value of z-coordinates?  [micrometers]
+27.6177
+# max value of z-coordinates?  [micrometers]
+27.6177
+# min length of x-axis?  [micrometers]
+70.0000
+# max length of x-axis?  [micrometers]
+70.0000
+# min length of z-axis?  [micrometers]
+8.00000
+# max length of z-axis?  [micrometers]
+8.00000
+# Should the Voronoi criterion for grains of type 10 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 10? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 11
+# -----------------------
+# Geometry of grain type11
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+9.20977
+# max value of x-coordinates?  [micrometers]
+9.20977
+# min value of z-coordinates?  [micrometers]
+22.5472
+# max value of z-coordinates?  [micrometers]
+22.5472
+# min length of x-axis?  [micrometers]
+20.8921
+# max length of x-axis?  [micrometers]
+20.8921
+# min length of z-axis?  [micrometers]
+3.67740
+# max length of z-axis?  [micrometers]
+3.67740
+# Should the Voronoi criterion for grains of type 11 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 11? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 12
+# -----------------------
+# Geometry of grain type12
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+27.5238
+# max value of x-coordinates?  [micrometers]
+27.5238
+# min value of z-coordinates?  [micrometers]
+22.4395
+# max value of z-coordinates?  [micrometers]
+22.4395
+# min length of x-axis?  [micrometers]
+10.4245
+# max length of x-axis?  [micrometers]
+10.4245
+# min length of z-axis?  [micrometers]
+4.14310
+# max length of z-axis?  [micrometers]
+4.14310
+# Should the Voronoi criterion for grains of type 12 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 12? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 13
+# -----------------------
+# Geometry of grain type13
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+38.4829
+# max value of x-coordinates?  [micrometers]
+38.4829
+# min value of z-coordinates?  [micrometers]
+19.0000
+# max value of z-coordinates?  [micrometers]
+19.0000
+# min length of x-axis?  [micrometers]
+12.7089
+# max length of x-axis?  [micrometers]
+12.7089
+# min length of z-axis?  [micrometers]
+4.00000
+# max length of z-axis?  [micrometers]
+4.00000
+# Should the Voronoi criterion for grains of type 13 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 13? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 14
+# -----------------------
+# Geometry of grain type14
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+28.6379
+# max value of x-coordinates?  [micrometers]
+28.6379
+# min value of z-coordinates?  [micrometers]
+19.9264
+# max value of z-coordinates?  [micrometers]
+19.9264
+# min length of x-axis?  [micrometers]
+10.5701
+# max length of x-axis?  [micrometers]
+10.5701
+# min length of z-axis?  [micrometers]
+2.63610
+# max length of z-axis?  [micrometers]
+2.63610
+# Should the Voronoi criterion for grains of type 14 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 14? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 15
+# -----------------------
+# Geometry of grain type15
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+3.68883
+# max value of x-coordinates?  [micrometers]
+3.68883
+# min value of z-coordinates?  [micrometers]
+18.2596
+# max value of z-coordinates?  [micrometers]
+18.2596
+# min length of x-axis?  [micrometers]
+6.63010
+# max length of x-axis?  [micrometers]
+6.63010
+# min length of z-axis?  [micrometers]
+1.99050
+# max length of z-axis?  [micrometers]
+1.99050
+# Should the Voronoi criterion for grains of type 15 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 15? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 16
+# -----------------------
+# Geometry of grain type16
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+12.8430
+# max value of x-coordinates?  [micrometers]
+12.8430
+# min value of z-coordinates?  [micrometers]
+18.1806
+# max value of z-coordinates?  [micrometers]
+18.1806
+# min length of x-axis?  [micrometers]
+6.64650
+# max length of x-axis?  [micrometers]
+6.64650
+# min length of z-axis?  [micrometers]
+2.68450
+# max length of z-axis?  [micrometers]
+2.68450
+# Should the Voronoi criterion for grains of type 16 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 16? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 17
+# -----------------------
+# Geometry of grain type17
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+19.1090
+# max value of x-coordinates?  [micrometers]
+19.1090
+# min value of z-coordinates?  [micrometers]
+19.5055
+# max value of z-coordinates?  [micrometers]
+19.5055
+# min length of x-axis?  [micrometers]
+7.56840
+# max length of x-axis?  [micrometers]
+7.56840
+# min length of z-axis?  [micrometers]
+2.74890
+# max length of z-axis?  [micrometers]
+2.74890
+# Should the Voronoi criterion for grains of type 17 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 17? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 18
+# -----------------------
+# Geometry of grain type18
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+2.21762
+# max value of x-coordinates?  [micrometers]
+2.21762
+# min value of z-coordinates?  [micrometers]
+16.4456
+# max value of z-coordinates?  [micrometers]
+16.4456
+# min length of x-axis?  [micrometers]
+3.98380
+# max length of x-axis?  [micrometers]
+3.98380
+# min length of z-axis?  [micrometers]
+1.51090
+# max length of z-axis?  [micrometers]
+1.51090
+# Should the Voronoi criterion for grains of type 18 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 18? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 19
+# -----------------------
+# Geometry of grain type19
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+8.60810
+# max value of x-coordinates?  [micrometers]
+8.60810
+# min value of z-coordinates?  [micrometers]
+15.6853
+# max value of z-coordinates?  [micrometers]
+15.6853
+# min length of x-axis?  [micrometers]
+5.56160
+# max length of x-axis?  [micrometers]
+5.56160
+# min length of z-axis?  [micrometers]
+2.21350
+# max length of z-axis?  [micrometers]
+2.21350
+# Should the Voronoi criterion for grains of type 19 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 19? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 20
+# -----------------------
+# Geometry of grain type20
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+19.3155
+# max value of x-coordinates?  [micrometers]
+19.3155
+# min value of z-coordinates?  [micrometers]
+16.9502
+# max value of z-coordinates?  [micrometers]
+16.9502
+# min length of x-axis?  [micrometers]
+7.56840
+# max length of x-axis?  [micrometers]
+7.56840
+# min length of z-axis?  [micrometers]
+2.40020
+# max length of z-axis?  [micrometers]
+2.40020
+# Should the Voronoi criterion for grains of type 20 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 20? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 21
+# -----------------------
+# Geometry of grain type21
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+27.1394
+# max value of x-coordinates?  [micrometers]
+27.1394
+# min value of z-coordinates?  [micrometers]
+16.4643
+# max value of z-coordinates?  [micrometers]
+16.4643
+# min length of x-axis?  [micrometers]
+7.56840
+# max length of x-axis?  [micrometers]
+7.56840
+# min length of z-axis?  [micrometers]
+1.84310
+# max length of z-axis?  [micrometers]
+1.84310
+# Should the Voronoi criterion for grains of type 21 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 21? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 22
+# -----------------------
+# Geometry of grain type22
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+33.1248
+# max value of x-coordinates?  [micrometers]
+33.1248
+# min value of z-coordinates?  [micrometers]
+15.8984
+# max value of z-coordinates?  [micrometers]
+15.8984
+# min length of x-axis?  [micrometers]
+4.22970
+# max length of x-axis?  [micrometers]
+4.22970
+# min length of z-axis?  [micrometers]
+2.00060
+# max length of z-axis?  [micrometers]
+2.00060
+# Should the Voronoi criterion for grains of type 22 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 22? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 23
+# -----------------------
+# Geometry of grain type23
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+36.6968
+# max value of x-coordinates?  [micrometers]
+36.6968
+# min value of z-coordinates?  [micrometers]
+17.8856
+# max value of z-coordinates?  [micrometers]
+17.8856
+# min length of x-axis?  [micrometers]
+6.61460
+# max length of x-axis?  [micrometers]
+6.61460
+# min length of z-axis?  [micrometers]
+2.05210
+# max length of z-axis?  [micrometers]
+2.05210
+# Should the Voronoi criterion for grains of type 23 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 23? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 24
+# -----------------------
+# Geometry of grain type24
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+37.3543
+# max value of x-coordinates?  [micrometers]
+37.3543
+# min value of z-coordinates?  [micrometers]
+16.2658
+# max value of z-coordinates?  [micrometers]
+16.2658
+# min length of x-axis?  [micrometers]
+4.23450
+# max length of x-axis?  [micrometers]
+4.23450
+# min length of z-axis?  [micrometers]
+1.27480
+# max length of z-axis?  [micrometers]
+1.27480
+# Should the Voronoi criterion for grains of type 24 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 24? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 25
+# -----------------------
+# Geometry of grain type25
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+41.4203
+# max value of x-coordinates?  [micrometers]
+41.4203
+# min value of z-coordinates?  [micrometers]
+16.6117
+# max value of z-coordinates?  [micrometers]
+16.6117
+# min length of x-axis?  [micrometers]
+3.66120
+# max length of x-axis?  [micrometers]
+3.66120
+# min length of z-axis?  [micrometers]
+2.05970
+# max length of z-axis?  [micrometers]
+2.05970
+# Should the Voronoi criterion for grains of type 25 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 25? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 26
+# -----------------------
+# Geometry of grain type26
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+1.79608
+# max value of x-coordinates?  [micrometers]
+1.79608
+# min value of z-coordinates?  [micrometers]
+14.9575
+# max value of z-coordinates?  [micrometers]
+14.9575
+# min length of x-axis?  [micrometers]
+3.02430
+# max length of x-axis?  [micrometers]
+3.02430
+# min length of z-axis?  [micrometers]
+1.23670
+# max length of z-axis?  [micrometers]
+1.23670
+# Should the Voronoi criterion for grains of type 26 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 26? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 27
+# -----------------------
+# Geometry of grain type27
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+23.0968
+# max value of x-coordinates?  [micrometers]
+23.0968
+# min value of z-coordinates?  [micrometers]
+1.55925
+# max value of z-coordinates?  [micrometers]
+1.55925
+# min length of x-axis?  [micrometers]
+16.2138
+# max length of x-axis?  [micrometers]
+16.2138
+# min length of z-axis?  [micrometers]
+4.04745
+# max length of z-axis?  [micrometers]
+4.04745
+# Should the Voronoi criterion for grains of type 27 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 27? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 28
+# -----------------------
+# Geometry of grain type28
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+29.6983
+# max value of x-coordinates?  [micrometers]
+29.6983
+# min value of z-coordinates?  [micrometers]
+14.6167
+# max value of z-coordinates?  [micrometers]
+14.6167
+# min length of x-axis?  [micrometers]
+4.15560
+# max length of x-axis?  [micrometers]
+4.15560
+# min length of z-axis?  [micrometers]
+1.26120
+# max length of z-axis?  [micrometers]
+1.26120
+# Should the Voronoi criterion for grains of type 28 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 28? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 29
+# -----------------------
+# Geometry of grain type29
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+39.3132
+# max value of x-coordinates?  [micrometers]
+39.3132
+# min value of z-coordinates?  [micrometers]
+14.6454
+# max value of z-coordinates?  [micrometers]
+14.6454
+# min length of x-axis?  [micrometers]
+3.95570
+# max length of x-axis?  [micrometers]
+3.95570
+# min length of z-axis?  [micrometers]
+1.99800
+# max length of z-axis?  [micrometers]
+1.99800
+# Should the Voronoi criterion for grains of type 29 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 29? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 30
+# -----------------------
+# Geometry of grain type30
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+5.63675
+# max value of x-coordinates?  [micrometers]
+5.63675
+# min value of z-coordinates?  [micrometers]
+13.2459
+# max value of z-coordinates?  [micrometers]
+13.2459
+# min length of x-axis?  [micrometers]
+7.71390
+# max length of x-axis?  [micrometers]
+7.71390
+# min length of z-axis?  [micrometers]
+1.95200
+# max length of z-axis?  [micrometers]
+1.95200
+# Should the Voronoi criterion for grains of type 30 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 30? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 31
+# -----------------------
+# Geometry of grain type31
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+18.2942
+# max value of x-coordinates?  [micrometers]
+18.2942
+# min value of z-coordinates?  [micrometers]
+11.4392
+# max value of z-coordinates?  [micrometers]
+11.4392
+# min length of x-axis?  [micrometers]
+24.5320
+# max length of x-axis?  [micrometers]
+24.5320
+# min length of z-axis?  [micrometers]
+5.00000
+# max length of z-axis?  [micrometers]
+5.00000
+# Should the Voronoi criterion for grains of type 31 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 31? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 32
+# -----------------------
+# Geometry of grain type32
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+30.7289
+# max value of x-coordinates?  [micrometers]
+30.7289
+# min value of z-coordinates?  [micrometers]
+13.0409
+# max value of z-coordinates?  [micrometers]
+13.0409
+# min length of x-axis?  [micrometers]
+8.64390
+# max length of x-axis?  [micrometers]
+8.64390
+# min length of z-axis?  [micrometers]
+1.72930
+# max length of z-axis?  [micrometers]
+1.72930
+# Should the Voronoi criterion for grains of type 32 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 32? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 33
+# -----------------------
+# Geometry of grain type33
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+37.5134
+# max value of x-coordinates?  [micrometers]
+37.5134
+# min value of z-coordinates?  [micrometers]
+12.9124
+# max value of z-coordinates?  [micrometers]
+12.9124
+# min length of x-axis?  [micrometers]
+4.23940
+# max length of x-axis?  [micrometers]
+4.23940
+# min length of z-axis?  [micrometers]
+1.37600
+# max length of z-axis?  [micrometers]
+1.37600
+# Should the Voronoi criterion for grains of type 33 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 33? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 34
+# -----------------------
+# Geometry of grain type34
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+41.7527
+# max value of x-coordinates?  [micrometers]
+41.7527
+# min value of z-coordinates?  [micrometers]
+12.8583
+# max value of z-coordinates?  [micrometers]
+12.8583
+# min length of x-axis?  [micrometers]
+3.53130
+# max length of x-axis?  [micrometers]
+3.53130
+# min length of z-axis?  [micrometers]
+2.04480
+# max length of z-axis?  [micrometers]
+2.04480
+# Should the Voronoi criterion for grains of type 34 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 34? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 35
+# -----------------------
+# Geometry of grain type35
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+2.80606
+# max value of x-coordinates?  [micrometers]
+2.80606
+# min value of z-coordinates?  [micrometers]
+10.8005
+# max value of z-coordinates?  [micrometers]
+10.8005
+# min length of x-axis?  [micrometers]
+5.41920
+# max length of x-axis?  [micrometers]
+5.41920
+# min length of z-axis?  [micrometers]
+2.50000
+# max length of z-axis?  [micrometers]
+2.50000
+# Should the Voronoi criterion for grains of type 35 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 35? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 36
+# -----------------------
+# Geometry of grain type36
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+35.2724
+# max value of x-coordinates?  [micrometers]
+35.2724
+# min value of z-coordinates?  [micrometers]
+11.7612
+# max value of z-coordinates?  [micrometers]
+11.7612
+# min length of x-axis?  [micrometers]
+5.13810
+# max length of x-axis?  [micrometers]
+5.13810
+# min length of z-axis?  [micrometers]
+0.700000
+# max length of z-axis?  [micrometers]
+0.700000
+# Should the Voronoi criterion for grains of type 36 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 36? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 37
+# -----------------------
+# Geometry of grain type37
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+40.3415
+# max value of x-coordinates?  [micrometers]
+40.3415
+# min value of z-coordinates?  [micrometers]
+10.7771
+# max value of z-coordinates?  [micrometers]
+10.7771
+# min length of x-axis?  [micrometers]
+3.96320
+# max length of x-axis?  [micrometers]
+3.96320
+# min length of z-axis?  [micrometers]
+2.00960
+# max length of z-axis?  [micrometers]
+2.00960
+# Should the Voronoi criterion for grains of type 37 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 37? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 38
+# -----------------------
+# Geometry of grain type38
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+7.20486
+# max value of x-coordinates?  [micrometers]
+7.20486
+# min value of z-coordinates?  [micrometers]
+8.22950
+# max value of z-coordinates?  [micrometers]
+8.22950
+# min length of x-axis?  [micrometers]
+6.07420
+# max length of x-axis?  [micrometers]
+6.07420
+# min length of z-axis?  [micrometers]
+1.99820
+# max length of z-axis?  [micrometers]
+1.99820
+# Should the Voronoi criterion for grains of type 38 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 38? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 39
+# -----------------------
+# Geometry of grain type39
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+18.7625
+# max value of x-coordinates?  [micrometers]
+18.7625
+# min value of z-coordinates?  [micrometers]
+8.05568
+# max value of z-coordinates?  [micrometers]
+8.05568
+# min length of x-axis?  [micrometers]
+16.3410
+# max length of x-axis?  [micrometers]
+16.3410
+# min length of z-axis?  [micrometers]
+3.05480
+# max length of z-axis?  [micrometers]
+3.05480
+# Should the Voronoi criterion for grains of type 39 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 39? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 40
+# -----------------------
+# Geometry of grain type40
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+35.2307
+# max value of x-coordinates?  [micrometers]
+35.2307
+# min value of z-coordinates?  [micrometers]
+8.11369
+# max value of z-coordinates?  [micrometers]
+8.11369
+# min length of x-axis?  [micrometers]
+18.9208
+# max length of x-axis?  [micrometers]
+18.9208
+# min length of z-axis?  [micrometers]
+4.33340
+# max length of z-axis?  [micrometers]
+4.33340
+# Should the Voronoi criterion for grains of type 40 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 40? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 41
+# -----------------------
+# Geometry of grain type41
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+4.04748
+# max value of x-coordinates?  [micrometers]
+4.04748
+# min value of z-coordinates?  [micrometers]
+6.40554
+# max value of z-coordinates?  [micrometers]
+6.40554
+# min length of x-axis?  [micrometers]
+7.69400
+# max length of x-axis?  [micrometers]
+7.69400
+# min length of z-axis?  [micrometers]
+2.06880
+# max length of z-axis?  [micrometers]
+2.06880
+# Should the Voronoi criterion for grains of type 41 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 41? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 42
+# -----------------------
+# Geometry of grain type42
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+24.5722
+# max value of x-coordinates?  [micrometers]
+24.5722
+# min value of z-coordinates?  [micrometers]
+4.98704
+# max value of z-coordinates?  [micrometers]
+4.98704
+# min length of x-axis?  [micrometers]
+36.4671
+# max length of x-axis?  [micrometers]
+36.4671
+# min length of z-axis?  [micrometers]
+3.50000
+# max length of z-axis?  [micrometers]
+3.50000
+# Should the Voronoi criterion for grains of type 42 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 42? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 43
+# -----------------------
+# Geometry of grain type43
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+13.6105
+# max value of x-coordinates?  [micrometers]
+13.6105
+# min value of z-coordinates?  [micrometers]
+2.90275
+# max value of z-coordinates?  [micrometers]
+2.90275
+# min length of x-axis?  [micrometers]
+10.7432
+# max length of x-axis?  [micrometers]
+10.7432
+# min length of z-axis?  [micrometers]
+2.03690
+# max length of z-axis?  [micrometers]
+2.03690
+# Should the Voronoi criterion for grains of type 43 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 43? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 44
+# -----------------------
+# Geometry of grain type44
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+2.50000
+# max value of x-coordinates?  [micrometers]
+2.50000
+# min value of z-coordinates?  [micrometers]
+1.00000
+# max value of z-coordinates?  [micrometers]
+1.00000
+# min length of x-axis?  [micrometers]
+7.61640
+# max length of x-axis?  [micrometers]
+7.61640
+# min length of z-axis?  [micrometers]
+2.50000
+# max length of z-axis?  [micrometers]
+2.50000
+# Should the Voronoi criterion for grains of type 44 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 44? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 45
+# -----------------------
+# Geometry of grain type45
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+18.7045
+# max value of x-coordinates?  [micrometers]
+18.7045
+# min value of z-coordinates?  [micrometers]
+14.3725
+# max value of z-coordinates?  [micrometers]
+14.3725
+# min length of x-axis?  [micrometers]
+14.3725
+# max length of x-axis?  [micrometers]
+14.3725
+# min length of z-axis?  [micrometers]
+3.81100
+# max length of z-axis?  [micrometers]
+3.81100
+# Should the Voronoi criterion for grains of type 45 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 45? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 46
+# -----------------------
+# Geometry of grain type46
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+31.3352
+# max value of x-coordinates?  [micrometers]
+31.3352
+# min value of z-coordinates?  [micrometers]
+1.71588
+# max value of z-coordinates?  [micrometers]
+1.71588
+# min length of x-axis?  [micrometers]
+10.2924
+# max length of x-axis?  [micrometers]
+10.2924
+# min length of z-axis?  [micrometers]
+4.03140
+# max length of z-axis?  [micrometers]
+4.03140
+# Should the Voronoi criterion for grains of type 46 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 46? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 47
+# -----------------------
+# Geometry of grain type47
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+38.2859
+# max value of x-coordinates?  [micrometers]
+38.2859
+# min value of z-coordinates?  [micrometers]
+1.90000
+# max value of z-coordinates?  [micrometers]
+1.90000
+# min length of x-axis?  [micrometers]
+10.4880
+# max length of x-axis?  [micrometers]
+10.4880
+# min length of z-axis?  [micrometers]
+5.01260
+# max length of z-axis?  [micrometers]
+5.01260
+# Should the Voronoi criterion for grains of type 47 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 47? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+#
+# INPUT_FOR_GRAIN_TYPE 48
+# -----------------------
+# Geometry of grain type48
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# min value of x-coordinates?  [micrometers]
+38.2859
+# max value of x-coordinates?  [micrometers]
+38.2859
+# min value of z-coordinates?  [micrometers]
+1.90000
+# max value of z-coordinates?  [micrometers]
+1.90000
+# min length of x-axis?  [micrometers]
+10.4880
+# max length of x-axis?  [micrometers]
+10.4880
+# min length of z-axis?  [micrometers]
+5.01260
+# max length of z-axis?  [micrometers]
+5.01260
+# Should the Voronoi criterion for grains of type 48 be applied?
+# Options:    voronoi     voronoi
+voronoi
+# Phase number for grain type 48? (int)
+1
+# Mean dislocation density? [m-2]
+6E+14
+# Determination of grain orientations?
+# Options:   fix   random    fix_direction
+#           [step beween random values in degrees]
+fix
+# Miller indices h,k,l or vector in y-direction [3 reals in one line]
++0.000 +0.000 +1.000
+# Miller indices u,v,w or vector in z-direction [3 reals in one line]
++1.000 +0.000 +0.000
+#
+#
+# Data for further nucleation
+# ===========================
+# Enable further nucleation?
+# Options:  nucleation   nucleation_symm   no_nucleation  [verbose|no_verbose]
+nucleation
+# Additional output for nucleation?
+# Options:     out_nucleation     no_out_nucleation
+out_nucleation
+#
+# Number of types of seeds?
+1
+#
+# Input_for_seed_type 1:
+# ----------------------
+# Type of 'position' of the seeds?
+# Options:   bulk  region  interface  triple  quadruple  front  [restrictive]
+interface
+# Phase of new grains (integer) [unresolved|add_to_grain]?
+1
+# Reference phase (integer) [min. and max. fraction (real)]?
+1
+# Substrate phase [2nd phase in interface]?
+# (set to 1 to disable the effect of substrate curvature)
+1
+# maximum number of new nuclei 1?
+# (set negative for unlimited number)
+100
+# Grain radius [micrometers]?
+0.700000
+# Choice of growth mode:
+# Options:   stabilisation analytical_curvature
+stabilisation
+# Critical dislocation density [m^-2]?
+1.40E10
+# Determination of nuclei orientations?
+# Options:   random    fix     fix_direction   parent_relation
+random
+# min value of rotation angle? [Degree]
++0.000
+# max value of rotation angle? [Degree]
++360.00
+# Referring to which coordinate system shall the rotation axis be defined?
+# local  (system of the crystal)
+# global (system of the workpiece)
+local
+# Rotation axis? [3 reals in one line]
++0.000 +1.000 +0.000
+# Shield effect:
+# Shield time [s] [shield phase or group number] ?
+100.00
+# Shield distance [micrometers]  [ nucleation distance [micrometers] ]?
+25.000
+# Input of min and max dislocation density of the nuclei:
+# min dislocation density of the nuclei? [m^-2]
+0.0000
+# max dislocation density of the nuclei? [m^-2]
+0.0000
+# Nucleation range
+# min. nucleation temperature for seed type 1 [K]
+570.1500
+# max. nucleation temperature for seed type 1 [K]
+576.1500
+# Time between checks for nucleation? [s]
+# Options:  constant   from_file
+constant
+# Time interval [s]
+1.50000E-02
+# Shall random noise be applied?
+# Options:     nucleation_noise   no_nucleation_noise
+nucleation_noise
+# Factor for random noise?
+# (applied as DeltaT -> (1+Factor*(RAND-1/2))*DeltaT)
+1.000E-03
+#
+#
+# Seed for random-number generator initialisation
+# -----------------------------------------------
+7
+#
+# Max. number of simultaneous nucleations?
+# ----------------------------------------
+# (set to 0 for automatic)
+0
+#
+# Shall metastable small seeds be killed?
+# ---------------------------------------
+# Options:     kill_metastable      no_kill_metastable
+kill_metastable
+#
+#
+# Phase interaction data
+# ======================
+#
+# Data for phase interaction 0 / 1:
+# ---------------------------------
+# Simulation of interaction between phases 0 and 1?
+# Options: phase_interaction  no_phase_interaction
+#  [standard|particle_pinning[_temperature]|solute_drag]
+#   |[no_junction_force|junction_force]
+no_phase_interaction
+#
+# Data for phase interaction 0 / 2:
+# ---------------------------------
+# Simulation of interaction between phases 0 and 2?
+# Options: phase_interaction  no_phase_interaction  identical phases nb
+#  [standard|particle_pinning[_temperature]|solute_drag]
+#   |[no_junction_force|junction_force]
+no_phase_interaction
+#
+# Data for phase interaction 1 / 1:
+# ---------------------------------
+# Simulation of interaction between phases 1 and 1?
+# Options: phase_interaction  no_phase_interaction  identical phases nb
+#  [standard|particle_pinning[_temperature]|solute_drag]
+#   |[no_junction_force|junction_force]
+phase_interaction particle_pinning
+# Type of interfacial energy definition between phases 1 and 1?
+# Options:  constant  temp_dependent
+constant
+# Interfacial energy between phases 1 and 1? [J/cm**2]
+#     [max. value for num. interface stabilisation [J/cm**2]]
+3.24000E-05
+# Type of mobility definition between phases 1 and 1?
+# Options: constant temp_dependent dg_dependent [fixed_minimum]
+temp_dependent
+# Kinetic coefficient mu between phases 1 and 1  [ min. value ] [cm**4/(Js)] ?
+3.10000E-05
+# Definition of pinning force: pressure or curvature
+curvature
+# Critical pinning curvature [1/micrometer]
+0.18000
+# min mobility [cm**4/Js]
+0.0000
+# Shall misorientation be considered?
+# Options:   misorientation    no_misorientation
+#           [low_angle_limit (degrees)] default:15    [special_orient (nb)]
+misorientation  15.
+# Input of the misorientation coefficients:
+# Modification of interfacial energy for low angle boundaries
+# Options:  factor   read-shockley
+factor
+# Prefactor of interfacial energy for low angle boundaries?
+0.20000
+# Modification of the mobility for low angle boundaries
+# Options:  factor   humphreys [min_reduction + parameters B and N
+#                         (default: min_reduction=0. B=5.0 N=4.0)]
+factor
+# Prefactor of interfacial mobility for low angle boundaries?
+0.10000
+#
+#
+#
+# DATA FOR PHASE INTERACTION
+#
+#
+#
+# Data for phase interaction 1 / 2:
+# ---------------------------------
+# Simulation of interaction between phases 1 and 2?
+# Options: phase_interaction  no_phase_interaction  identical phases nb
+#  [standard|particle_pinning[_temperature]|solute_drag]
+#   |[no_junction_force|junction_force]
+phase_interaction particle_pinning
+# Type of interfacial energy definition between phases 1 and 2?
+# Options:  constant  temp_dependent
+constant
+# Interfacial energy between phases 1 and 2? [J/cm**2]
+#     [max. value for num. interface stabilisation [J/cm**2]]
+3.24000E-05
+# Type of mobility definition between phases 1 and 2?
+# Options: constant temp_dependent dg_dependent [fixed_minimum]
+constant
+# Kinetic coefficient mu between phases 1 and 2  [ min. value ] [cm**4/(Js)] ?
+3.10000E-05
+# Definition of pinning force: pressure or curvature
+curvature
+# Critical pinning curvature [1/micrometer]
+0.18000
+# min mobility [cm**4/Js]
+0.0000
+# Shall misorientation be considered?
+# Options:   misorientation    no_misorientation
+#           [low_angle_limit (degrees)] default:15    [special_orient (nb)]
+misorientation  15.
+# Input of the misorientation coefficients:
+# Modification of interfacial energy for low angle boundaries
+# Options:  factor   read-shockley
+factor
+# Prefactor of interfacial energy for low angle boundaries?
+0.20000
+# Modification of the mobility for low angle boundaries
+# Options:  factor   humphreys [min_reduction + parameters B and N
+#                         (default: min_reduction=0. B=5.0 N=4.0)]
+factor
+# Prefactor of interfacial mobility for low angle boundaries?
+0.10000
+# Is interaction isotropic?
+# Options: isotropic
+#          anisotropic [junction_force] [harmonic_expansion]
+isotropic
+#
+# Data for phase interaction 2 / 2:
+# ---------------------------------
+# Simulation of interaction between phases 2 and 2?
+# Options: phase_interaction  no_phase_interaction  identical phases nb
+#  [standard|particle_pinning[_temperature]|solute_drag]
+#   |[no_junction_force|junction_force]
+no_phase_interaction
+#
+#
+# Phase diagram - input data
+# ==========================
+# Equilibrium temperature [K] between 1  and 2
+680.000000000000
+# Entropy of fusion between phase 1  and 2 ?  [J/(cm**3 K)]
+0.900000000000000
+#
+#
+# Boundary conditions
+# ===================
+# Type of temperature trend?
+# Options:   linear     linear_from_file     profiles_from_file
+linear
+# Number of connecting points?    (integer)
+0
+# Initial temperature at the bottom?  (real)  [K]
+680.0000
+# Temperature gradient in z-direction?  [K/cm]
+0.0000
+# Cooling rate? [K/s]
+0.0000
+# Moving-frame system in z-direction?
+# Options:      moving_frame      no_moving_frame
+no_moving_frame
+#
+# Boundary conditions for phase field in each direction
+# Options: i (insulation) s (symmetric) p (periodic/wrap-around)
+#          g (gradient)   f (fixed)     w (wetting)
+# Sequence: W E (S N, if 3D) B T borders
+pppp
+# Unit-cell model symmetric with respect to the x/y diagonal plane?
+# Options:    unit_cell_symm   no_unit_cell_symm
+no_unit_cell_symm
+#
+#
+# Other numerical parameters
+# ==========================
+# Phase min?
+1.00E-04
+# Interface thickness (in cells)?
+3.00
+#
+#

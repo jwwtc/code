@@ -1,0 +1,427 @@
+
+
+# Language
+# ========
+
+English
+
+# SimulationName
+# ==============
+
+Results_ReX/output_files/T033_ReX_deterministic_1100
+overwrite
+
+# Restart
+# =======
+
+new
+
+# Geometry
+# ========
+
+500
+1
+500
+0.50000
+
+# ModelSpecification
+# ==================
+
+phase
+
+# Boundary Conditions
+# ===================
+
+iiii
+
+# Database
+# ========
+
+
+# Components
+# ==========
+
+
+# Phases
+# ======
+
+matrix
+phase_1
+end_of_phases
+
+# Orientation
+# -----------
+
+angle_2d
+
+# Stress related
+# --------------
+
+
+# PhaseData
+# =========
+
+recrystall verbose
+energy
+2.123E-03
+anisotropic
+cubic
+no_categorize
+
+# PhaseInteractions
+# =================
+
+no_phase_interaction
+phase_interaction
+constant
+5.00000E-05
+constant
+5.00000E-04
+misorientation
+factor
+0.10000
+factor
+0.10000
+
+# DiffusionData
+# =============
+
+
+# Grain Input
+# ===========
+
+deterministic
+22
+elliptic
+267.000
+108.400
+309.600
+101.000
+voronoi
+1
+1.2650
+0.980000000000000
+elliptic
+149.900
+123.060
+303.420
+104.880
+voronoi
+1
+4.9600
+0.990000000000000
+elliptic
+175.800
+26.2000
+300.600
+102.200
+voronoi
+1
+1.2900
+0.980000000000000
+elliptic
+-2.24000
+22.7000
+300.500
+101.500
+voronoi
+1
+1.2400
+0.980000000000000
+elliptic
+260.000
+149.700
+300.900
+109.000
+voronoi
+1
+1.5805
+0.924100000000000
+elliptic
+10.9000
+82.0000
+306.300
+102.200
+voronoi
+1
+1.6500
+0.940000000000000
+elliptic
+123.100
+56.8500
+306.620
+105.490
+voronoi
+1
+1.6000
+0.900000000000000
+elliptic
+148.950
+49.7000
+303.650
+109.900
+voronoi
+1
+1.6039
+0.952600000000000
+elliptic
+266.320
+11.9270
+307.000
+104.000
+voronoi
+1
+1.7000
+0.940000000000000
+elliptic
+122.900
+157.200
+305.600
+106.400
+voronoi
+1
+1.6000
+0.940000000000000
+elliptic
+9.70000
+152.500
+306.540
+105.000
+voronoi
+1
+2.6000
+0.900000000000000
+elliptic
+189.600
+92.1800
+305.700
+100.000
+voronoi
+1
+2.6000
+0.900000000000000
+elliptic
+170.400
+71.8500
+301.250
+101.200
+voronoi
+1
+2.7000
+0.900000000000000
+elliptic
+29.2000
+45.8000
+309.700
+106.200
+voronoi
+1
+2.6000
+0.860000000000000
+elliptic
+230.700
+125.400
+301.300
+103.200
+voronoi
+1
+5.0531
+0.857200000000000
+elliptic
+18.4000
+114.000
+305.700
+102.500
+voronoi
+1
+2.5900
+0.860000000000000
+elliptic
+56.1000
+111.500
+303.300
+108.550
+voronoi
+1
+5.0000
+0.800000000000000
+elliptic
+61.5000
+45.5200
+301.600
+108.200
+voronoi
+1
+5.0150
+0.775900000000000
+elliptic
+97.3000
+124.400
+306.700
+102.000
+voronoi
+1
+1.4000
+0.758000000000000
+elliptic
+197.700
+120.210
+304.730
+102.430
+voronoi
+1
+2.5000
+0.750000000000000
+elliptic
+245.300
+-0.860000
+303.200
+107.000
+voronoi
+1
+4.9000
+0.765000000000000
+elliptic
+33.3500
+142.000
+307.300
+101.300
+voronoi
+1
+5.0000
+0.756000000000000
+
+# InitialConcentration
+# ====================
+
+
+# Process Conditions
+# ==================
+
+linear
+0
+1100.000
+0.0000
+-1.0000
+no_moving_frame
+
+# Nucleation
+# ==========
+
+nucleation
+no_out_nucleation
+2
+interface
+1
+1
+1
+29
+0.700000
+stabilisation
+4.0000
+random
+1000.0
+20.000
+0.0000
+0.0000
+750.0000
+1005.000
+constant
+0.25000
+nucleation_noise
+1.000E-03
+region
+0.0000
+250.00
+10.000
+20.000
+1
+1
+seed_undercooling
+29
+0.700000
+stabilisation
+1.0000
+random
+1000.0
+7.5000
+0.0000
+0.0000
+750.0000
+1005.000
+constant
+0.25000
+nucleation_noise
+1.000E-03
+13
+25
+kill_metastable
+
+# Time
+# ====
+
+linear_step 5.0 10.
+linear_step 20.0 250.
+linear_step 2.0 270.
+end_of_simulation
+
+# Output
+# ======
+
+legacy
+no_out_restart
+out_grains
+no_out_phases
+no_out_fraction
+no_tab_fractions
+no_out_interface
+no_out_driv_force
+no_out_mobility
+no_out_curvature
+no_out_velocity
+no_tab_grains
+no_tab_vnm
+no_tab_grain_data
+no_out_temp
+out_recrystall
+tab_recrystall
+no_out_disloc
+no_out_miller
+out_orientation
+no_tab_orientation
+no_tab_log
+
+# Phase-Field Solver
+# ==================
+
+automatic
+30
+multi_obstacle fd_correction
+5.00E-03
+5.00
+0.1
+0.1
+
+# Temperature Solver (concentration)
+# ==================================
+
+
+# Temperature Solver (no concentration)
+# =====================================
+
+
+# Concentration Solver
+# ====================
+
+
+# OptionalThermodynamicDefinitions
+# ================================
+
+
+# ExpansionSolver
+# ===============
+
+
+# Threads
+# =======
+

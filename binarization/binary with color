@@ -1,2 +1,0 @@
-run("8-bit Color", "number=2");
-saveAs("Tiff", "C:/Users/mikep/Desktop/project/images/1.tif");
