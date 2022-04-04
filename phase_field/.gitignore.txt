@@ -1,2 +1,2 @@
-/c/Users/mikep/Desktop/project/code/phase_field/manuals/
-/c/Users/mikep/Desktop/project/code/phase_field/code/++other/
+manuals/
+code/++other/
