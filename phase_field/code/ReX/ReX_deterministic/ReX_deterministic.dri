@@ -2,7 +2,6 @@
 # Automatic 'Driving File' written out by MICRESS.
 #
 #
-#
 # MICRESS binary
 # ==============
 # version number: 6.400 (Linux)
@@ -165,7 +164,6 @@ linear_step 20.0 250.
 linear_step 2.0 270.
 end_of_simulation
 
-end_of_simulation
 # Time-step?
 # Options:   fix ...[s]   automatic    automatic_limited
 automatic
