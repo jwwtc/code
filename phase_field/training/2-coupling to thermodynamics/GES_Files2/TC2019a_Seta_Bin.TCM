@@ -1,0 +1,15 @@
+@@ LOGFILE GENERATED ON UNIX / KTH       DATE 2013- 9-11
+@@
+@@ GES file generation for Seta_Bin                                                                                                                                                                                                                                                               
+
+go dat
+sw
+user
+AgAlCu_new4.TDB
+d-e al ag
+rej phases *
+rest phases liq hcp fcc
+get-data
+go gibbs
+save Seta_Bin
+exit

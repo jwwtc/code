@@ -47,7 +47,7 @@ English
 # Type of coupling?
 # Options:  phase  concentration [volume_change] temperature  temp_cyl_coord
 #    [stress] [stress_coupled] [flow] [flow_coarse] [dislocation]
-phase
+concentration
 # Type of potential?
 # Options:  double_obstacle  multi_obstacle   [fd_correction]
 multi_obstacle  fd_correction

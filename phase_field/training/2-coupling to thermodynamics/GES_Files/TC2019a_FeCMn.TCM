@@ -1,0 +1,20 @@
+@@ LOGFILE GENERATED ON UNIX / KTH       DATE 2013- 9-11
+@@
+@@ GES5 file generation for Gamma Alpha (FeCMn)                                                                                                                                                                                                                    
+
+go dat
+sw
+tcfe9
+d-e fe c mn
+rej phases *
+rest phases liq bcc_a2 cementite fcc_a1
+get-data
+app
+mobfe4
+d-e fe c mn
+rej phases *
+rest phases liq fcc cementite bcc
+get data
+go gibbs
+save TC2019a_FeCMn
+exit

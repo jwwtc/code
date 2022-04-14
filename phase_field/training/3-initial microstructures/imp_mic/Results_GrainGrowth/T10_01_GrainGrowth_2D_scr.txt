@@ -1,0 +1,745 @@
+
+# MICRESS binary
+# ==============
+# version number: 7.100 (Windows)
+# compiled: 10/30/2021
+# compiler version: Intel 1910 20201010
+# executable architecture: x64
+# Thermo-Calc coupling: enabled
+#  Version:    22
+#  Link Date:  Tue Jun 16 08:49:19 2020
+#  OS Name:    WinNT
+#  Build Date: 22336
+#  Compiler:   Intel(R) Visual Fortran Compiler Version 16.0.4.246 Build 20160811
+# OpenMP: disabled
+# ('double precision' binary)
+#
+#
+# Language
+# ========
+# Please select a language: 'English', 'Deutsch' or 'Francais'
+English
+#
+#
+# Output Location
+# ===============
+# Options: [ <directory path>/ ] <base name>
+# The default result directory is the driving file location.
+Results_GrainGrowth/T10_01_GrainGrowth_2D
+# Overwrite files with the same name?
+# Options:    overwrite      write_protected     append
+#             [zipped|not_zipped|vtk]
+#             [unix|windows|non_native]
+overwrite
+
+# The data compression is done with 'zlib' (cf. http://www.zlib.net/).
+# The routine for appending is loosely derived from the 'gzappend.c' example.
+
+#
+#
+# Restart
+# =======
+# Restart using old results?
+# Options:    new       restart [reset_time | with_flow]
+new
+#
+#
+# Geometry
+# ========
+# Grid size?
+# (for 2D calculations: CellsY=1, for 1D calculations: CellsX=1, CellsY=1)
+# Cells in X-direction (CellsX):
+200
+# Cells in Y-direction (CellsY):
+1
+# Cells in Z-direction (CellsZ):
+200
+# Cell dimension (grid spacing in micrometers):
+# (optionally followed by rescaling factor for the output in the form of '3/4')
+1.5
+#
+#
+# Model
+# =====
+# Type of coupling?
+# Options:  phase  concentration [volume_change] temperature  temp_cyl_coord
+#    [stress_{u|ce|mc}{1|2|3}] [flow] [flow_coarse] [dislocation]
+phase
+#
+#
+# Boundary Conditions
+# ===================
+# Boundary conditions for phase field in each direction
+# Options: i (insulation) s (symmetric) p (periodic/wrap-around)
+#          g (gradient)   f (fixed)     w (wetting)
+# Sequence: W E B T
+#   (X: West-East, Y:South-North, Z:Bottom-Top)
+pppp
+
+# License check ...
+
+#
+#
+# Phases
+# ======
+#
+# Selection of Phases
+# -------------------
+#
+# Phases can be added by user defined names.
+# Options:
+# <user defined name> [<alias>]
+# 'end_of_phases' will finish the phase data input.
+#
+# Phase 0 (matrix phase)
+matrix
+# Phase 1
+phase_1
+# Phase 2
+end_of_phases
+#
+# MICRESS phase indexing
+# 0 -> MATRIX (user), alias = MATRIX
+# 1 -> PHASE_1 (user), alias = PHASE_1
+#
+# Input/Output Format for Orientations
+# ------------------------------------
+# How shall grain orientations be defined?
+# Options:  angle_2d  euler_zxz  angle_axis  miller_indices  quaternion
+angle_2d
+#
+#
+# Phase Properties
+# ----------------
+#
+# Phase 0 ( MATRIX )
+# ------------------
+#
+# Phase 1 ( PHASE_1 )
+# -------------------
+# Simulation of recrystallisation in phase  1 (PHASE_1) ?
+# Options:   recrystall     no_recrystall   [verbose|no_verbose]
+no_recrystall
+# Is phase  1 (PHASE_1) anisotropic ?
+# Optionen: isotropic  anisotropic  faceted_a  faceted_b   faceted[_c]  antifaceted
+anisotropic
+# Crystal symmetry of phase  1 (PHASE_1) ?
+# Options:   none  cubic  hexagonal  tetragonal  orthorhombic
+cubic
+# Should grains of phase  1 (PHASE_1) be reduced to categories?
+# Options:   categorize no_categorize
+no_categorize
+#
+#
+#
+# Phase Interactions
+# ==================
+# Start legacy mode by entering keyword 'phase_interaction' or 'no_phase_interaction'.
+# Start terse mode with 2 phase IDs and keyword 'phase_interaction' in one line.
+# Finish terse mode input with 'end_phase_interactions'.
+#
+# 0 (MATRIX)  /  1 (PHASE_1)
+# --------------------------
+# Simulation of interaction between 0 (MATRIX)  and  1 (PHASE_1) ?
+# Options: phase_interaction  no_phase_interaction
+#  [ standard | particle_pinning[_temperature] | solute_drag ]
+#   | [ no_junction_force | junction_force ]
+no_phase_interaction
+#
+# 1 (PHASE_1)  /  1 (PHASE_1)
+# ---------------------------
+# Simulation of interaction between 1 (PHASE_1)  and  1 (PHASE_1) ?
+# Options: phase_interaction  no_phase_interaction  identical phases nb
+#  [ standard | particle_pinning[_temperature] | solute_drag ]
+#   | [ no_junction_force | junction_force ]
+phase_interaction
+# Type of interfacial energy definition between 1 (PHASE_1) and  1 (PHASE_1) ?
+# Options:  constant  temp_dependent
+constant
+# Interfacial energy between 1 (PHASE_1) and  1 (PHASE_1) ? [J/cm**2]
+#     [max. value for num. interface stabilisation [J/cm**2]]
+5.00000E-05
+# Type of mobility definition between PHASE_1 and PHASE_1?
+# Options: constant temp_dependent dg_dependent [fixed_minimum]
+constant
+# Kinetic coefficient mu between PHASE_1 and PHASE_1 [cm**4/(Js)] ?
+5.00000E-03
+# Shall misorientation be considered?
+# Options:  misorientation  no_misorientation
+#           [low_angle_limit <degrees (default=15)>]  [special_orient <nb>]
+no_misorientation
+#
+# Initial Microstructure
+# ======================
+# Type of grain positioning?
+# Options:  deterministic   random [deterministic_infile]   from_file
+from_file
+# Filename of initial grain/phase structure [VTK_identifier  (default=korn)] ?
+micress_2Dmicrostructure.vtk FeatureIds
+# Treatment of data?
+# (n: none, 1: 1D, x: rotate Clockwise along x-axis, y, z,
+#  or p: 'phase to grains transformation')
+n
+# Number of grains at the beginning?
+# (Set to less than 1 for the number of grain to be read from the input data,
+#  with optionally a minimal size, in cells)
+-1
+# Reading (uncompressing) the VTK data file
+# VTK FeatureIds field read
+# VTK data file read
+# Number of grains found in input data: 211
+# Highest found grain ID: 211
+# Read grain properties from a file?
+# Options:    input      from_file    identical    blocks
+identical
+# Phase number?  [grain group]  (integer)
+1
+# Rotation angle? [Degree]
+0.000000000000  
+# 'Non-geometric' data for grains -1 to 211 identical
+#
+#
+# Process Conditions
+# ==================
+#
+# Temperature
+# -----------
+# Type of temperature trend?
+# Options:   linear     linear_from_file     profiles_from_file
+linear
+# Number of connecting points?    (integer)
+0                     
+# Initial temperature at the bottom?  (real)  [K]
+999.0000000000  
+# Temperature gradient in z-direction?  [K/cm]
+0.000000000000  
+# Cooling rate? [K/s]
+0.000000000000  
+#
+# Moving frame
+# ------------
+# Moving-frame system in z-direction?
+# Options:      moving_frame      no_moving_frame
+no_moving_frame
+
+# Nucleation
+# ==========
+# Enable further nucleation?
+# Options:  nucleation   nucleation_symm   no_nucleation  [verbose|no_verbose]
+no_nucleation
+
+# Output
+# ======
+#
+# Output times
+# ------------
+# Finish input of output times (in seconds) with 'end_of_simulation'
+# 'regularly-spaced' outputs can be set with 'linear_step'
+# or 'logarithmic_step' and then specifying the increment
+# and end value
+# ('automatic_outputs' optionally followed by the number
+#  of outputs can be used in conjuction with 'linear_from_file')
+#  'first'                  : additional output for first time-step
+#  'end_at_temperature' <temp>     : additional output and end of simulation
+#                                    at given temperature
+#  'end_at_fraction' <phase><frac> : additional output and end of simulation
+#                                    at given phase fraction
+linear_step 5.0 50.0
+linear_step 10.0 100.0
+linear_step 20.0 300.0
+end_of_simulation
+#
+# Output files
+# ------------
+# Selection of the outputs
+# [legacy|verbose|terse]
+# Restart data output?                                 ('rest')
+# Options:     out_restart      no_out_restart         [wallclock time, h.]
+no_out_restart
+# Grain number output?                                 ('korn')
+# Options:     out_grains       no_out_grains
+out_grains
+# Phase number output?                                 ('phas')
+# Options:     out_phases       no_out_phases          [no_interfaces]
+out_phases
+# Fraction output?                                     ('frac')
+# Options:     out_fraction     no_out_fraction        [phase number]
+no_out_fraction
+# Average fraction table?                              ('TabF')
+# Options:     tab_fractions    no_tab_fractions       [front_temp] [TabL_steps]
+no_tab_fractions
+# Interface output?                                    ('intf')
+# Options:     out_interface    no_out_interface       [sharp]
+out_interface
+# Driving-force output?                                ('driv')
+# Options:     out_driv_force   no_out_driv_force
+no_out_driv_force
+# Interface mobility output?                           ('mueS')
+# Options:     out_mobility     no_out_mobility
+out_mobility
+# Curvature output?                                    ('krum')
+# Options:     out_curvature    no_out_curvature
+out_curvature
+# Interface velocity output?                           ('vel')
+# Options:     out_velocity     no_out_velocity
+out_velocity
+# Should the grain-time file be written out?           ('TabK')
+# Options:     tab_grains       no_tab_grains          [extra|standard]
+tab_grains
+# Should the 'von Neumann Mullins' output be written out?       ('TabN')
+# Options:    tab_vnm    no_tab_vnm
+tab_vnm
+# Should the 'grain data output' be written out?       ('TabGD')
+# Options:    tab_grain_data    no_tab_grain_data
+tab_grain_data
+# Temperature output?                                  ('temp')
+# Options:     out_temp         no_out_temp
+no_out_temp
+# Recrystallisation energy output?                     ('rex')
+# Options:     out_recrystall   no_out_recrystall
+no_out_recrystall
+# Recrystallised fraction output?                      ('TabR')
+# Options:     tab_recrystall   no_tab_recrystall
+no_tab_recrystall
+# Dislocation density output?                          ('rhoD')
+# Options:     out_disloc       no_out_disloc
+no_out_disloc
+# Miller-Indices output?                               ('mill')
+# Options:     out_miller       no_out_miller
+no_out_miller
+# Orientation output?                                  ('orie')
+# Options:     out_orientation  no_out_orientation
+out_orientation
+# Should the orientation-time file be written?         ('TabO')
+# Options:   tab_orientation  no_tab_orientation    [rotmat]
+no_tab_orientation
+# Should monitoring outputs be written out?            ('TabL')
+# Options:     tab_log [simulation time, s] [wallclock time, min]  no_tab_log
+tab_log 0.1
+#
+#
+# Numerical parameters
+# ====================
+#
+# Phase field solver
+# ------------------
+# Time-step ?
+# Options:   fix ...[s]   automatic    automatic_limited
+automatic
+#Coefficient for phase-field criterion 1.00
+#Number of steps to adjust profiles of initially sharp interfaces [exclude_inactive]?
+100
+# Type of potential?
+# Options:  double_obstacle  multi_obstacle   [no_fd_correction | fd_correction]
+# Recommended: multi_obstacle fd_correction
+multi_obstacle fd_correction
+# Phase minimum?
+1.E-04
+# Interface thickness (in cells)?
+4.000000000000  
+# Coefficient for initial dimension of field iFace
+#  [minimum usage] [target usage]
+0.10
+# Coefficient for initial dimension of field nTupel
+#  [minimum usage] [target usage]
+0.01
+
+
+Beginning of initialisation
+===========================
+Routine init calls routine initDateien
+Routine init calls routine initParallel
+Routine init calls routine initRand
+Routine init calls routine initWorkspace
+Routine init calls routine initFixeFelder
+Routine init calls routine initPointer
+Routine init calls routine initIFaceSharp
+# Grain number   1 set
+# Grain number   2 set
+# Grain number   3 set
+# Grain number   4 set
+# Grain number   5 set
+# Grain number   6 set
+# Grain number   7 set
+# Grain number   8 set
+# Grain number   9 set
+# Grain number  10 set
+# Grain number  11 set
+# Grain number  12 set
+# Grain number  13 set
+# Grain number  14 set
+# Grain number  15 set
+# Grain number  16 set
+# Grain number  17 set
+# Grain number  18 set
+# Grain number  19 set
+# Grain number  20 set
+# Grain number  21 set
+# Grain number  22 set
+# Grain number  23 set
+# Grain number  24 set
+# Grain number  25 set
+# Grain number  26 set
+# Grain number  27 set
+# Grain number  28 set
+# Grain number  29 set
+# Grain number  30 set
+# Grain number  31 set
+# Grain number  32 set
+# Grain number  33 set
+# Grain number  34 set
+# Grain number  35 set
+# Grain number  36 set
+# Grain number  37 set
+# Grain number  38 set
+# Grain number  39 set
+# Grain number  40 set
+# Grain number  41 set
+# Grain number  42 set
+# Grain number  43 set
+# Grain number  44 set
+# Grain number  45 set
+# Grain number  46 set
+# Grain number  47 set
+# Grain number  48 set
+# Grain number  49 set
+# Grain number  50 set
+# Grain number  51 set
+# Grain number  52 set
+# Grain number  53 set
+# Grain number  54 set
+# Grain number  55 set
+# Grain number  56 set
+# Grain number  57 set
+# Grain number  58 set
+# Grain number  59 set
+# Grain number  60 set
+# Grain number  61 set
+# Grain number  62 set
+# Grain number  63 set
+# Grain number  64 set
+# Grain number  65 set
+# Grain number  66 set
+# Grain number  67 set
+# Grain number  68 set
+# Grain number  69 set
+# Grain number  70 set
+# Grain number  71 set
+# Grain number  72 set
+# Grain number  73 set
+# Grain number  74 set
+# Grain number  75 set
+# Grain number  76 set
+# Grain number  77 set
+# Grain number  78 set
+# Grain number  79 set
+# Grain number  80 set
+# Grain number  81 set
+# Grain number  82 set
+# Grain number  83 set
+# Grain number  84 set
+# Grain number  85 set
+# Grain number  86 set
+# Grain number  87 set
+# Grain number  88 set
+# Grain number  89 set
+# Grain number  90 set
+# Grain number  91 set
+# Grain number  92 set
+# Grain number  93 set
+# Grain number  94 set
+# Grain number  95 set
+# Grain number  96 set
+# Grain number  97 set
+# Grain number  98 set
+# Grain number  99 set
+# Grain number 100 set
+# Grain number 101 set
+# Grain number 102 set
+# Grain number 103 set
+# Grain number 104 set
+# Grain number 105 set
+# Grain number 106 set
+# Grain number 107 set
+# Grain number 108 set
+# Grain number 109 set
+# Grain number 110 set
+# Grain number 111 set
+# Grain number 112 set
+# Grain number 113 set
+# Grain number 114 set
+# Grain number 115 set
+# Grain number 116 set
+# Grain number 117 set
+# Grain number 118 set
+# Grain number 119 set
+# Grain number 120 set
+# Grain number 121 set
+# Grain number 122 set
+# Grain number 123 set
+# Grain number 124 set
+# Grain number 125 set
+# Grain number 126 set
+# Grain number 127 set
+# Grain number 128 set
+# Grain number 129 set
+# Grain number 130 set
+# Grain number 131 set
+# Grain number 132 set
+# Grain number 133 set
+# Grain number 134 set
+# Grain number 135 set
+# Grain number 136 set
+# Grain number 137 set
+# Grain number 138 set
+# Grain number 139 set
+# Grain number 140 set
+# Grain number 141 set
+# Grain number 142 set
+# Grain number 143 set
+# Grain number 144 set
+# Grain number 145 set
+# Grain number 146 set
+# Grain number 147 set
+# Grain number 148 set
+# Grain number 149 set
+# Grain number 150 set
+# Grain number 151 set
+# Grain number 152 set
+# Grain number 153 set
+# Grain number 154 set
+# Grain number 155 set
+# Grain number 156 set
+# Grain number 157 set
+# Grain number 158 set
+# Grain number 159 set
+# Grain number 160 set
+# Grain number 161 set
+# Grain number 162 set
+# Grain number 163 set
+# Grain number 164 set
+# Grain number 165 set
+# Grain number 166 set
+# Grain number 167 set
+# Grain number 168 set
+# Grain number 169 set
+# Grain number 170 set
+# Grain number 171 set
+# Grain number 172 set
+# Grain number 173 set
+# Grain number 174 set
+# Grain number 175 set
+# Grain number 176 set
+# Grain number 177 set
+# Grain number 178 set
+# Grain number 179 set
+# Grain number 180 set
+# Grain number 181 set
+# Grain number 182 set
+# Grain number 183 set
+# Grain number 184 set
+# Grain number 185 set
+# Grain number 186 set
+# Grain number 187 set
+# Grain number 188 set
+# Grain number 189 set
+# Grain number 190 set
+# Grain number 191 set
+# Grain number 192 set
+# Grain number 193 set
+# Grain number 194 set
+# Grain number 195 set
+# Grain number 196 set
+# Grain number 197 set
+# Grain number 198 set
+# Grain number 199 set
+# Grain number 200 set
+# Grain number 201 set
+# Grain number 202 set
+# Grain number 203 set
+# Grain number 204 set
+# Grain number 205 set
+# Grain number 206 set
+# Grain number 207 set
+# Grain number 208 set
+# Grain number 209 set
+# Grain number 210 set
+# Grain number 211 set
+Routine init calls routine initKorn
+Routine init calls routine initEinschwing
+Routine init calls routine initTwidth
+
+tWidth_max( PHASE_1: PHASE_1) = 2.1375000E-02 s
+Maximal value for tWidth = 2.1375000E-02 s for phase-field solver
+Initial value for tWidth = 2.13750E-02 s for automatic time stepping (phase-field solver)
+End of routine init
+
+
+Remaining license time: expires in 4 days
+
+==================================================
+
+Time t = 0.0000000 s
+CPU-time: 2 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 5.0000 s
+CPU-time: 6 s
+Current phase-field solver time step = 1.39E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 10.000 s
+CPU-time: 4 s
+Current phase-field solver time step = 1.79E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 15.000 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 20.000 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 25.000 s
+CPU-time: 2 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 30.000 s
+CPU-time: 2 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 35.000 s
+CPU-time: 2 s
+Current phase-field solver time step = 2.03E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 40.000 s
+CPU-time: 2 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 45.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 50.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 60.000 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 70.000 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 80.000 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 90.000 s
+CPU-time: 2 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 100.00 s
+CPU-time: 2 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 120.00 s
+CPU-time: 5 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 140.00 s
+CPU-time: 4 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 160.00 s
+CPU-time: 4 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 180.00 s
+CPU-time: 4 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 200.00 s
+CPU-time: 4 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 220.00 s
+CPU-time: 4 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 240.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 260.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 280.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 300.00 s
+CPU-time: 2 s
+Current phase-field solver time step = 2.14E-02 s
+Temperature at the bottom = 999.00 K
+Temperature gradient = 0.00000 K/cm
+
+==================================================
+
+Simulation run on machine: PC-02
+Remaining license time: expires in 4 days
+CPU time in seconds:  90
+Wall clock time in seconds:  100
+End
+

@@ -1,0 +1,14 @@
+@@ LOGFILE GENERATED ON UNIX / KTH       DATE 2013- 9-11
+@@ 
+@@ GES5 file generation AlCU.GES5                                                                                                                                                                                                                                                                 
+go dat
+sw
+user
+./COST2_setup_bugfix.TDB
+d-e al cu
+rej phases *
+rest phases liq alcu_theta fcc
+get-data
+go gibbs
+save TC2019a_AlCu
+exit

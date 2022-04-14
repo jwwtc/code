@@ -1,0 +1,26 @@
+#LOGFILE GENERATED ON UNIX / KTH       DATE 2014-10-21
+# Erzeugung GES-File                                                                                                                                                                                                                                              
+
+go da
+sw TCNI8
+def-el AL CO CR HF MO NI RE TA TI W
+rej
+PHASES
+*
+rest
+p
+LIQUID:L FCC_L12
+get
+a-d
+MOBNI4
+def-el AL CO CR HF MO NI RE TA TI W
+rej
+PHASES
+*
+rest
+p
+FCC_L12 LIQUID:L
+get
+go g
+save TC2019a_CMSX4
+exit

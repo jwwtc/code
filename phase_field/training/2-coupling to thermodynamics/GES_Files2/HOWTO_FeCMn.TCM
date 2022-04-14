@@ -1,0 +1,87 @@
+@@ to record a log file in interactive mode use: set_log_file <filename>
+@@ to stop recording, just exit tcs
+@@ 
+@@ lets see what we are doing:
+set-echo
+@@ 
+@@select thermodynamic database 
+@@ GOTO_MODULE DATABASE_RETRIEVAL                                                                                                                                                                                                                                                       
+goto dat
+@@ 
+@@for example TCFe6 iron and steel database
+@@ SWITCH_DATABASE TCFE6
+sw TCFe9
+@@
+@@which list the database elements
+@@ LIST_DATABASE elements
+l-d elements
+@@
+@@define elements in alloy systems
+@@ DEFINE_SYSTEM fe c mn
+d-sys fe c mn 
+@@
+@@list the system
+@@ LIST_SYSTEM CONSTITUENT
+l-sy CONSTITUENT
+@@ LIST_SYSTEM phases
+l-sy phases
+@@
+@@define phases of interest
+@@first reject all phases
+@@ REJECT phases *
+rej phases *
+@@ 
+@@then restore phases of interest 
+@@e.g. fcc liquid and bcc
+@@ RESTORE phases liq fcc bcc
+@@
+rest phases liq fcc bcc
+@@
+@@get defined system into Ges Workspace
+@@ GET_DATA
+get
+@@
+@@Optional: Append mobility database
+@@
+@@ Useful combinations of mobility and thermodynamic databases
+@@    mobFE1  SSOL
+@@    mobAL1  TTAL (COST)
+@@    mobAL2  TCAL
+@@    mobNI1  TTNI
+@@    mobNI2  TCNI
+@@
+@@ APPEND_DATABASE mob2
+app mobFe4
+@@
+@@define elements in alloy systems (same as above!!)
+@@ DEFINE_SYSTEM fe c mn
+d-sys fe c mn 
+@@
+@@list the system
+@@ LIST_SYSTEM CONSTITUENT
+l-sy CONSTITUENT
+@@ LIST_SYSTEM phases
+l-sy phases
+@@
+@@define phases of interest
+@@first reject all phases
+@@ REJECT phases *
+rej phases *
+@@ 
+@@then restore phases of interest for diffusion 
+@@(and modelled in database!)e.g. fcc and bcc:
+@@ RESTORE phases fcc bcc
+rest phases fcc bcc
+@@
+@@get defined/appended system into Ges Workspace
+@@ GET_DATA
+get
+@@ 
+@@goto Gibbs Workspace
+@@ GOTO_MODULE GIBBS_ENERGY_SYSTEM
+go gibbs
+@@
+@@save Gibbs Workspace to file (here: FeCMn.ges)
+@@  SAVE_GES_WORKSPACE
+save FeCMnTest
+@@

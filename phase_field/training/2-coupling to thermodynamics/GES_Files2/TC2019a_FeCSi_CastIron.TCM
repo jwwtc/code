@@ -1,0 +1,18 @@
+@@ GES5 file generation for CastIron Examples (FeCSi_CastIron)                                                                                                                                                                                                                    
+
+go dat
+sw
+TCFE9
+d-e fe c si
+rej phases *
+rest phases liq fcc_a1 graphite
+get-data
+app
+mobfe4
+d-e fe c si
+rej phases *
+rest phases liq fcc_a1
+get data
+go gibbs
+save TC2019a_FeCSi_CastIron
+exit
