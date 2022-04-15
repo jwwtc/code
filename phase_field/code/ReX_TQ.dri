@@ -9,7 +9,7 @@ English
 # Options: [ <directory path>/ ] <base name>
 # The default result directory is the driving file location.
 #
-Results_ReX/output_files/T033_ReX_deterministic_1100
+results/ReX_1100
 #
 # Overwrite files with the same name?
 # Options:    overwrite      write_protected     append
@@ -32,7 +32,7 @@ new
 # Cells in Y-direction (CellsY):
 1
 # Cells in Z-direction (CellsZ):
-500
+300
 # Cell dimension (grid spacing in micrometers):
 # (optionally followed by rescaling factor for the output in the form of '3/4')
 0.50000
@@ -58,23 +58,36 @@ iiii
 #
 # Database
 # ===================
-# Boundary conditions for phase field in each direction
-# Options: i (insulation) s (symmetric) p (periodic/wrap-around)
-#          g (gradient)   f (fixed)     w (wetting)
-# Sequence: W E B T
-#   (X: West-East, Y:South-North, Z:Bottom-Top)
-iiii
-#
+# Thermodynamic database
+database files/C70600_GES
+# Which global relinearization interval shall be used?
+# Options: manual   from_file   none
+manual
+# Relinearization interval [s]
+0.1000 
 #
 # Components
 # ===================
-# Boundary conditions for phase field in each direction
-# Options: i (insulation) s (symmetric) p (periodic/wrap-around)
-#          g (gradient)   f (fixed)     w (wetting)
-# Sequence: W E B T
-#   (X: West-East, Y:South-North, Z:Bottom-Top)
-iiii
+# Type of concentration?
+# Options: atom_percent   weight_percent
+weight_percent
 #
+# The database contains the following components:  (CHECK!)
+# 1: Cu
+# 2: Ni
+# 3: Fe
+# 4: Mn
+# A component can be specified by an element symbol, a user defined name or 
+# by the database index.
+# Component 0 (main component)
+cu
+# Component 1
+ni
+# Component 2
+fe
+# Component 3
+mn
+end_of_components
 #
 # Phases
 # ======
@@ -86,12 +99,10 @@ iiii
 # Options:
 # <user defined name> [<alias>]
 # 'end_of_phases' will finish the phase data input.
-#
 # Phase 0 (matrix phase)
-matrix
+fcc
 # Phase 1
-phase_1
-# Phase 2
+liq
 end_of_phases
 #
 # MICRESS phase indexing
@@ -110,27 +121,38 @@ angle_2d
 #
 # Phase 0 ( MATRIX )
 # ------------------
-#
-# Phase 1 ( PHASE_1 )
-# -------------------
-# Simulation of recrystallisation in phase  1 (PHASE_1) ?
+# Simulation of recrystallisation in phase  0) ?
 # Options:   recrystall     no_recrystall   [verbose|no_verbose]
 recrystall verbose
 # Which recrystallisation model?
 # Options:  energy  mean_disloc  local_disloc  [all_interfaces]
 energy
 # Energy threshold for recrystallisation  model? [J/cm**3 or MPa]
-2.1230000000000E-03
-# Is phase  1 (PHASE_1) anisotropic ?
+2.12300E-03
+# Is phase  0 anisotropic ?
+# Optionen: isotropic  anisotropic  faceted_a  faceted_b   faceted[_c]  antifaceted
+anisotropic
+# Crystal symmetry  ?
+# Options:   none  cubic  hexagonal  tetragonal  orthorhombic
+cubic
+# Should grains of phase  0 be reduced to categories?
+# Options:   categorize no_categorize
+no_categorize
+#
+# Phase 1 ( PHASE_1 )
+# -------------------
+# Simulation of recrystallisation in phase  1 (PHASE_1) ?
+# Options:   recrystall     no_recrystall   [verbose|no_verbose]
+no_recrystall
+# Is phase  1 anisotropic ?
 # Optionen: isotropic  anisotropic  faceted_a  faceted_b   faceted[_c]  antifaceted
 anisotropic
 # Crystal symmetry of phase  1 (PHASE_1) ?
 # Options:   none  cubic  hexagonal  tetragonal  orthorhombic
-cubic
+#cubic
 # Should grains of phase  1 (PHASE_1) be reduced to categories?
 # Options:   categorize no_categorize
 no_categorize
-#
 #
 #
 # Phase Interactions
@@ -153,34 +175,8 @@ no_phase_interaction
 # Options: phase_interaction  no_phase_interaction  identical phases nb
 #  [ standard | particle_pinning[_temperature] | solute_drag ]
 #   | [ no_junction_force | junction_force ]
-phase_interaction
-# Type of interfacial energy definition between 1 (PHASE_1) and  1 (PHASE_1) ?
-# Options:  constant  temp_dependent
-constant
-# Interfacial energy between 1 (PHASE_1) and  1 (PHASE_1) ? [J/cm**2]
-#     [max. value for num. interface stabilisation [J/cm**2]]
-5.00000E-05
-# Type of mobility definition between PHASE_1 and PHASE_1?
-# Options: constant temp_dependent dg_dependent [fixed_minimum]
-constant
-# Kinetic coefficient mu between PHASE_1 and PHASE_1 [cm**4/(Js)] ?
-5.00000E-04
-# Shall misorientation be considered?
-# Options:  misorientation  no_misorientation
-#           [low_angle_limit <degrees (default=15)>]  [special_orient <nb>]
-misorientation
-# Input of the misorientation coefficients:
-# Modification of interfacial energy for low angle boundaries
-# Options:  factor   read-shockley
-factor
-# Prefactor of interfacial energy for low angle boundaries?
-0.1000000000000
-# Modification of the mobility for low angle boundaries
-# Options: {factor | humphreys [<minimum> <parameter B> <parameter N>]}
-#                    (default: minimum=0.05 B=5.0 N=4.0)
-factor
-# Prefactor of interfacial mobility for low angle boundaries?
-0.1000000000000
+no_phase_interaction
+#
 #
 # Initial Microstructure
 # ======================
@@ -676,10 +672,8 @@ voronoi
 # Rotation angle? [Degree]
 0.7560000000000
 #
-#
 # Process Conditions
 # ==================
-#
 # Temperature
 # -----------
 # Type of temperature trend?
@@ -687,7 +681,7 @@ voronoi
 linear
 # Number of connecting points?    (integer)
 0
-# Initial temperature at the bottom?  (real)  [K]
+# Initial temperature at the bottom? (real) [K]
 1000.000000000
 # Temperature gradient in z-direction?  [K/cm]
 0.000000000000
@@ -700,7 +694,7 @@ linear
 # Options:      moving_frame      no_moving_frame
 no_moving_frame
 #
-#
+# Nucleation
 # ==========
 # Enable further nucleation?
 # Options:  nucleation   nucleation_symm   no_nucleation  [verbose|no_verbose]
@@ -748,9 +742,9 @@ random
 0.000000000000
 # Nucleation range
 # min. nucleation temperature for seed type 1 [K]
-750.0000000000
+600.0000000000
 # max. nucleation temperature for seed type 1 [K]
-1005.000000000
+1300
 # Time between checks for nucleation? [s]
 # Options:  constant   from_file
 constant
@@ -809,7 +803,7 @@ no_out_restart
 out_grains
 # Phase number output?                                 ('phas')
 # Options:     out_phases       no_out_phases          [no_interfaces]
-no_out_phases
+out_phases
 # Fraction output?                                     ('frac')
 # Options:     out_fraction     no_out_fraction        [phase number]
 out_fraction
