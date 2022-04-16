@@ -64,7 +64,7 @@ database files/C70600_GES
 # Options: manual   from_file   none
 manual
 # Relinearization interval [s]
-0.1000 
+2
 #
 # Components
 # ===================
@@ -94,15 +94,15 @@ end_of_components
 #
 # Selection of Phases
 # -------------------
-#
+# The database contains 2 phases:
+# 1: FCC_A1
+# 2: LIQUID
 # Phases can be added by user defined names.
 # Options:
 # <user defined name> [<alias>]
 # 'end_of_phases' will finish the phase data input.
 # Phase 0 (matrix phase)
-fcc
-# Phase 1
-liq
+fcc_a1
 end_of_phases
 #
 # MICRESS phase indexing
@@ -131,7 +131,7 @@ energy
 2.12300E-03
 # Is phase  0 anisotropic ?
 # Optionen: isotropic  anisotropic  faceted_a  faceted_b   faceted[_c]  antifaceted
-anisotropic
+anisotropic 
 # Crystal symmetry  ?
 # Options:   none  cubic  hexagonal  tetragonal  orthorhombic
 cubic
@@ -143,16 +143,16 @@ no_categorize
 # -------------------
 # Simulation of recrystallisation in phase  1 (PHASE_1) ?
 # Options:   recrystall     no_recrystall   [verbose|no_verbose]
-no_recrystall
+#no_recrystall
 # Is phase  1 anisotropic ?
 # Optionen: isotropic  anisotropic  faceted_a  faceted_b   faceted[_c]  antifaceted
-anisotropic
+#anisotropic
 # Crystal symmetry of phase  1 (PHASE_1) ?
 # Options:   none  cubic  hexagonal  tetragonal  orthorhombic
 #cubic
 # Should grains of phase  1 (PHASE_1) be reduced to categories?
 # Options:   categorize no_categorize
-no_categorize
+#no_categorize
 #
 #
 # Phase Interactions
@@ -175,7 +175,7 @@ no_phase_interaction
 # Options: phase_interaction  no_phase_interaction  identical phases nb
 #  [ standard | particle_pinning[_temperature] | solute_drag ]
 #   | [ no_junction_force | junction_force ]
-no_phase_interaction
+#no_phase_interaction
 #
 #
 # Initial Microstructure
@@ -194,21 +194,21 @@ deterministic
 # Options:  round  rectangular  elliptic  round_inverse
 elliptic
 # Center x,z coordinates [micrometers], grain number 1?
-267.0000000000
-108.4000000000
+267.00
+108.40
 # Length of axis along x-axis [micrometers]
-309.6000000000
+309.60
 # Length of axis along z-axis [micrometers]
-101.0000000000
+101.00
 # Should the Voronoi criterion be applied?
 # Options:    voronoi     no_voronoi
 voronoi
 # Phase number?  [grain group]  (integer)
 1
 # Recrystallisation energy?
-1.265000000000
+1.265
 # Rotation angle? [Degree]
-0.9800000000000
+0.98
 #
 # Grain number 2
 # --------------
@@ -719,7 +719,7 @@ interface
 1
 # Maximum number of new nuclei of seed type 1?
 # (set negative for unlimited number)
-29
+30
 # Grain radius [micrometers]?
 0.700000
 # Choice of growth mode:
@@ -737,20 +737,20 @@ random
 20.000
 # Input of minimal and maximal energy of the nuclei:
 # Minimum of recrystallisation energy?  [J/cm**3 or MPa]
-0.000000000000
+0.000
 # Maximum of recrystallisation energy?  [J/cm**3 or MPa]
-0.000000000000
+0.000
 # Nucleation range
 # min. nucleation temperature for seed type 1 [K]
-600.0000000000
+600.0
 # max. nucleation temperature for seed type 1 [K]
-1300
+1500
 # Time between checks for nucleation? [s]
 # Options:  constant   from_file
 constant
 # Time interval [s]
 0.25000
-# Shall random noise be applied?
+# Shall random noise be applied?  [!!!]
 # Options:     nucleation_noise   no_nucleation_noise
 nucleation_noise
 # Factor for random noise?
