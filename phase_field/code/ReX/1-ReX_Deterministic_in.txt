@@ -56,7 +56,7 @@ new
 # Cells in Y-direction (CellsY):
 1
 # Cells in Z-direction (CellsZ):
-500
+300
 # Cell dimension (grid spacing in micrometers):
 # (optionally followed by rescaling factor for the output in the form of '3/4')
 0.50000

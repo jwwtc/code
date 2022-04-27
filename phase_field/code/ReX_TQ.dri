@@ -1,5 +1,5 @@
 #
-#!ReXDeterministic
+#			ReXDeterministic
 #
 # Language
 # ========
@@ -106,8 +106,8 @@ fcc_a1
 end_of_phases
 #
 # MICRESS phase indexing
-# 0 -> MATRIX (user), alias = MATRIX
-# 1 -> PHASE_1 (user), alias = PHASE_1
+# FCC_A1 -> MATRIX (user), alias = MATRIX
+# none -> PHASE_1 (user), alias = PHASE_1
 #
 # Input/Output Format for Orientations
 # ------------------------------------
@@ -119,7 +119,7 @@ angle_2d
 # Phase Properties
 # ----------------
 #
-# Phase 0 ( MATRIX )
+# Phase 0 (MATRIX)
 # ------------------
 # Simulation of recrystallisation in phase  0) ?
 # Options:   recrystall     no_recrystall   [verbose|no_verbose]
@@ -701,7 +701,7 @@ no_moving_frame
 nucleation
 # Additional output for nucleation?
 # Options:     out_nucleation     no_out_nucleation
-no_out_nucleation
+out_nucleation
 #
 # Number of types of seeds?
 1
@@ -732,7 +732,7 @@ stabilisation
 random
 # Shield effect:
 # Shield time [s] [shield phase or group number] ?
-1000.0
+10.0
 # Shield distance [micrometers]  [ nucleation distance [micrometers] ] ?
 20.000
 # Input of minimal and maximal energy of the nuclei:
@@ -787,8 +787,8 @@ kill_metastable
 #                                    at given temperature
 #  'end_at_fraction' <phase><frac> : additional output and end of simulation
 #                                    at given phase fraction
-linear_step 5.0 20
-linear_step 10 270.
+linear_step 5.0 20.0
+linear_step 10 270.0
 end_of_simulation
 #
 # Output files

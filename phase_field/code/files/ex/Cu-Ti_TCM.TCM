@@ -10,7 +10,7 @@ goto dat
 @@ 
 @@for example TCFe6 iron and steel database
 @@ SWITCH_DATABASE TCFE6
-sw TCCu3
+sw cudemo
 @@
 @@which list the database elements
 @@ LIST_DATABASE elements
@@ -18,7 +18,7 @@ l-d elements
 @@
 @@define elements in alloy systems
 @@ DEFINE_SYSTEM fe c mn (or d-e)
-d-sys cu ni fe mn
+d-sys cu ti
 @@
 @@list the system
 @@ LIST_SYSTEM CONSTITUENT
@@ -32,7 +32,7 @@ l-sy phases
 rej phases *
 @@ 
 @@then restore phases of interest 
-@@e.g. fcc liq and bcc 
+@@e.g. fcc liquid and bcc 
 @@ RESTORE phases liq fcc
 @@ (or liquid and fcc_a1)
 rest phases liquid fcc_a1
@@ -47,11 +47,11 @@ get-data
 @@    mobFE1  SSOL
 @@    mobAL1  TTAL (COST)
 @@ APPEND_DATABASE mob2
-app mobcu3
+app mcudemo
 @@
 @@ define elements in alloy systems (same!)
 @@ DEFINE_SYSTEM
-d-sys cu ni fe mn
+d-sys cu ti
 @@
 @@list the system
 @@ LIST_SYSTEM CONSTITUENT
@@ -66,7 +66,7 @@ rej phases *
 @@ 
 @@then restore phases of interest for diffusion
 @@(and modelled in database!)e.g. fcc (not liq):
-rest phases FCC_A1
+rest phases fcc_a1
 @@
 @@get defined/appended system into Ges Workspace
 @@ GET_DATA
