@@ -1,0 +1,1949 @@
+
+# MICRESS binary
+# ==============
+# version number: 7.100 (Windows)
+# compiled: 10/30/2021
+# compiler version: Intel 1910 20201010
+# executable architecture: x64
+# Thermo-Calc coupling: enabled
+#  Version:    22
+#  Link Date:  Tue Jun 16 08:49:19 2020
+#  OS Name:    WinNT
+#  Build Date: 22336
+#  Compiler:   Intel(R) Visual Fortran Compiler Version 16.0.4.246 Build 20160811
+# OpenMP: disabled
+# ('double precision' binary)
+#
+#
+# Language
+# ========
+# Please select a language: 'English', 'Deutsch' or 'Francais'
+English
+#
+#
+# Output Location
+# ===============
+# Options: [ <directory path>/ ] <base name>
+# The default result directory is the driving file location.
+results/trials/b/trial_b
+# Overwrite files with the same name?
+# Options:    overwrite      write_protected     append
+#             [zipped|not_zipped|vtk]
+#             [unix|windows|non_native]
+overwrite
+
+# The data compression is done with 'zlib' (cf. http://www.zlib.net/).
+# The routine for appending is loosely derived from the 'gzappend.c' example.
+
+#
+#
+# Restart
+# =======
+# Restart using old results?
+# Options:    new       restart [reset_time | with_flow]
+new
+#
+#
+# Geometry
+# ========
+# Grid size?
+# (for 2D calculations: CellsY=1, for 1D calculations: CellsX=1, CellsY=1)
+# Cells in X-direction (CellsX):
+500
+# Cells in Y-direction (CellsY):
+1
+# Cells in Z-direction (CellsZ):
+300
+# Cell dimension (grid spacing in micrometers):
+# (optionally followed by rescaling factor for the output in the form of '3/4')
+0.5
+#
+#
+# Model
+# =====
+# Type of coupling?
+# Options:  phase  concentration [volume_change] temperature  temp_cyl_coord
+#    [stress_{u|ce|mc}{1|2|3}] [flow] [flow_coarse] [dislocation]
+concentration
+# Thermal Conditions
+# Options: no_lat_heat no_lat_heat_dsc lat_heat 1d_temp [kin. Coeff.]
+# kin. Coeff: Kinetics of latent heat release (default is 0.01)
+no_lat_heat
+#
+#
+# Boundary Conditions
+# ===================
+# Boundary conditions for phase field in each direction
+# Options: i (insulation) s (symmetric) p (periodic/wrap-around)
+#          g (gradient)   f (fixed)     w (wetting)
+# Sequence: W E B T
+#   (X: West-East, Y:South-North, Z:Bottom-Top)
+iiii
+#
+# Boundary conditions for concentration field in each direction
+# Options: i (insulation) s (symmetric) p (periodic/wrap-around) g (gradient) f (fixed)
+# Sequence: W E B T
+iiii
+#
+#
+# Database
+# ========
+# Is a thermodynamic database to be used?
+# Options: database [silent|verbose] [<GES5 file name>]
+#          no_database
+database files/c70600
+
+# License check ...
+
+# Which global relinearisation interval shall be used?
+# Options:  manual   from_file   none
+manual
+# Relinearisation interval (s) [Tmin (K), Tmax (K)]
+2.000000000000  
+# Reading GES5 workspace ...
+#
+#
+# Components
+# ==========
+# Type of concentration?
+# Options:     atom_percent    (at%)
+#              weight_percent  (wt%)
+weight_percent
+#
+# The database contains the following components:
+# 1: CU
+# 2: FE
+# 3: MN
+# 4: NI
+#
+# A component can be specified by an element symbol,
+# user defined name or database index.
+# 'end_of_components' will finish the components input.
+# Component 0 (main component) ?
+cu
+# CU identified
+# Component 1 ?
+fe
+# FE identified
+# Component 2 ?
+mn
+# MN identified
+# Component 3 ?
+ni
+# NI identified
+# Component 4 ?
+end_of_components
+#
+# MICRESS component indexing
+# 0 -> CU (database)
+# 1 -> FE (database)
+# 2 -> MN (database)
+# 3 -> NI (database)
+#
+#
+# Phases
+# ======
+#
+# Selection of Phases
+# -------------------
+# The database contains 2 phases:
+# 1: FCC_A1
+# 2: LIQUID
+#
+# Database phases can be specified by their names or indices.
+# Other phases can be added by user defined names.
+# Options:
+#   {<database name> | <database index> | <user defined name>} [<alias>]
+# 'end_of_phases' will finish the phase data input.
+#
+# Phase 0 (matrix phase)
+liquid
+# Phase 1
+fcc_a1 fcc
+# Phase 2
+end_of_phases
+#
+# MICRESS phase indexing
+# 0 -> LIQUID (database), alias = LIQUID
+# 1 -> FCC_A1 (database), alias = fcc
+#
+# Input/Output Format for Orientations
+# ------------------------------------
+# How shall grain orientations be defined?
+# Options:  angle_2d  euler_zxz  angle_axis  miller_indices  quaternion
+angle_2d
+#
+#
+# Phase Properties
+# ----------------
+#
+# Phase 0 ( LIQUID )
+# ------------------
+# Type of molar volume input ?
+# Options: constant database [temp_extrapol] [conc_extrapol]
+database
+#
+# Phase 1 ( fcc )
+# ---------------
+# Simulation of recrystallisation in phase  1 (fcc) ?
+# Options:   recrystall     no_recrystall   [verbose|no_verbose]
+recrystall verbose
+# Which recrystallisation model?
+# Options:  energy  mean_disloc  local_disloc  [all_interfaces]
+energy
+# Energy threshold for recrystallisation  model? [J/cm**3 or MPa]
+2.1230000000000E-03 
+# Is phase  1 (fcc) anisotropic ?
+# Optionen: isotropic  anisotropic  faceted_a  faceted_b   faceted[_c]  antifaceted
+anisotropic
+# Crystal symmetry of phase  1 (fcc) ?
+# Options:   none  cubic  hexagonal  tetragonal  orthorhombic
+cubic
+# Should grains of phase  1 (fcc) be reduced to categories?
+# Options:   categorize no_categorize
+no_categorize
+# Type of molar volume input ?
+# Options: constant database [temp_extrapol] [conc_extrapol]
+database
+#
+#
+# general TQ update-interval for molar volumes [s] ?
+10.000
+#
+#
+# Phase Interactions
+# ==================
+# Start legacy mode by entering keyword 'phase_interaction' or 'no_phase_interaction'.
+# Start terse mode with 2 phase IDs and keyword 'phase_interaction' in one line.
+# Finish terse mode input with 'end_phase_interactions'.
+#
+# 0 (LIQUID)  /  1 (fcc)
+# ----------------------
+# Simulation of interaction between 0 (LIQUID)  and  1 (fcc) ?
+# Options: phase_interaction  no_phase_interaction
+#  [ standard | particle_pinning[_temperature] | solute_drag ]
+#   | [ redistribution_control ] or [ no_junction_force | junction_force ]
+no_phase_interaction
+#
+# 1 (fcc)  /  1 (fcc)
+# -------------------
+# Simulation of interaction between 1 (fcc)  and  1 (fcc) ?
+# Options: phase_interaction  no_phase_interaction  identical phases nb
+#  [ standard | particle_pinning[_temperature] | solute_drag ]
+#   | [ redistribution_control ] or [ no_junction_force | junction_force ]
+phase_interaction
+# Type of interfacial energy definition between 1 (fcc) and  1 (fcc) ?
+# Options:  constant  temp_dependent
+constant
+# Interfacial energy between 1 (fcc) and  1 (fcc) ? [J/cm**2]
+#     [max. value for num. interface stabilisation [J/cm**2]]
+5.00000E-05
+# Type of mobility definition between fcc and fcc?
+# Options: constant temp_dependent dg_dependent [fixed_minimum]
+constant
+# Kinetic coefficient mu between fcc and fcc [cm**4/(Js)] ?
+5.00000E-04
+# Shall misorientation be considered?
+# Options:  misorientation  no_misorientation
+#           [low_angle_limit <degrees (default=15)>]  [special_orient <nb>]
+misorientation
+# Input of the misorientation coefficients:
+# Modification of interfacial energy for low angle boundaries
+# Options:  factor   read-shockley
+factor
+# Prefactor of interfacial energy for low angle boundaries?
+0.1000000000000 
+# Modification of the mobility for low angle boundaries
+# Options: {factor | humphreys [<minimum> <parameter B> <parameter N>]}
+#                    (default: minimum=0.05 B=5.0 N=4.0)
+factor
+# Prefactor of interfacial mobility for low angle boundaries?
+0.1000000000000 
+#
+#
+# Diffusion
+# =========
+# ["Terse Mode": Each line starts with component number and phase number]
+# Options:   diagonal|diagonal_dilute [x]   multi|multi_plus [y(1..k)]
+#  x: one of the characters "n", "d", "g", "l", "z", "i", "I", or "f"
+#  y: chain of "n", "d", "g", "l", "z", or "f" (for each component)
+#  default: "g"  resp. "gggg..."
+#  Rem: "n":no diffusion, "d": input, "f": T-dep. from file
+#       "i":infinite, "I": infinite in each grain
+#       from database: "g": global, "l": local, "z" global z-segmented
+# Extra line option: [+b] for grain-boundary diffusion
+# Extra line option (prefactor on time step): cushion <0-1>
+# Extra line option: infinite_limit_[d|t] (in cm**2/s|K)
+# Extra line option: maxfactor_local [real > 1.0] (default: 10.0)
+# Extra line option: factor [real > 0.]
+# Extra line option: dilute [real >= 0.] (default:1.0)
+# Finish input of diffusion data with 'end_diffusion_data'.
+#
+# How shall diffusion of component FE in phase LIQUID be solved?
+diagonal g
+# How shall diffusion of component FE in phase fcc be solved?
+diagonal g
+# How shall diffusion of component MN in phase LIQUID be solved?
+diagonal g
+# How shall diffusion of component MN in phase fcc be solved?
+diagonal g
+# How shall diffusion of component NI in phase LIQUID be solved?
+diagonal g
+# How shall diffusion of component NI in phase fcc be solved?
+diagonal g
+#
+# How shall the interval for updating diffusion coefficients
+# data be set?
+# Options:   constant   from_file
+constant
+# Interval for updating diffusion coefficients data? [s]
+5.0000
+#
+#
+# Initial Microstructure
+# ======================
+# Type of grain positioning?
+# Options:  deterministic   random [deterministic_infile]   from_file
+deterministic
+# NB: the origin of coordinate system is the bottom left-hand corner,
+#     all points within the simulation domain having positive coordinates.
+# Number of grains at the beginning?
+22                    
+#
+# Grain number 1
+# --------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 1?
+267.0000000000  
+108.4000000000  
+# Length of axis along x-axis [micrometers]
+309.6000000000  
+# Length of axis along z-axis [micrometers]
+101.0000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+1.265000000000  
+# Rotation angle? [Degree]
+0.9800000000000 
+#
+# Grain number 2
+# --------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 2?
+149.9000000000  
+123.0600000000  
+# Length of axis along x-axis [micrometers]
+303.4200000000  
+# Length of axis along z-axis [micrometers]
+104.8800000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+4.960000000000  
+# Rotation angle? [Degree]
+0.9900000000000 
+#
+# Grain number 3
+# --------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 3?
+175.8000000000  
+26.20000000000  
+# Length of axis along x-axis [micrometers]
+300.6000000000  
+# Length of axis along z-axis [micrometers]
+102.2000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+1.290000000000  
+# Rotation angle? [Degree]
+0.9800000000000 
+#
+# Grain number 4
+# --------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 4?
+-2.240000000000 
+22.70000000000  
+# Length of axis along x-axis [micrometers]
+300.5000000000  
+# Length of axis along z-axis [micrometers]
+101.5000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+1.240000000000  
+# Rotation angle? [Degree]
+0.9800000000000 
+#
+# Grain number 5
+# --------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 5?
+260.0000000000  
+149.7000000000  
+# Length of axis along x-axis [micrometers]
+300.9000000000  
+# Length of axis along z-axis [micrometers]
+109.0000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+1.580500000000  
+# Rotation angle? [Degree]
+0.9241000000000 
+#
+# Grain number 6
+# --------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 6?
+10.90000000000  
+82.00000000000  
+# Length of axis along x-axis [micrometers]
+306.3000000000  
+# Length of axis along z-axis [micrometers]
+102.2000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+1.650000000000  
+# Rotation angle? [Degree]
+0.9400000000000 
+#
+# Grain number 7
+# --------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 7?
+123.1000000000  
+56.85000000000  
+# Length of axis along x-axis [micrometers]
+306.6200000000  
+# Length of axis along z-axis [micrometers]
+105.4900000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+1.600000000000  
+# Rotation angle? [Degree]
+0.9000000000000 
+#
+# Grain number 8
+# --------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 8?
+148.9500000000  
+49.70000000000  
+# Length of axis along x-axis [micrometers]
+303.6500000000  
+# Length of axis along z-axis [micrometers]
+109.9000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+1.603900000000  
+# Rotation angle? [Degree]
+0.9526000000000 
+#
+# Grain number 9
+# --------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 9?
+266.3200000000  
+11.92700000000  
+# Length of axis along x-axis [micrometers]
+307.0000000000  
+# Length of axis along z-axis [micrometers]
+104.0000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+1.700000000000  
+# Rotation angle? [Degree]
+0.9400000000000 
+#
+# Grain number 10
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 10?
+122.9000000000  
+157.2000000000  
+# Length of axis along x-axis [micrometers]
+305.6000000000  
+# Length of axis along z-axis [micrometers]
+106.4000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+1.600000000000  
+# Rotation angle? [Degree]
+0.9400000000000 
+#
+# Grain number 11
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 11?
+9.700000000000  
+152.5000000000  
+# Length of axis along x-axis [micrometers]
+306.5400000000  
+# Length of axis along z-axis [micrometers]
+105.0000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+2.600000000000  
+# Rotation angle? [Degree]
+0.9000000000000 
+#
+# Grain number 12
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 12?
+189.6000000000  
+92.18000000000  
+# Length of axis along x-axis [micrometers]
+305.7000000000  
+# Length of axis along z-axis [micrometers]
+100.0000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+2.600000000000  
+# Rotation angle? [Degree]
+0.9000000000000 
+#
+# Grain number 13
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 13?
+170.4000000000  
+71.85000000000  
+# Length of axis along x-axis [micrometers]
+301.2500000000  
+# Length of axis along z-axis [micrometers]
+101.2000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+2.700000000000  
+# Rotation angle? [Degree]
+0.9000000000000 
+#
+# Grain number 14
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 14?
+29.20000000000  
+45.80000000000  
+# Length of axis along x-axis [micrometers]
+309.7000000000  
+# Length of axis along z-axis [micrometers]
+106.2000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+2.600000000000  
+# Rotation angle? [Degree]
+0.8600000000000 
+#
+# Grain number 15
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 15?
+230.7000000000  
+125.4000000000  
+# Length of axis along x-axis [micrometers]
+301.3000000000  
+# Length of axis along z-axis [micrometers]
+103.2000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+5.053100000000  
+# Rotation angle? [Degree]
+0.8572000000000 
+#
+# Grain number 16
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 16?
+18.40000000000  
+114.0000000000  
+# Length of axis along x-axis [micrometers]
+305.7000000000  
+# Length of axis along z-axis [micrometers]
+102.5000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+2.590000000000  
+# Rotation angle? [Degree]
+0.8600000000000 
+#
+# Grain number 17
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 17?
+56.10000000000  
+111.5000000000  
+# Length of axis along x-axis [micrometers]
+303.3000000000  
+# Length of axis along z-axis [micrometers]
+108.5500000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+5.000000000000  
+# Rotation angle? [Degree]
+0.8000000000000 
+#
+# Grain number 18
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 18?
+61.50000000000  
+45.52000000000  
+# Length of axis along x-axis [micrometers]
+301.6000000000  
+# Length of axis along z-axis [micrometers]
+108.2000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+5.015000000000  
+# Rotation angle? [Degree]
+0.7759000000000 
+#
+# Grain number 19
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 19?
+97.30000000000  
+124.4000000000  
+# Length of axis along x-axis [micrometers]
+306.7000000000  
+# Length of axis along z-axis [micrometers]
+102.0000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+1.400000000000  
+# Rotation angle? [Degree]
+0.7580000000000 
+#
+# Grain number 20
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 20?
+197.7000000000  
+120.2100000000  
+# Length of axis along x-axis [micrometers]
+304.7300000000  
+# Length of axis along z-axis [micrometers]
+102.4300000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+2.500000000000  
+# Rotation angle? [Degree]
+0.7500000000000 
+#
+# Grain number 21
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 21?
+245.3000000000  
+-0.8600000000000
+# Length of axis along x-axis [micrometers]
+303.2000000000  
+# Length of axis along z-axis [micrometers]
+107.0000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+4.900000000000  
+# Rotation angle? [Degree]
+0.7650000000000 
+#
+# Grain number 22
+# ---------------
+# Geometry?
+# Options:  round  rectangular  elliptic  round_inverse
+elliptic
+# Center x,z coordinates [micrometers], grain number 22?
+33.35000000000  
+142.0000000000  
+# Length of axis along x-axis [micrometers]
+307.3000000000  
+# Length of axis along z-axis [micrometers]
+101.3000000000  
+# Should the Voronoi criterion be applied?
+# Options:    voronoi     no_voronoi
+voronoi
+# Phase number?  [grain group]  (integer)
+1
+# Recrystallisation energy?
+5.000000000000  
+# Rotation angle? [Degree]
+0.7560000000000 
+#
+# Structure from restart file
+# ---------------------------
+# Shall grain(s) be replaced by initial structure(s) from a restart file(s) ?
+# Options: restart_file | no_restart_file
+no_restart_file
+#
+# Initial Concentrations
+# ======================
+# How shall initial concentrations be set?
+# Options:  input  equilibrium  from_file     [phase number]
+input
+# Initial concentration of component 1 (FE) in phase 0 (LIQUID) ? [wt%]
+1.500000000
+# Initial concentration of component 2 (MN) in phase 0 (LIQUID) ? [wt%]
+1.000000000
+# Initial concentration of component 3 (NI) in phase 0 (LIQUID) ? [wt%]
+10.00000000
+# Initial concentration of component 1 (FE) in phase 1 (fcc) ? [wt%]
+1.500000000
+# Initial concentration of component 2 (MN) in phase 1 (fcc) ? [wt%]
+1.000000000
+# Initial concentration of component 3 (NI) in phase 1 (fcc) ? [wt%]
+10.00000000
+# Temperature at which the initial equilibrium
+# will be calculated? [K]
+1000.000000000  
+#
+#
+# Process Conditions
+# ==================
+#
+# Temperature
+# -----------
+# Type of temperature trend?
+# Options:   linear     linear_from_file     profiles_from_file
+linear
+# Number of connecting points?    (integer)
+0                     
+# Initial temperature at the bottom?  (real)  [K]
+890.0000000000  
+# Temperature gradient in z-direction?  [K/cm]
+0.000000000000  
+# Cooling rate? [K/s]
+-1.000000000000 
+#
+# 1D far field for solute diffusion
+# ---------------------------------
+# Enable one dimensional far field approximation for solute diffusion?
+# Options:     1d_far_field   1d_far_field_EW  no_1d_far_field
+no_1d_far_field
+#
+# Moving frame
+# ------------
+# Moving-frame system in z-direction?
+# Options:      moving_frame      no_moving_frame
+no_moving_frame
+
+# Nucleation
+# ==========
+# Enable further nucleation?
+# Options:  nucleation   nucleation_symm   no_nucleation  [verbose|no_verbose]
+nucleation
+# Additional output for nucleation?
+# Options:     out_nucleation     no_out_nucleation
+out_nucleation
+#
+# Number of types of seeds?
+1                     
+#
+# Input for seed type 1:
+# ----------------------
+# Type of 'position' of the seeds?
+# Options:   bulk  region  interface  triple  quadruple  front  [restrictive]
+interface
+# Phase of new grains (integer) [unresolved|add_to_grain|split_from_grain]?
+1
+# Reference phase (integer) [min. and max. fraction (real)]?
+1
+# Substrate phase [2nd substrate phase] [substrate_curvature]?
+1
+# Maximum number of new nuclei of seed type 1?
+# (set negative for unlimited number)
+20                    
+# Grain radius [micrometers]?
+0.700000
+# Choice of growth mode:
+# Options:   stabilisation analytical_curvature
+stabilisation
+# critical recrystallisation energy [J/cm**3 or MPa]?
+4.0000
+# Determination of nuclei orientations?
+# Options:   random    randomZ   fix     range    parent_relation
+random
+# Shield effect:
+# Shield time [s] [shield phase or group number] ?
+5.0
+# Shield distance [micrometers]  [ nucleation distance [micrometers] ] ?
+10.000
+# Input of minimal and maximal energy of the nuclei:
+# Minimum of recrystallisation energy?  [J/cm**3 or MPa]
+2.1230000000000E-06 
+# Maximum of recrystallisation energy?  [J/cm**3 or MPa]
+2.1230000000000E-05 
+# Nucleation range
+# min. nucleation temperature for seed type 1 [K]
+870.0000000000  
+# max. nucleation temperature for seed type 1 [K]
+1100.000000000  
+# Time between checks for nucleation? [s]
+# Options:  constant   from_file
+constant
+# Time interval [s]
+2.0000
+# Shall random noise be applied?
+# Options:     nucleation_noise   no_nucleation_noise
+nucleation_noise
+# Factor for random noise?
+# (applied as DeltaT -> (1+Factor*(RAND-1/2))*DeltaT)
+1.0000000000000E-03 
+#
+# Seed for random-number generator initialisation
+# -----------------------------------------------
+13                    
+#
+# Max. number of simultaneous nucleations?
+# ----------------------------------------
+# (set to 0 for automatic)
+25                    
+#
+# Shall metastable small seeds be killed?
+# Options:     kill_metastable      no_kill_metastable
+kill_metastable
+
+# Output
+# ======
+#
+# Output times
+# ------------
+# Finish input of output times (in seconds) with 'end_of_simulation'
+# 'regularly-spaced' outputs can be set with 'linear_step'
+# or 'logarithmic_step' and then specifying the increment
+# and end value
+# ('automatic_outputs' optionally followed by the number
+#  of outputs can be used in conjuction with 'linear_from_file')
+#  'first'                  : additional output for first time-step
+#  'end_at_temperature' <temp>     : additional output and end of simulation
+#                                    at given temperature
+#  'end_at_fraction' <phase><frac> : additional output and end of simulation
+#                                    at given phase fraction
+linear_step 1 20
+linear_step 5 60
+linear_step 20 300
+end_of_simulation
+#
+# Output files
+# ------------
+# Selection of the outputs
+# [legacy|verbose|terse]
+# Restart data output?                                 ('rest')
+# Options:     out_restart      no_out_restart         [wallclock time, h.]
+no_out_restart
+# Grain number output?                                 ('korn')
+# Options:     out_grains       no_out_grains
+out_grains
+# Phase number output?                                 ('phas')
+# Options:     out_phases       no_out_phases          [no_interfaces]
+out_phases
+# Fraction output?                                     ('frac')
+# Options:     out_fraction     no_out_fraction        [phase number]
+out_fraction
+# Average fraction table?                              ('TabF')
+# Options:     tab_fractions    no_tab_fractions       [front_temp] [TabL_steps]
+no_tab_fractions
+# Interface output?                                    ('intf')
+# Options:     out_interface    no_out_interface       [sharp]
+no_out_interface
+# Driving-force output?                                ('driv')
+# Options:     out_driv_force   no_out_driv_force
+no_out_driv_force
+# Relinearisation number output?                       ('numR')
+# Options:     out_relin    no_out_relin
+no_out_relin
+# Linearisation reference output?            ('refR')
+# Options:     out_lin_ref    no_out_lin_ref
+out_lin_ref
+# Interface mobility output?                           ('mueS')
+# Options:     out_mobility     no_out_mobility
+no_out_mobility
+# Curvature output?                                    ('krum')
+# Options:     out_curvature    no_out_curvature
+no_out_curvature
+# Interface velocity output?                           ('vel')
+# Options:     out_velocity     no_out_velocity
+no_out_velocity
+# Should the grain-time file be written out?           ('TabK')
+# Options:     tab_grains       no_tab_grains          [extra|standard]
+no_tab_grains
+# Should the 'von Neumann Mullins' output be written out?       ('TabN')
+# Options:    tab_vnm    no_tab_vnm
+no_tab_vnm
+# Should the 'grain data output' be written out?       ('TabGD')
+# Options:    tab_grain_data    no_tab_grain_data
+no_tab_grain_data
+# Temperature output?                                  ('temp')
+# Options:     out_temp         no_out_temp
+no_out_temp
+# Concentration output?                                ('conc')
+# Options:  out_conc  no_out_conc  [component numbers] [atom_percent|weight_percent] [element_extensions]
+out_conc
+# Concentration of reference phase output?             ('cPha')
+# Options:  out_conc_phase  no_out_conc_phase
+#   phase 0 [component numbers (default = all)] | ...
+#   ... | phase n [component numbers] [atom_percent|weight_percent] [element_extensions]
+out_conc_phase 0
+# Output for phase: 0  Concentrations: All
+# Average concentration per phase (and extrema)?       ('TabC')
+# Options:     tab_conc       no_tab_conc
+tab_conc
+# Recrystallisation energy output?                     ('rex')
+# Options:     out_recrystall   no_out_recrystall
+out_recrystall
+# Recrystallised fraction output?                      ('TabR')
+# Options:     tab_recrystall   no_tab_recrystall
+tab_recrystall
+# Dislocation density output?                          ('rhoD')
+# Options:     out_disloc       no_out_disloc
+no_out_disloc
+# Miller-Indices output?                               ('mill')
+# Options:     out_miller       no_out_miller
+no_out_miller
+# Orientation output?                                  ('orie')
+# Options:     out_orientation  no_out_orientation
+out_orientation
+# Should the orientation-time file be written?         ('TabO')
+# Options:   tab_orientation  no_tab_orientation    [rotmat]
+no_tab_orientation
+# Linearisation output?     ('TabLin')
+# Options:    tab_lin  no_tab_lin
+no_tab_lin
+# Should monitoring outputs be written out?            ('TabL')
+# Options:     tab_log [simulation time, s] [wallclock time, min]  no_tab_log
+no_tab_log
+#
+#
+# Numerical parameters
+# ====================
+#
+# Phase field solver
+# ------------------
+# Time-step ?
+# Options:   fix ...[s]   automatic    automatic_limited
+automatic
+#Coefficient for phase-field criterion 1.00
+#Coefficient for segregation criterion 0.900
+#Number of steps to adjust profiles of initially sharp interfaces [exclude_inactive]?
+50
+# Type of potential?
+# Options:  double_obstacle  multi_obstacle   [no_fd_correction | fd_correction]
+# Recommended: multi_obstacle fd_correction
+multi_obstacle fd_correction
+# Phase minimum?
+5.00E-03
+# Interface thickness (in cells)?
+5.000000000000  
+# Coefficient for initial dimension of field iFace
+#  [minimum usage] [target usage]
+0.1
+# Coefficient for initial dimension of field nTupel
+#  [minimum usage] [target usage]
+0.1
+#
+# Concentration solver
+# --------------------
+# Factor for diffusion time stepping?  (0.0 < factor < 1.0)
+0.9500000000000 
+# Optional parameters for thermodynamic definitions
+# Finish input with 'end_of_options'.
+#   {stoichiometric | stoich_solubility | stoich_enhanced} <phase> <component list>
+#   steep_limit <value>
+#   limits <phase> <component> <min (at%)> <max (at%)>
+#   penalty <phase> <phase 2> <component>
+#   sum_limits <phase> <component list>
+#   diagonal [<component list>]
+#   interaction <component 1> <component 2>
+#   {criterion_higher | criterion_lower} <phase> <phase 2> <component>
+#   {ordered | disordered} <phase> <sublattice 1> <sublattice 2>
+#   switch_diff_data <phase> <reference phase>
+#   {diff_comp_sets | vol_comp_sets | enth_comp_sets} <phase list>
+#   temp_limit_TQ <lowest (K)> <highest (K)>
+#   temp_limit_phase_TQ <phase> <lowest (K)> <highest (K)>
+#   independent_sublattice <phase> <submatrix component> <component list>
+#   database_consistent
+#   pressure <value (MPa)>
+#   start_value <phase> <phase 2>
+#   init_fraction <phase> <phase 2> <fraction>
+#   tic_tq_segments | tic_z_segments
+end_of_options
+#
+#
+#
+
+
+Beginning of initialisation
+===========================
+Routine init calls routine initDateien
+Routine init calls routine initParallel
+Routine init calls routine initRand
+Routine init calls routine initWorkspace
+Routine init calls routine initFixeFelder
+Routine init calls routine initPointer
+Routine init calls routine initIFaceSharp
+# Grain number  1 set
+# Grain number  2 set
+# Grain number  3 set
+# Grain number  4 set
+# Grain number  5 set
+# Grain number  6 set
+# Grain number  7 set
+# Grain number  8 set
+# Grain number  9 set
+# Grain number 10 set
+# Grain number 11 set
+# Grain number 12 set
+# Grain number 13 set
+# Grain number 14 set
+# Grain number 15 set
+# Grain number 16 set
+# Grain number 17 set
+# Grain number 18 set
+# Grain number 19 set
+# Grain number 20 set
+# Grain number 21 set
+# Grain number 22 set
+Routine init calls routine initFracPhase
+Routine init calls routine initKorn
+Routine init calls routine initEinschwing
+Routine init calls routine initTQ
+
+Start Composition and Limits for quasi-equilibrium
+--------------------------------------------------
+CU in LIQUID:           -100.000 at% (>0 - 100.000at% )
+FE in LIQUID:           -100.000 at% (>0 - 100.000at% )
+MN in LIQUID:           -100.000 at% (>0 - 100.000at% )
+NI in LIQUID:           -100.000 at% (>0 - 100.000at% )
+CU in fcc:              -100.000 at% (>0 - 100.000at% )
+FE in fcc:              -100.000 at% (>0 - 100.000at% )
+MN in fcc:              -100.000 at% (>0 - 100.000at% )
+NI in fcc:              -100.000 at% (>0 - 100.000at% )
+
+Routine init calls routine initConcFeld
+Phase  1 exists, but is defined as inert (i.e. has no interactions)!
+Routine init calls routine initMol
+
+Initial molar volume of phase 1:
+--------------------------------
+ 7.33582814                # molVolPh [cm**3/mol]
+
+Routine init calls routine initTwidth
+
+tWidth_max( fcc: fcc) = 2.3750000E-02 s
+Maximal value for tWidth = 2.3750000E-02 s for phase-field solver
+Updating of diffusion data from database...
+Maximal value for tWidth = 9935.761 s for conc-field solver
+Automatic time stepping (phase-field solver): decreased value for tWidth = 2.37500E-02 s
+Initial value for tWidth = 2.37500E-02 s for automatic time stepping (phase-field solver)
+
+End of routine init
+
+
+Remaining license time: permanent
+
+==================================================
+
+Time t = 0.0000000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.38E-02 s
+Average conc. of comp. FE = 1.5000000 wt%
+Average conc. of comp. MN = 1.0000000 wt%
+Average conc. of comp. NI = 10.0000000 wt%
+Temperature at the bottom = 890.00 K
+Temperature gradient = 0.00000 K/cm
+Fraction of phase LIQUID: 0.00000
+Fraction of phase fcc: 1.00000
+
+Updating of diffusion data from database...
+
+Intermediate output for t = 1.0000 s
+CPU-time: 0 s
+Current phase-field solver time step = 6.32E-01 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 889.00 K
+Temperature gradient = 0.00000 K/cm
+
+Seed number 1 set at time t = 2.0000 s
+--------------------------------------
+at an interface, zp =                116451
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0531 MPa or J/cm**3
+Grain number = 23
+
+Seed number 2 set at time t = 2.0000 s
+--------------------------------------
+at an interface, zp =                 24804
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0150 MPa or J/cm**3
+Grain number = 24
+
+Seed number 3 set at time t = 2.0000 s
+--------------------------------------
+at an interface, zp =                 15723
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0150 MPa or J/cm**3
+Grain number = 25
+
+Seed number 4 set at time t = 2.0000 s
+--------------------------------------
+at an interface, zp =                 21718
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0150 MPa or J/cm**3
+Grain number = 26
+
+Seed number 5 set at time t = 2.0000 s
+--------------------------------------
+at an interface, zp =                 26710
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0150 MPa or J/cm**3
+Grain number = 27
+
+Seed number 6 set at time t = 2.0000 s
+--------------------------------------
+at an interface, zp =                139545
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0531 MPa or J/cm**3
+Grain number = 28
+
+Seed number 7 set at time t = 2.0000 s
+--------------------------------------
+at an interface, zp =                141025
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0531 MPa or J/cm**3
+Grain number = 29
+
+Seed number 8 set at time t = 2.0000 s
+--------------------------------------
+at an interface, zp =                143499
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0531 MPa or J/cm**3
+Grain number = 30
+
+Seed number 9 set at time t = 2.0000 s
+--------------------------------------
+at an interface, zp =                144480
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0531 MPa or J/cm**3
+Grain number = 31
+
+Seed number 10 set at time t = 2.0000 s
+---------------------------------------
+at an interface, zp =                146969
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0531 MPa or J/cm**3
+Grain number = 32
+
+Seed number 11 set at time t = 2.0000 s
+---------------------------------------
+at an interface, zp =                 67889
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0150 MPa or J/cm**3
+Grain number = 33
+
+Seed number 12 set at time t = 2.0000 s
+---------------------------------------
+at an interface, zp =                 48384
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0150 MPa or J/cm**3
+Grain number = 34
+
+Seed number 13 set at time t = 2.0000 s
+---------------------------------------
+at an interface, zp =                 58895
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0150 MPa or J/cm**3
+Grain number = 35
+
+Seed number 14 set at time t = 2.0000 s
+---------------------------------------
+at an interface, zp =                 31847
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0150 MPa or J/cm**3
+Grain number = 36
+
+Seed number 15 set at time t = 2.0000 s
+---------------------------------------
+at an interface, zp =                 44771
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0150 MPa or J/cm**3
+Grain number = 37
+
+Seed number 16 set at time t = 2.0000 s
+---------------------------------------
+at an interface, zp =                 65353
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0150 MPa or J/cm**3
+Grain number = 38
+
+Seed number 17 set at time t = 2.0000 s
+---------------------------------------
+at an interface, zp =                115412
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0531 MPa or J/cm**3
+Grain number = 39
+
+Seed number 18 set at time t = 2.0000 s
+---------------------------------------
+at an interface, zp =                125428
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0531 MPa or J/cm**3
+Grain number = 40
+
+Seed number 19 set at time t = 2.0000 s
+---------------------------------------
+at an interface, zp =                131434
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0531 MPa or J/cm**3
+Grain number = 41
+
+Seed number 20 set at time t = 2.0000 s
+---------------------------------------
+at an interface, zp =                136436
+Phase: 1 (fcc)
+Seed type: 1
+Local temperature = 888.00 K
+Driving force = 5.0531 MPa or J/cm**3
+Grain number = 42
+
+
+Intermediate output for t = 2.0000 s
+CPU-time: 0 s
+Current phase-field solver time step = 6.28E-01 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 888.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+
+Intermediate output for t = 2.0010 s
+CPU-time: 0 s
+Current phase-field solver time step = 9.89E-04 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 888.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 3.0000 s
+CPU-time: 7 s
+Current phase-field solver time step = 9.78E-04 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 887.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 4.0000 s
+CPU-time: 7 s
+Current phase-field solver time step = 9.80E-04 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 886.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 5.0000 s
+CPU-time: 7 s
+Current phase-field solver time step = 9.73E-04 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 885.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 6.0000 s
+CPU-time: 8 s
+Current phase-field solver time step = 9.68E-04 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 884.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+
+Intermediate output for t = 7.0000 s
+CPU-time: 7 s
+Current phase-field solver time step = 9.80E-04 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 883.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 8.0000 s
+CPU-time: 7 s
+Current phase-field solver time step = 9.95E-04 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 882.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+
+Intermediate output for t = 9.0000 s
+CPU-time: 5 s
+Current phase-field solver time step = 2.28E-03 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 881.00 K
+Temperature gradient = 0.00000 K/cm
+Updating of diffusion data from database...
+
+Intermediate output for t = 10.000 s
+CPU-time: 2 s
+Current phase-field solver time step = 2.12E-03 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 880.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+
+Intermediate output for t = 11.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.86E-03 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 879.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 12.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.85E-03 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 878.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+
+Intermediate output for t = 13.000 s
+CPU-time: 3 s
+Current phase-field solver time step = 1.02E-03 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 877.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 14.000 s
+CPU-time: 4 s
+Current phase-field solver time step = 9.26E-04 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 876.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 15.000 s
+CPU-time: 2 s
+Current phase-field solver time step = 1.29E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 875.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 16.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 874.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+
+Intermediate output for t = 17.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 2.20E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 873.00 K
+Temperature gradient = 0.00000 K/cm
+
+Intermediate output for t = 18.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 872.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+
+Intermediate output for t = 19.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 1.85E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 871.00 K
+Temperature gradient = 0.00000 K/cm
+Updating of diffusion data from database...
+
+Intermediate output for t = 20.000 s
+CPU-time: 0 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 870.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 25.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 1.39E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 865.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 30.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 860.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 35.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 855.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 40.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.24E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 850.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 45.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 845.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 50.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 840.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 55.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 835.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 60.000 s
+CPU-time: 1 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 830.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 80.000 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 810.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 100.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 790.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 120.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 770.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 140.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 750.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 160.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 730.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 180.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 710.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 200.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 690.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 220.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 670.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 240.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 650.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 260.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 630.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 280.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 610.00 K
+Temperature gradient = 0.00000 K/cm
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+complete relinearisation!
+complete relinearisation!
+Updating of diffusion data from database...
+
+Intermediate output for t = 300.00 s
+CPU-time: 3 s
+Current phase-field solver time step = 2.37E-02 s
+Average conc. of comp. FE = 1.5000000, Variation = -0.0000000 wt%
+Average conc. of comp. MN = 1.0000000, Variation = +0.0000000 wt%
+Average conc. of comp. NI = 10.0000000, Variation = +0.0000000 wt%
+Temperature at the bottom = 590.00 K
+Temperature gradient = 0.00000 K/cm
+
+==================================================
+
+Simulation run on machine: ELK171
+Remaining license time: permanent
+CPU time in seconds:  122
+Wall clock time in seconds:  136
+End
+
