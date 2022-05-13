@@ -102,7 +102,7 @@ angle_2d
 # Phase 0
 # --
 #
-# Type of molar volume input ?
+# Type of molar volume input?
 # Options: constant [temp_extrapol] [conc_extrapol]
 database
 #
@@ -113,22 +113,22 @@ database
 recrystall verbose
 # recrystallisation model
 # Options:  energy  mean_disloc  local_disloc  [all_interfaces]
-energy
+mean_disloc all_interfaces
 # energy threshold for the recrystallisation  model [J/cm**3 or MPa]
 2.12300E-03
-# is phase 1 anisotropic?
+# is phase 1 anisotropic
 # Optionen: isotropic  anisotropic  faceted_a  faceted_b   faceted[_c]  antifaceted
 anisotropic
 # crystal symmetry
 # Options:   none  cubic  hexagonal  tetragonal  orthorhombic
 cubic
-# should grains of phase  1 be reduced to categories?
+# should grains of phase  1 be reduced to categories
 # Options:   categorize no_categorize
 no_categorize
-# Type of molar volume input ?
+# Type of molar volume input
 # Options: constant database [temp_extrapol] [conc_extrapol]
 database
-# general TQ update-interval for molar volumes [s] ?
+# general TQ update-interval for molar volumes [s]
 10
 #
 #
@@ -167,19 +167,19 @@ constant
 # shall misorientation be considered?
 # Options --- misorientation  no_misorientation
 #           [low_angle_limit <degrees (default=15)>]  [special_orient <nb>]
-no_misorientation
+misorientation
 # input for the misorientation coefficients:
 # modification of interfacial energy for low angle boundaries
 # Options --- factor   read-shockley
-#factor
+read-shockley
 # prefactor of interfacial energy for low angle boundaries?
-#0.1000000000000
+0.1000000000000
 # modification of the mobility for low angle boundaries
 # Options --- {factor | humphreys [<minimum> <parameter B> <parameter N>]}
 #                    (default: minimum=0.05 B=5.0 N=4.0)
-#factor
+factor
 # prefactor of interfacial mobility for low angle boundaries?
-#0.1000000000000
+0.1000000000000
 #
 #
 # Diffusion
@@ -288,11 +288,11 @@ out_nucleation
 # position
 # Options --- bulk  region  interface  triple  quadruple  front  [restrictive]
 interface
-# phase (integer) [unresolved|add_to_grain|split_from_grain]?
+# phase (integer) [unresolved|add_to_grain|split_from_grain]
 1
-# reference phase (integer) [min. and max. fraction (real)]?
+# reference phase (integer) [min. and max. fraction (real)]
 1
-# substrate phase [2nd substrate phase] [substrate_curvature]?
+# substrate phase [2nd substrate phase] [substrate_curvature]
 1
 # maximum number of new nuclei of seed 1
 # (set negative for unlimited number) (ex=30)
@@ -302,7 +302,7 @@ interface
 # growth mode
 # Options --- stabilisation analytical_curvature
 stabilisation
-# critical recrystallisation energy [J/cm**3 or MPa]?
+# critical recrystallisation energy [J/cm**3 or MPa]
 4.0000
 # nuclei orientations
 # Options ---  random    randomZ   fix     range    parent_relation
