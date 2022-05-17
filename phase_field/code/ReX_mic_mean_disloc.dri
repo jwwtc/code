@@ -4,7 +4,7 @@
 #
 English
 #  <directory path>/ <base name>
-results/mean_disloc/mean_disloc
+results/mean_disloc_inter_energy/mean_disloc
 #
 overwrite
 new
@@ -12,9 +12,9 @@ new
 # Geometry
 # ========
 #21.4 µm Grid size for a 643 RVE containing 191 grains
-750
+500
 1
-750
+500
 # cell dimension (grid spacing in mm) !
 1
 #
@@ -157,19 +157,19 @@ constant
 # Options: constant temp_dependent(!) dg_dependent [fixed_minimum]
 constant
 # kinetic coefficient mu between 1 and 1 [cm**4/(Js)]
-0.0007
+0.0007	#0.00002
 # shall misorientation be considered
 # Options:  misorientation  no_misorientation
-#           [low_angle_limit <degrees (default=15)>]  [special_orient <nb>]
-no_misorientation #misorientation 15.
+# [low_angle_limit <degrees (default=15)>]  [special_orient <nb>]
+misorientation 15.
 # Input of the misorientation coefficients:
 # Modification of interfacial energy for low angle boundaries
 # Options:  factor   read-shockley
-#Read-Shockley
+Read-Shockley
 # Modification of the mobility for low angle boundaries
 # Options: {factor | humphreys [<minimum> <parameter B> <parameter N>]}
 #                    (default: minimum=0.05 B=5.0 N=4.0)
-#Humphreys
+Humphreys
 #
 #
 # Diffusion
@@ -204,7 +204,7 @@ constant
 # Initial Microstructure
 # ======================
 from_file
-files\input_mic\800x800\input_mic.vtk korn
+files\input_mic\500x500\input_mic.vtk FeatureIds
 n
 -1
 identical
@@ -215,7 +215,7 @@ identical
 #or 7.76E+13, or 1.42E+15	T. Sousa et al. (2017)
 #or 10E+15			Recrystallization and Related Annealing Phenomena (2017)
 # rotation angle
-45
+0
 # Filename of properties of the grain structure
 #T11_03_EulerAngles_T950.txt
 # Filename of local dislocation densities [VTK_identifier (default=rhoD)]
@@ -291,7 +291,7 @@ interface
 # Options --- stabilisation analytical_curvature
 stabilisation
 # critical dislocation density [m^-2]
-10E+10 #2.25E+14
+2.25E+14 #2.25E+14
 # nuclei orientations
 # Options ---  random    randomZ   fix     range    parent_relation
 random
@@ -350,6 +350,7 @@ linear_step 0.5 5
 linear_step 1 20
 linear_step 5 60
 linear_step 20 300
+linear_step 100 1000
 end_of_simulation
 #
 # Output files
@@ -460,7 +461,7 @@ multi_obstacle fd_correction
 # phase minimum
 5.00E-03
 # interface thickness (in cells)
-5.000
+4.0
 # Coefficient for initial dimension of field iFace
 #  [minimum usage] [target usage]
 0.1
