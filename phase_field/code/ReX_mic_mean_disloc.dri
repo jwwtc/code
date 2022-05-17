@@ -12,11 +12,11 @@ new
 # Geometry
 # ========
 #21.4 µm Grid size for a 643 RVE containing 191 grains
-500
+800
 1
-500
-# cell dimension (grid spacing in mm) !
-1
+800
+# cell dimension (grid spacing in mm)!
+0.4
 #
 # Model
 # =====
@@ -154,23 +154,14 @@ constant
 #     [max. value for num. interface stabilisation [J/cm**2]]
 0.0000625  #0.625 J/m2, Murr (1975), Vandermeer et al. (1997)
 # type of mobility definition between 1 and 1
-# Options: constant temp_dependent(!) dg_dependent [fixed_minimum]
+# Options: constant temp_dependent dg_dependent [fixed_minimum]
 constant
 # kinetic coefficient mu between 1 and 1 [cm**4/(Js)]
 0.0007	#0.00002
 # shall misorientation be considered
 # Options:  misorientation  no_misorientation
 # [low_angle_limit <degrees (default=15)>]  [special_orient <nb>]
-misorientation 15.
-# Input of the misorientation coefficients:
-# Modification of interfacial energy for low angle boundaries
-# Options:  factor   read-shockley
-Read-Shockley
-# Modification of the mobility for low angle boundaries
-# Options: {factor | humphreys [<minimum> <parameter B> <parameter N>]}
-#                    (default: minimum=0.05 B=5.0 N=4.0)
-Humphreys
-#
+no_misorientation
 #
 # Diffusion
 # =========
@@ -431,7 +422,7 @@ out_disloc
 no_out_miller
 # Orientation output?                                  ('orie')
 # Options --- out_orientation  no_out_orientation
-out_orientation
+no_out_orientation
 # Should the orientation-time file be written?         ('TabO')
 # Options --- tab_orientation  no_tab_orientation    [rotmat]
 no_tab_orientation
