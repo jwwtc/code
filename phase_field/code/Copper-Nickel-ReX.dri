@@ -4,7 +4,7 @@
 #
 English
 #<directory path>/ <base name>
-results/final/final
+results/final/876/876
 overwrite
 new
 #
@@ -14,7 +14,7 @@ new
 1
 600
 # cell dimension (grid spacing in mm)
-0.71666 # 600 x 0.71666 = 430
+0.71666 #600x0.71666=430
 #
 # Model
 # =====
@@ -41,7 +41,7 @@ pppp
 database files/ges/c70600
 # global relinearization interval
 manual
-2 #[s]
+50 #[s]
 #
 # Components
 # ==========
@@ -197,7 +197,7 @@ input
 1
 10
 # temperature at which the initial equilibrium will be calculated [K]
-890
+876
 #
 # Process Conditions
 # ==================
@@ -209,7 +209,7 @@ linear
 # number of connecting points   (integer)
 0.00
 # initial temperature at the bottom (real) [K]
-890
+876
 # temperature gradient in z-direction  [K/cm]
 0.00
 # cooling rate [K/s]
@@ -311,8 +311,10 @@ kill_metastable
 linear_step 1 20
 linear_step 5 60
 linear_step 20 800
-linear_step 100 1000
-linear_step 200 15000
+linear_step 100 3000
+linear_step 100 8000
+#linear_step 2  3360
+linear_step 200 11000
 end_of_simulation
 #
 # Output files
@@ -423,7 +425,7 @@ multi_obstacle fd_correction
 # phase minimum
 5.00E-03
 # interface thickness (in cells)
-4.0
+5.5
 # Coefficient for initial dimension of field iFace
 #  [minimum usage] [target usage]
 0.1
