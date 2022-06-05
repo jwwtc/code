@@ -4,7 +4,7 @@
 #
 English
 #<directory path>/ <base name>
-results/final/876/876
+results/final/1003/1003
 overwrite
 new
 #
@@ -197,7 +197,7 @@ input
 1
 10
 # temperature at which the initial equilibrium will be calculated [K]
-876
+1003
 #
 # Process Conditions
 # ==================
@@ -209,7 +209,7 @@ linear
 # number of connecting points   (integer)
 0.00
 # initial temperature at the bottom (real) [K]
-876
+1003
 # temperature gradient in z-direction  [K/cm]
 0.00
 # cooling rate [K/s]
@@ -309,11 +309,10 @@ kill_metastable
 #  'end_at_fraction' <phase><frac> : additional output and end of simulation
 #                                    at given phase fraction
 linear_step 1 20
-linear_step 5 60
-linear_step 20 800
-linear_step 100 3000
-linear_step 100 8000
-#linear_step 2  3360
+linear_step 10 60
+linear_step 20 200
+linear_step 200 6000
+linear_step 5 6700
 linear_step 200 11000
 end_of_simulation
 #
