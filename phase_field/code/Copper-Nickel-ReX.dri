@@ -13,7 +13,7 @@ new
 600
 1
 600
-# cell dimension (grid spacing in mm)
+# cell dimension (grid spacing in µm)
 0.71666 #600x0.71666=430
 #
 # Model
@@ -100,7 +100,7 @@ recrystall verbose
 # recrystallisation model
 # Options:  energy  mean_disloc  local_disloc  [all_interfaces]
 mean_disloc all_interfaces
-# dislocation threshold for recrystallisation model [m^-2] 
+# dislocation threshold for recrystallisation model [m^-2]
 1E+12 #2E+12
 # burgers vector of phase 1 [nm] [dislocation interaction coefficient (default: 0.5)]
 0.255625 #R.C. Weast, Ed., Handbook of Chemistry and Physics, 55th ed., CRC Press, 1974
@@ -176,13 +176,8 @@ identical
 9.1E+14 #(±0.9)			Tibor Berecz (2019)
 #or 7.76E+13, or 1.42E+15	T. Sousa et al. (2017)
 #or 10E+15			Recrystallization and Related Annealing Phenomena (2017)
-# eular angles	#rotation angles
+# euler angles	#rotation angles
 0
-# Filename of properties of the grain structure
-#T11_03_EulerAngles_T950.txt
-# Filename of local dislocation densities [VTK_identifier (default=rhoD)]
-#T11_03_DislocationDensity_T950.vtk   rhoD
-#
 no_restart_file
 #
 # Initial Concentrations
