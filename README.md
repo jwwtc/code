@@ -7,34 +7,50 @@ From a materials engineering standpoint, the development and understanding of pr
 ## Organization
 
 ├── AUTHORS.md              <- List of developers and maintainers.
+
 ├── CHANGELOG.md            <- Changelog to keep track of new features and fixes.
+
 ├── CONTRIBUTING.md         <- Guidelines for contributing to this project.
+
 ├── Dockerfile              <- Build a docker container with `docker build .`.
+
 ├── LICENSE.txt             <- License as chosen on the command-line.
-├── README.md               <- The top-level README for developers.
+
+├── README.md               <- The top-level README for developers
+
 ├── configs                 <- Directory for configurations of model & application.
+
 ├── data
+
 │   ├── external            <- Data from third party sources.
+
 │   ├── interim             <- Intermediate data that has been transformed.
+
 │   ├── preprocessed        <- The final, canonical data sets for modeling.
+
 │   └── raw                 <- The original, immutable data dump.
+
 ├── docs                    <- Directory for Sphinx documentation in rst or md.
+
 ├── environment.yml         <- The conda environment file for reproducibility.
 
 ## Installation
 
 1. Download and install Anaconda.
-2. Clone this repository to a directory of yours.
-3. Navigate to the project directory.
-4. Open Anaconda prompt there.
-5. Run the following commands from Anaconda prompt to create an environment with a specific python version and the required packages:
+2. 
+3. Clone this repository to a directory of yours.
+4. 
+5. Navigate to the project directory.
+6. 
+7. Open Anaconda prompt there.
+8. 
+9. Run the following commands from Anaconda prompt to create an environment with a specific python version and the required packages:
 ```
 conda create -n rexsurrogate python==3.6.10
 conda activate rexsurrogate
 pip install -r ./requirements.txt
 ```
 For further help, see [here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
-For more information about creating, managing, and working with Conda environments, please consult the relevant help page.
 
 To read and run the code, open Jupyter Notebook by running this command:
 ```
