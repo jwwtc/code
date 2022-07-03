@@ -37,14 +37,10 @@ From a materials engineering standpoint, the development and understanding of pr
 ## Installation
 
 1. Download and install Anaconda.
-2. 
-3. Clone this repository to a directory of yours.
-4. 
-5. Navigate to the project directory.
-6. 
-7. Open Anaconda prompt there.
-8. 
-9. Run the following commands from Anaconda prompt to create an environment with a specific python version and the required packages:
+2.. Clone this repository to a directory of yours.
+3. Navigate to the project directory.
+4. Open Anaconda prompt there.
+5. Run the following commands from Anaconda prompt to create an environment with a specific python version and the required packages:
 ```
 conda create -n rexsurrogate python==3.6.10
 conda activate rexsurrogate
